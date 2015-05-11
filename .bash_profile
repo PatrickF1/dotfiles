@@ -2,5 +2,6 @@
 [ -z "$PS1" ] && return
 
 source .aliases
+
 export PS1="\u@\h:\W\$ "
-export HISTSIZE='2000';
+export HISTSIZE='2000'

@@ -1,6 +1,6 @@
 alias ls="ls -Gh"
 alias mkdir="mkdir -p"
-export PS1="\u@\h:\W\$ "
+alias grep="grep --color=auto"
 
 # Easier navigation
 alias ..="cd .."
