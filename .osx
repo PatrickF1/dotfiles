@@ -18,4 +18,8 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 # Show indicator lights for open applications in the Dock
 defaults write com.apple.dock show-process-indicators -bool true
 
+# Expand the save and print panels by default
+defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
+defaults write -g PMPrintingExpandedStateForPrint -bool true
+
 echo "Done. Note that these changes may require a logout or restart to take effect."
