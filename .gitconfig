@@ -4,5 +4,5 @@
 [push]
 	default = simple
 [core]
-	excludesfile = /Users/pafong/.gitignore_global
+	excludesfile = ~/.gitignore_global
 	editor = subl -nw
