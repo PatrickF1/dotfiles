@@ -1,1 +1,1 @@
-My personal config files. Much of it was copied from https://mths.be/dotfilesdotfiles and other repos.
+My personal config files. Much of it was copied from https://mths.be/dotfiles and https://github.com/atomantic.
