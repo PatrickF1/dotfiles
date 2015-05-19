@@ -8,6 +8,9 @@
 defaults write -g InitialKeyRepeat -int 12
 defaults write -g KeyRepeat -int 1
 
+# Disable press-and-hold for keys in favor of key repeat
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
 
@@ -28,5 +31,7 @@ defaults write -g PMPrintingExpandedStateForPrint -bool true
 # Disable the crash reporter
 defaults write com.apple.CrashReporter DialogType -string "none"
 
+# Disable automatic emoji substitution (i.e. use plain text smileys)
+defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
 
 echo "Done. Note that these changes may require a logout or restart to take effect."
