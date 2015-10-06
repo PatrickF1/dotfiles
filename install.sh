@@ -6,5 +6,6 @@ for dotfile in $REPO_DIR/.{aliases,bash_profile,gitconfig,gitignore_global}; do
     cp -i $dotfile ~
 done
 
-echo "Configuring OS X."
+echo "Done. You must restart terminal or source the dot files before the changes to take effect."
+echo "Now configuring OS X."
 sh osx.sh

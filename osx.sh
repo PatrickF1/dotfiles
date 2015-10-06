@@ -34,4 +34,4 @@ defaults write com.apple.CrashReporter DialogType -string "none"
 # Disable automatic emoji substitution (i.e. use plain text smileys)
 defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
 
-echo "Done. Note that these changes may require a logout or restart to take effect."
+echo "Done."
