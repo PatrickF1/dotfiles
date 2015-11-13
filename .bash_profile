@@ -4,7 +4,8 @@
 source ~/.aliases
 
 export PS1="\[$(tput setaf 6)\][\u@\h \w]\\$ \[$(tput sgr0)\]"
-export HISTSIZE='2000'
 
+export HISTSIZE='2000'
+export HISTTIMEFORMAT='%F %T '
 shopt -s histverify # don't immediately execute commands from history but copy them onto command line
 shopt -s histappend # append to bash history instead of overwriting
