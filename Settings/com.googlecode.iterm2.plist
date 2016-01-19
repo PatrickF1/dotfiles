@@ -1471,12 +1471,17 @@
 	<array/>
 	<key>NSTableView Sort Ordering KeyBingingTable</key>
 	<array/>
+	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
+	<dict>
+		<key>TB Is Shown</key>
+		<integer>1</integer>
+	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>4350 739 445 270 2560 0 2560 1418 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>350 393 924 485 0 0 1440 878 </string>
+	<string>319 343 924 485 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>4 109 1432 761 0 0 1440 878 </string>
+	<string>4 96 1432 781 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>4 327 730 551 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -1525,47 +1530,47 @@
 			<key>Ansi 10 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.38298487663269043</real>
+				<real>0.2541370689868927</real>
 				<key>Green Component</key>
-				<real>0.35665956139564514</real>
+				<real>0.63390517234802246</real>
 				<key>Red Component</key>
-				<real>0.27671992778778076</real>
+				<real>0.28918451070785522</real>
 			</dict>
 			<key>Ansi 11 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.43850564956665039</real>
+				<real>0.29656597971916199</real>
 				<key>Green Component</key>
-				<real>0.40717673301696777</real>
+				<real>0.80605107545852661</real>
 				<key>Red Component</key>
-				<real>0.32436618208885193</real>
+				<real>0.8644709587097168</real>
 			</dict>
 			<key>Ansi 12 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.51685798168182373</real>
+				<real>0.88259339332580566</real>
 				<key>Green Component</key>
-				<real>0.50962930917739868</real>
+				<real>0.0</real>
 				<key>Red Component</key>
-				<real>0.44058024883270264</real>
+				<real>0.13748396933078766</real>
 			</dict>
 			<key>Ansi 13 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.72908437252044678</real>
+				<real>0.61049854755401611</real>
 				<key>Green Component</key>
-				<real>0.33896297216415405</real>
+				<real>0.106540247797966</real>
 				<key>Red Component</key>
-				<real>0.34798634052276611</real>
+				<real>0.91044890880584717</real>
 			</dict>
 			<key>Ansi 14 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.56363654136657715</real>
+				<real>0.75896424055099487</real>
 				<key>Green Component</key>
-				<real>0.56485837697982788</real>
+				<real>0.74463778734207153</real>
 				<key>Red Component</key>
-				<real>0.50599193572998047</real>
+				<real>0.078903175890445709</real>
 			</dict>
 			<key>Ansi 15 Color</key>
 			<dict>
@@ -1597,11 +1602,11 @@
 			<key>Ansi 4 Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.78231418132781982</real>
+				<real>0.71889388561248779</real>
 				<key>Green Component</key>
-				<real>0.46265947818756104</real>
+				<real>0.3761124312877655</real>
 				<key>Red Component</key>
-				<real>0.12754884362220764</real>
+				<real>0.17582139372825623</real>
 			</dict>
 			<key>Ansi 5 Color</key>
 			<dict>
@@ -1668,7 +1673,7 @@
 			<key>Blend</key>
 			<real>0.30000001192092896</real>
 			<key>Blink Allowed</key>
-			<true/>
+			<false/>
 			<key>Blinking Cursor</key>
 			<false/>
 			<key>Blur</key>
@@ -2110,7 +2115,7 @@
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
-			<true/>
+			<false/>
 			<key>Use Canonical Parser</key>
 			<false/>
 			<key>Use Italic Font</key>
@@ -2755,7 +2760,7 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>467683801.723203</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>470959748.74251097</real>
+	<real>474855734.25690502</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -2787,7 +2792,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-12-04T22:08:14Z</date>
+	<date>2016-01-19T00:21:06Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
