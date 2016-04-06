@@ -1479,9 +1479,9 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>4350 739 445 270 2560 0 2560 1418 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>319 343 924 485 0 0 1440 877 </string>
+	<string>3159 362 924 485 2560 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>4 96 1432 781 0 0 1440 877 </string>
+	<string>2560 21 1279 1394 2560 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>4 327 730 551 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -2757,10 +2757,12 @@
 			<string>/Users/pafong</string>
 		</dict>
 	</array>
+	<key>NoSyncHaveShownPromoWithId_4</key>
+	<true/>
 	<key>NoSyncTimeOfLastPromo</key>
-	<real>467683801.723203</real>
+	<real>477788529.007047</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>474855734.25690502</real>
+	<real>481672542.65502203</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -2792,7 +2794,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-01-19T00:21:06Z</date>
+	<date>2016-04-06T21:59:40Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>

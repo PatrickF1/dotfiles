@@ -1,5 +1,12 @@
 {
     "font_size": 17,
     "translate_tabs_to_spaces": true,
-    "word_wrap": true
+    "indent_guide_options": ["draw_normal", "draw_active"],
+    "word_wrap": true,
+    "highlight_modified_tabs": true,
+    "highlight_line": true,
+    "binary_file_patterns": ["*.cache", "*.gz"],
+    "bold_folder_labels": true,
+    "margin": 0,
+    "always_show_minimap_viewport": true,
 }
