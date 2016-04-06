@@ -7,6 +7,10 @@ for dotfile in $REPO_DIR/.{aliases,bash_profile,gitconfig,gitignore_global}; do
     cp -i $dotfile ~
 done
 
+echo "Iteractively copying Sublime Text 3 User preferences into its home."
+SUBLIME_PREFERENCES_HOME="$HOME/Library/Application Support/Sublime Text 3/Packages/User/"
+cp -i $REPO_DIR/Settings/Preferences.sublime-settings "$SUBLIME_PREFERENCES_HOME"
+
 echo "Done. You must restart terminal or source the dot files before the changes to take effect."
 
 sh $REPO_DIR/osx.sh
