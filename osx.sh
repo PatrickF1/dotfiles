@@ -1,3 +1,4 @@
+echo "Configuring OS X."
 # Ask for the administrator password upfront
 # sudo -v
 
