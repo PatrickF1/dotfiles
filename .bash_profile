@@ -2,6 +2,7 @@
 [ -z "$PS1" ] && return
 
 source ~/.aliases
+source ~/.functions
 
 export PS1="\[$(tput setaf 6)\][\u@\h \w]\\$ \[$(tput sgr0)\]"
 
