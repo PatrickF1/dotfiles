@@ -1489,9 +1489,11 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>355 1398 620 392 -295 900 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>201 1256 796 473 -295 900 1920 1057 </string>
+	<string>284 307 796 473 0 0 1440 877 </string>
+	<key>NSWindow Frame UKCrashReporter</key>
+	<string>99 293 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-293 901 955 1056 -295 900 1920 1057 </string>
+	<string>4 85 1432 783 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>4 327 730 551 0 0 1440 878 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -2855,10 +2857,14 @@
 	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
 	<false/>
+	<key>RestoreWindowContents</key>
+	<false/>
 	<key>RightCommand</key>
 	<integer>8</integer>
 	<key>RightOption</key>
 	<integer>3</integer>
+	<key>RunJobsInServers</key>
+	<false/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -2868,7 +2874,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-07-28T20:13:08Z</date>
+	<date>2016-07-31T06:10:42Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Show Toolbelt</key>
@@ -2903,6 +2909,8 @@
 	</array>
 	<key>TripleClickSelectsFullWrappedLines</key>
 	<false/>
+	<key>UKCrashReporterLastCrashReportDate</key>
+	<real>1469945600</real>
 	<key>URLHandlersByGuid</key>
 	<dict/>
 	<key>UseBorder</key>
