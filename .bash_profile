@@ -3,6 +3,7 @@
 
 source ~/.aliases
 source ~/.functions
+source ~/.git-completion.bash
 
 export PS1="\[$(tput setaf 6)\][\u@\h \w]\\$ \[$(tput sgr0)\]"
 
