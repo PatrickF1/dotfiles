@@ -1,12 +1,13 @@
 [user]
-	name = Patrick Fong
-	email = pafong@groupon.com
+  name = Patrick Fong
+  email = pafong@groupon.com
 [push]
-	default = simple
+  default = simple
 [core]
-	excludesfile = ~/.gitignore_global
-	editor = subl -nw
+  excludesfile = ~/.gitignore_global
+  editor = subl -nw
 [alias]
-	lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(cyan)%aD%C(reset) %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)%n''          %C(black)%s%C(reset) %C(black)  [%an]%C(reset)'
-	dc = diff --cached
-	st = status
+  lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(cyan)%aD%C(reset) %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)%n''          %C(black)%s%C(reset) %C(black)  [%an]%C(reset)'
+  dc = diff --cached
+  st = status
+  br = branch
