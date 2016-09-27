@@ -1,8 +1,7 @@
 alias ls="ls -Gh"
 alias mkdir="mkdir -p"
 alias grep="grep --color=auto"
-
-# Easier navigation
+alias history="history | less"
 alias ..="cd .."
 
 # Recursively delete `.DS_Store` files
