@@ -1320,10 +1320,24 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
+		<key>0x66-0x140000</key>
+		<dict>
+			<key>Action</key>
+			<integer>23</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
 		<key>0x9-0x40000</key>
 		<dict>
 			<key>Action</key>
 			<integer>0</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xd-0x100000</key>
+		<dict>
+			<key>Action</key>
+			<integer>13</integer>
 			<key>Text</key>
 			<string></string>
 		</dict>
@@ -1487,15 +1501,15 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>269 194 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>557 375 400 129 0 0 1440 877 </string>
+	<string>2520 966 400 129 1440 0 2560 1417 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>610 437 700 622 0 0 1920 1177 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>180 123 606 456 0 0 1920 1177 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>700 612 796 473 0 0 1920 1177 </string>
+	<string>2538 843 796 473 1440 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>174 393 745 552 0 0 1920 1177 </string>
+	<string>-40 -425 1432 762 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>4 84 1432 783 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
@@ -3009,7 +3023,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-10-04T04:00:11Z</date>
+	<date>2016-10-26T19:17:17Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
