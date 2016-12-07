@@ -3,6 +3,7 @@
     "translate_tabs_to_spaces": true,
     "indent_guide_options": ["draw_normal", "draw_active"],
     "word_wrap": true,
+    "trim_trailing_white_space_on_save": true,
     "highlight_modified_tabs": true,
     "highlight_line": true,
     "binary_file_patterns": ["*.cache", "*.gz"],
