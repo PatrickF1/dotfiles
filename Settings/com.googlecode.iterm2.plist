@@ -1501,17 +1501,17 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>269 194 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>2520 966 400 129 1440 0 2560 1417 </string>
+	<string>520 580 400 129 0 0 1440 877 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>370 212 700 622 0 0 1440 877 </string>
+	<string>324 1316 700 622 -286 900 1920 1177 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>114 139 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>401 203 796 473 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>4 108 1432 762 0 0 1440 877 </string>
+	<string>1282 106 1261 762 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>4 84 1432 783 0 0 1440 877 </string>
+	<string>1450 838 745 552 1440 0 2560 1417 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -2994,6 +2994,8 @@
 	<true/>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>0</integer>
+	<key>PMPrintingExpandedStateForPrint2</key>
+	<false/>
 	<key>PassOnControlClick</key>
 	<false/>
 	<key>PasteFromClipboard</key>
@@ -3002,6 +3004,8 @@
 	<dict/>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/patrick/dotfiles/Settings</string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>PromptOnQuit</key>
 	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -3023,7 +3027,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-12-05T05:00:41Z</date>
+	<date>2017-03-02T21:17:09Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -3085,7 +3089,7 @@
 	<key>findRegex_iTerm</key>
 	<true/>
 	<key>iTerm Version</key>
-	<string>3.0.12</string>
+	<string>3.0.14</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
