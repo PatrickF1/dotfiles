@@ -4,6 +4,8 @@ alias grep="grep --color=auto"
 alias history="history | tail -r | less"
 alias ..="cd .."
 
+alias clearf="pbpaste | pbcopy"
+
 # Recursively delete `.DS_Store` files
 # alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
