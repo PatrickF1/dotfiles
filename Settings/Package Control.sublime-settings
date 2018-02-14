@@ -1,0 +1,18 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"A File Icon",
+		"ANSIescape",
+		"GitGutter",
+		"Line Endings Unify",
+		"Material Theme",
+		"Package Control",
+		"Pretty JSON",
+		"Sass",
+		"SideBarEnhancements"
+	]
+}

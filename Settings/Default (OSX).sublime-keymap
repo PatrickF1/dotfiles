@@ -2,4 +2,6 @@
   { "keys": ["super+l"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
   { "keys": ["super+["], "command": "jump_back" },
   { "keys": ["super+]"], "command": "jump_forward" },
+  { "keys": ["super+v"], "command": "paste_and_indent" },
+  { "keys": ["super+b"], "command": "goto_definition" }
 ]
