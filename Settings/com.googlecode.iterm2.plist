@@ -1469,7 +1469,7 @@
 	<key>MaxVertically</key>
 	<false/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/dotfiles/Settings</string>
+	<string>~/PersonalCode/dotfiles/Settings</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 459}</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -1524,13 +1524,13 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1827 317 606 469 1440 0 3440 1417 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>2452 558 918 512 1440 0 3440 1417 </string>
+	<string>2452 558 796 473 1440 0 3440 1417 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>651 121 592 584 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>3160 23 1717 1394 1440 0 3440 1417 </string>
+	<string>0 110 1440 767 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1440 25 1717 1392 1440 0 3440 1417 </string>
+	<string>0 325 730 552 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -3044,7 +3044,7 @@
 	<key>PointerActions</key>
 	<dict/>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/patrick/dotfiles/Settings</string>
+	<string>/Users/patrick/PersonalCode/dotfiles/Settings</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnQuit</key>
@@ -3068,7 +3068,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-01-23T18:14:18Z</date>
+	<date>2018-02-20T18:28:59Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SavePasteHistory</key>
