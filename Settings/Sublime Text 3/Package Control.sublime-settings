@@ -13,6 +13,9 @@
 		"Package Control",
 		"Pretty JSON",
 		"Sass",
-		"SideBarEnhancements"
+		"SideBarEnhancements",
+		"SublimeCodeIntel",
+		"SyncedSideBar",
+		"Terminal"
 	]
 }
