@@ -1,9 +1,0 @@
-www.bing.com###crs_pane
-
-www.usatoday.com###module-position-QCmZpveA4Wk
-
-stackoverflow.com###hot-network-questions
-stackexchange.com###hot-network-questions
-superuser.com###hot-network-questions
-askubuntu.com###hot-network-questions
-academia.stackexchange.com###hot-network-questions
