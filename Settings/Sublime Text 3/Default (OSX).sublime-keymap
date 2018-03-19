@@ -1,7 +1,10 @@
 [
-  { "keys": ["super+l"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
-  { "keys": ["super+["], "command": "jump_back" },
-  { "keys": ["super+]"], "command": "jump_forward" },
-  { "keys": ["super+v"], "command": "paste_and_indent" },
-  { "keys": ["super+b"], "command": "goto_definition" }
+    { "keys": ["super+shift+a"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
+    { "keys": ["super+shift+s"], "command": "goto_symbol_in_project" },
+    { "keys": ["ctrl+s"], "command": "show_overlay", "args": {"overlay": "goto", "text": "symbol@"} },
+    { "keys": ["super+l"], "command": "show_overlay", "args": {"overlay": "goto", "text": "line:"} },
+    { "keys": ["super+v"], "command": "paste_and_indent" },
+    { "keys": ["super+shift+v"], "command": "paste" },
+    { "keys": ["super+["], "command": "jump_back" },
+    { "keys": ["super+]"], "command": "jump_forward" }
 ]
