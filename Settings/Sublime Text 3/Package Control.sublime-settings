@@ -8,8 +8,8 @@
 		"A File Icon",
 		"ANSIescape",
 		"Babel",
+		"Git",
 		"GitGutter",
-		"Line Endings Unify",
 		"MarkdownLivePreview",
 		"Material Theme",
 		"Package Control",
@@ -17,7 +17,6 @@
 		"Sass",
 		"SideBarEnhancements",
 		"SublimeCodeIntel",
-		"SyncedSideBar",
-		"Terminal"
+		"SyncedSideBar"
 	]
 }
