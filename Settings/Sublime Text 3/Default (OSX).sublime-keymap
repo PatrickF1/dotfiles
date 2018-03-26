@@ -9,4 +9,5 @@
     { "keys": ["super+shift+\\"], "command": "select_all_bookmarks" },
     { "keys": ["super+;"], "command": "prev_bookmark" },
     { "keys": ["super+'"], "command": "next_bookmark" },
+    { "keys": ["super+b"], "command": "toggle_side_bar" }
 ]
