@@ -4,6 +4,7 @@
 source ~/.aliases
 source ~/.functions
 source ~/.git-completion.bash
+test -e ~/.secrets && source ~/.secrets
 
 export PS1="\[$(tput setaf 6)\][\u@\h \w]\\$ \[$(tput sgr0)\]"
 
@@ -16,3 +17,6 @@ shopt -s histappend # append to bash history instead of overwriting
 if [ $ITERM_SESSION_ID ]; then
   export PROMPT_COMMAND='echo -ne "\033];${PWD##*/}\007"; ':"$PROMPT_COMMAND";
 fi
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+eval "$(rbenv init -)"
