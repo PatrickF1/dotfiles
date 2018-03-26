@@ -1,28 +1,33 @@
 {
-  "always_show_minimap_viewport": true,
-  "binary_file_patterns": [
-    "*.cache",
-    "*.gz"
-  ],
-  "bold_folder_labels": true,
-  "color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
-  "font_size": 17,
-  "highlight_line": true,
-  "highlight_modified_tabs": true,
-  "ignored_packages": [
-    "Javascript",
-    "Vintage"
-  ],
-  "indent_guide_options": [
-    "draw_normal",
-    "draw_active"
-  ],
-  "line_padding_bottom": 2,
-  "line_padding_top": 2,
-  "margin": 0,
-  "show_encoding": true,
-  "theme": "Material-Theme.sublime-theme",
-  "translate_tabs_to_spaces": true,
-  "trim_trailing_white_space_on_save": true,
-  "word_wrap": true
+	"always_show_minimap_viewport": true,
+	"binary_file_patterns":
+	[
+		"*.cache",
+		"*.gz"
+	],
+	"bold_folder_labels": true,
+	"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+	"font_size": 17,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Javascript",
+		"Six",
+		"Vintage",
+		"Vintageous"
+	],
+	"indent_guide_options":
+	[
+		"draw_normal",
+		"draw_active"
+	],
+	"line_padding_bottom": 2,
+	"line_padding_top": 2,
+	"margin": 0,
+	"show_encoding": true,
+	"theme": "Material-Theme.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"word_wrap": true
 }
