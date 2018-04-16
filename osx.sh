@@ -1,5 +1,8 @@
 echo "Configuring OS X."
 
+# Use a very audible but not jarring system alert sound
+defaults write -g  com.apple.sound.beep.sound /System/Library/Sounds/Purr.aiff
+
 # Disable press-and-hold for keys in favor of key repeat
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
