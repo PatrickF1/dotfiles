@@ -29,8 +29,6 @@
 	"theme": "Material-Theme.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
-	"word_wrap": true,
-	// NeoVintageous settings below
 	"vintageous_reset_mode_when_switching_tabs": false,
-    "vintageous_use_sys_clipboard": true
+	"word_wrap": true
 }

@@ -5,6 +5,8 @@
     { "keys": ["super+shift+v"], "command": "paste" },
     { "keys": ["super+["], "command": "jump_back" },
     { "keys": ["super+]"], "command": "jump_forward" },
+    { "keys": ["ctrl+shift+tab"], "command": "prev_view" },
+    { "keys": ["ctrl+tab"], "command": "next_view" },
     { "keys": ["super+\\"], "command": "toggle_bookmark" },
     { "keys": ["super+shift+\\"], "command": "select_all_bookmarks" },
     { "keys": ["super+;"], "command": "prev_bookmark" },
