@@ -4,7 +4,7 @@ echo "Interactively symlinking the dot files into the home directory."
 
 REPO_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
-for dotfile in $REPO_DIR/.{aliases,bash_profile,gitconfig,gitignore_global,functions}; do
+for dotfile in $REPO_DIR/.{aliases,bashrc,bash_profile,gitconfig,gitignore_global,functions}; do
     ln -i -s $dotfile ~
 done
 
