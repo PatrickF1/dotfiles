@@ -10,4 +10,4 @@ end
 alias clearf="pbpaste | pbcopy"
 
 set -g theme_nerd_fonts yes
-set -g theme_color_scheme solarized-light
+set -g theme_color_scheme base16
