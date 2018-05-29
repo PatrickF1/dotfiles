@@ -9,6 +9,7 @@ end
 # aliases
 alias clearf="pbpaste | pbcopy"
 
-set -xg EDITOR "/usr/local/bin/subl"
-set -xg theme_nerd_fonts yes
-set -xg theme_color_scheme base16
+set -xg VISUAL "vim"
+set -xg EDITOR "vim"
+set -g theme_nerd_fonts yes
+set -g theme_color_scheme base16
