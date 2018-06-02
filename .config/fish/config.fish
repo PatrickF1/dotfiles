@@ -1,5 +1,6 @@
-fish_vi_key_bindings
-test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+if test -e {$HOME}/.iterm2_shell_integration.fish
+    source {$HOME}/.iterm2_shell_integration.fish
+end
 
 if test -e ~/.fish_secrets
     source ~/.fish_secrets
