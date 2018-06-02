@@ -1,3 +1,1 @@
-#!/usr/bin/env fish
-function fish_greeting
-end
+/Users/patrick/.config/fisherman/bobthefish/fish_greeting.fish

@@ -1,3 +1,4 @@
 .secrets
 .fish_secrets
 fishd.*
+.config/fish/functions/fisher.fish
