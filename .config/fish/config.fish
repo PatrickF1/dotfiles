@@ -13,3 +13,4 @@ set -xg VISUAL "vim"
 set -xg EDITOR "vim"
 set -g theme_nerd_fonts yes
 set -g theme_color_scheme base16
+set -U FZF_LEGACY_KEYBINDINGS 0
