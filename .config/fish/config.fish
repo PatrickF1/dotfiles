@@ -14,7 +14,7 @@ alias clearf="pbpaste | pbcopy"
 
 # visual settings
 set -g theme_nerd_fonts yes
-set -g theme_color_scheme dark
+set -g theme_color_scheme light
 set -g fish_color_command B7D847
 
 # fzf plugin settings
