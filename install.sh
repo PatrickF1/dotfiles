@@ -4,12 +4,19 @@ echo "Interactively symlinking the dot files into the home directory."
 
 REPO_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
-for dotfile in $REPO_DIR/.{aliases,bashrc,bash_profile,gitconfig,gitignore_global,functions,config}; do
+for dotfile in $REPO_DIR/.{aliases,bashrc,bash_profile,gitconfig,gitignore_global,functions}; do
     ln -i -s $dotfile ~
 done
 
 echo "Downloading the latest git-completion Bash script."
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+
+echo "Installing fish configs"
+FISH_CONFIGS_HOME="$HOME/.config/fish"
+mkdir -p $FISH_CONFIGS_HOME
+for fishConfig in "$REPO_DIR/fish/"*; do
+    ln -i -s "$fishConfig" "$FISH_CONFIGS_HOME"
+done
 
 echo "Iteractively symlinking Sublime Text 3 settings into their home."
 SUBLIME_PREFERENCES_HOME="$HOME/Library/Application Support/Sublime Text 3/Packages/User"
