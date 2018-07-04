@@ -22,6 +22,9 @@ for fishConfig in "$REPO_DIR/fish/"*; do
     ln -i -s "$fishConfig" "$FISH_CONFIGS_HOME"
 done
 
+echo "Downloading the latest docker fish completions"
+command -v docker && curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/fish/docker.fish -o ~/.config/fish/completions/docker.fish
+
 echo "Iteractively symlinking Sublime Text 3 settings into their home."
 SUBLIME_PREFERENCES_HOME="$HOME/Library/Application Support/Sublime Text 3/Packages/User"
 for sublimeSettingsFile in "$REPO_DIR/st3/"*; do
