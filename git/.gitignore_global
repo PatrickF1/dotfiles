@@ -1,4 +1,6 @@
 *.class
 *.pyc
 *~
+*.gz
+*.tar
 .DS_Store
