@@ -12,8 +12,8 @@ echo "Downloading the latest git-completion Bash script."
 curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 
 echo "Iteractively symlinking Sublime Text 3 settings into their home."
-SUBLIME_PREFERENCES_HOME="$HOME/Library/Application Support/Sublime Text 3/Packages/User/"
-for sublimeSettingsFile in "$REPO_DIR/Settings/Sublime Text 3/"*; do
+SUBLIME_PREFERENCES_HOME="$HOME/Library/Application Support/Sublime Text 3/Packages/User"
+for sublimeSettingsFile in "$REPO_DIR/st3/"*; do
     ln -i -s "$sublimeSettingsFile" "$SUBLIME_PREFERENCES_HOME"
 done
 

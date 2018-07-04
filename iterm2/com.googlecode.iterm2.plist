@@ -429,7 +429,7 @@
 	<key>NSFontPanelAttributes</key>
 	<string>1, 0</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Desktop</string>
+	<string>~/Code/dotfiles/iterm2</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
 	<key>NSNavPanelExpandedSizeForSaveMode</key>
@@ -486,7 +486,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>668 536 796 473 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 111 1680 916 0 0 1680 1027 </string>
+	<string>0 107 1680 920 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>842 80 838 947 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
@@ -577,16 +577,12 @@
 			</dict>
 			<key>Ansi 15 Color</key>
 			<dict>
-				<key>Alpha Component</key>
-				<real>1</real>
 				<key>Blue Component</key>
-				<real>1</real>
-				<key>Color Space</key>
-				<string>sRGB</string>
+				<real>0.99999129772186279</real>
 				<key>Green Component</key>
-				<real>0.98896950483322144</real>
+				<real>0.99997437000274658</real>
 				<key>Red Component</key>
-				<real>0.99568575620651245</real>
+				<real>1</real>
 			</dict>
 			<key>Ansi 2 Color</key>
 			<dict>
@@ -626,29 +622,21 @@
 			</dict>
 			<key>Ansi 6 Color</key>
 			<dict>
-				<key>Alpha Component</key>
-				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.85492348670959473</real>
-				<key>Color Space</key>
-				<string>sRGB</string>
+				<real>0.82062870264053345</real>
 				<key>Green Component</key>
-				<real>0.98838895559310913</real>
+				<real>1</real>
 				<key>Red Component</key>
-				<real>0.39322873950004578</real>
+				<real>0.34860008955001831</real>
 			</dict>
 			<key>Ansi 7 Color</key>
 			<dict>
-				<key>Alpha Component</key>
-				<real>1</real>
 				<key>Blue Component</key>
-				<real>1</real>
-				<key>Color Space</key>
-				<string>sRGB</string>
+				<real>0.99999129772186279</real>
 				<key>Green Component</key>
-				<real>0.98896950483322144</real>
+				<real>0.99997437000274658</real>
 				<key>Red Component</key>
-				<real>0.99568575620651245</real>
+				<real>1</real>
 			</dict>
 			<key>Ansi 8 Color</key>
 			<dict>
@@ -674,12 +662,16 @@
 			<true/>
 			<key>Background Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.16608485579490662</real>
+				<real>0.17442634701728821</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.14745020866394043</real>
+				<real>0.15458467602729797</real>
 				<key>Red Component</key>
-				<real>0.11278382688760757</real>
+				<real>0.11668335646390915</real>
 			</dict>
 			<key>Background Image Is Tiled</key>
 			<false/>
@@ -1934,7 +1926,7 @@
 	<key>PointerActions</key>
 	<dict/>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/patrick/Code/dotfiles/Settings</string>
+	<string>/Users/patrick/Code/dotfiles/iterm2</string>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>PromptOnQuit</key>
