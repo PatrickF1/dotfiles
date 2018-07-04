@@ -4,12 +4,12 @@ echo "Interactively symlinking the dot files into the home directory."
 
 REPO_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
-for dotfile in $REPO_DIR/.{aliases,bashrc,bash_profile,functions}; do
+for dotfile in $REPO_DIR/bash/.{aliases,bashrc,bash_profile,functions}; do
     ln -i -s $dotfile ~
 done
 
-for file in $REPO_DIR/git/.{gitconfig,gitignore_global}; do
-    ln -i -s $file ~
+for dotfile in $REPO_DIR/git/.{gitconfig,gitignore_global}; do
+    ln -i -s $dotfile ~
 done
 
 echo "Downloading the latest git-completion Bash script."
