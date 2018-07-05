@@ -9,9 +9,6 @@ end
 set -xg VISUAL "vim"
 set -xg EDITOR "vim"
 
-# aliases
-alias clearf="pbpaste | pbcopy"
-
 # visual settings
 set -g theme_nerd_fonts yes
 set -g theme_color_scheme light
