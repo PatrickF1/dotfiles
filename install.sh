@@ -7,6 +7,7 @@ REPO_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 for dotfile in $REPO_DIR/bash/.{aliases,bashrc,bash_profile,functions}; do
     ln -i -s $dotfile ~
 done
+touch ~/.hushlogin
 
 for dotfile in $REPO_DIR/git/.{gitconfig,gitignore_global}; do
     ln -i -s $dotfile ~

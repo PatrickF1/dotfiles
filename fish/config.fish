@@ -19,3 +19,6 @@ set -g FZF_LEGACY_KEYBINDINGS 0
 set -g FZF_FIND_FILE_COMMAND 'rg --files --hidden --follow --no-ignore-vcs -g !.git -g !node_modules -g !.idea 2> /dev/null'
 set -g FZF_CD_COMMAND bfs -type d -nohidden | sed s/^\./~/
 set -g FZF_CD_WITH_HIDDEN_COMMAND bfs -type d | sed s/^\./~/
+
+# suppress the default login message
+set fish_greeting ""
