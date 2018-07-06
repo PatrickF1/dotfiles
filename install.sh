@@ -18,9 +18,12 @@ curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-com
 
 echo "Installing fish configs"
 FISH_CONFIGS_HOME="$HOME/.config/fish"
-mkdir -p $FISH_CONFIGS_HOME
-for fishConfig in "$REPO_DIR/fish/"*; do
+mkdir -p $FISH_CONFIGS_HOME/functions
+for fishConfig in $REPO_DIR/fish/{config.fish,fishfile}; do
     ln -i -s "$fishConfig" "$FISH_CONFIGS_HOME"
+done
+for function in "$REPO_DIR/fish/functions/"*; do
+    ln -i -s "$function" "$FISH_CONFIGS_HOME/functions"
 done
 
 echo "Downloading the latest docker fish completions"
