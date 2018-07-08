@@ -13,8 +13,10 @@ for dotfile in $REPO_DIR/git/.{gitconfig,gitignore_global}; do
     ln -i -s $dotfile ~
 done
 
-echo "Downloading the latest git-completion Bash script."
-curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+if [ ! -f ~/.git-completion.bash ]; then
+    echo "Downloading the latest git-completion Bash script."
+    curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+fi
 
 echo "Installing fish configs"
 FISH_CONFIGS_HOME="$HOME/.config/fish"
@@ -26,8 +28,10 @@ for function in "$REPO_DIR/fish/functions/"*; do
     ln -i -s "$function" "$FISH_CONFIGS_HOME/functions"
 done
 
-echo "Downloading the latest docker fish completions"
-command -v docker && curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/fish/docker.fish -o ~/.config/fish/completions/docker.fish
+if [ ! -f ~/.config/fish/completions/docker.fish ]; then
+    echo "Downloading the latest docker fish completions"
+    command -v docker && curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/fish/docker.fish -o ~/.config/fish/completions/docker.fish
+fi
 
 echo "Iteractively symlinking Sublime Text 3 settings into their home."
 SUBLIME_PREFERENCES_HOME="$HOME/Library/Application Support/Sublime Text 3/Packages/User"
