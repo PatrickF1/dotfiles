@@ -13,6 +13,7 @@ set -xg EDITOR "vim"
 set -g theme_nerd_fonts yes
 set -g theme_color_scheme light
 set -g fish_color_command B7D847
+__differentiate_tab_colors
 
 # fzf plugin settings
 set -g FZF_LEGACY_KEYBINDINGS 0
