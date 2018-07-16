@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env fish
 echo "Installing files for current user."
 echo "Interactively symlinking the dot files into the home directory."
 
