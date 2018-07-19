@@ -10,7 +10,7 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 defaults write com.apple.screencapture disable-shadow -bool true
 
 # Use list view in all Finder windows by default
-# codes for the other view modes: `icnv`, `clmv`, `Flwv`
+# Codes for the other view modes: `icnv`, `clmv`, `Flwv`
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 # Show indicator lights for open applications in the Dock
@@ -18,6 +18,10 @@ defaults write com.apple.dock show-process-indicators -bool true
 
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
+
+# Keep dock right on the right side to save vertical screen real estate
+# and to prevent it from acccidentally being moved between monitors
+defaults write com.apple.dock 'orientation' -string 'right'
 
 # Show the Finder path bar
 defaults write com.apple.finder ShowPathbar -bool true
@@ -39,6 +43,8 @@ defaults write com.apple.CrashReporter DialogType -string "none"
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Disable automatic emoji substitution (i.e. use plain text smileys)
-defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
+# defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
 
+killall Dock
+killall Finder
 echo "Done."
