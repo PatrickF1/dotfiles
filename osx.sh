@@ -45,8 +45,8 @@ defaults write com.apple.CrashReporter DialogType -string "none"
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
-# Disable automatic emoji substitution (i.e. use plain text smileys)
-# defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
+# Disable the warning shown when changing a file extension
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
 killall Dock
 killall Finder
