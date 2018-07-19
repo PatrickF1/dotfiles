@@ -23,6 +23,9 @@ defaults write com.apple.dock showhidden -bool true
 # and to prevent it from acccidentally being moved between monitors
 defaults write com.apple.dock 'orientation' -string 'right'
 
+# Prevent Dock icons from bouncing
+defaults write com.apple.dock no-bouncing -bool true
+
 # Show the Finder path bar
 defaults write com.apple.finder ShowPathbar -bool true
 
