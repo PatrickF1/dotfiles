@@ -1,21 +1,38 @@
 echo "Configuring OS X."
+# Close any open System Preferences panes to prevent them from overriding
+# the settings being configured
+osascript -e 'tell application "System Preferences" to quit'
 
-# Use a very audible but not jarring system alert sound
-defaults write -g  com.apple.sound.beep.sound /System/Library/Sounds/Purr.aiff
+###############################################################################
+# Finder                                                                      #
+###############################################################################
+
+# Use list view in all Finder windows by default
+# Codes for the other view modes: `icnv`, `clmv`, `Flwv`
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
+# Disable the warning shown when changing a file extension
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# Set the Home folder as the default path for new Finder tabs
+defaults write com.apple.finder NewWindowTarget -string "PfLo"
+defaults write com.apple.finder NewWindowTargetPath -string "file://$HOME"
+
+# Show the Finder path bar
+defaults write com.apple.finder ShowPathbar -bool true
+
+# When performing a search, search the current folder by default
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+###############################################################################
+# Dock                                                                        #
+###############################################################################
 
 # Disable press-and-hold for keys in favor of key repeat
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
-
-# Use list view in all Finder windows by default
-# Codes for the other view modes: `icnv`, `clmv`, `Flwv`
-defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
-
-# Set the Home folder as the default path for new Finder tabs
-defaults write com.apple.finder NewWindowTarget -string "PfLo"
-defaults write com.apple.finder NewWindowTargetPath -string "file://$HOME"
 
 # Show indicator lights for open applications in the Dock
 defaults write com.apple.dock show-process-indicators -bool true
@@ -30,11 +47,12 @@ defaults write com.apple.dock 'orientation' -string 'right'
 # Prevent Dock icons from bouncing
 defaults write com.apple.dock no-bouncing -bool true
 
-# Show the Finder path bar
-defaults write com.apple.finder ShowPathbar -bool true
+###############################################################################
+# Miscellaneous                                                               #
+###############################################################################
 
-# When performing a search, search the current folder by default
-defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+# Use a very audible but not jarring system alert sound
+defaults write -g  com.apple.sound.beep.sound /System/Library/Sounds/Purr.aiff
 
 # Expand the save and print panels by default
 defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
@@ -49,9 +67,8 @@ defaults write com.apple.CrashReporter DialogType -string "none"
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
-# Disable the warning shown when changing a file extension
-defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
-
+# Restart affected apps so changes take effect immediately
 killall Dock
 killall Finder
+
 echo "Done."
