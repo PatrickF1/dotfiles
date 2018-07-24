@@ -24,9 +24,6 @@ mkdir -p $FISH_CONFIGS_HOME/functions
 for fishConfig in $REPO_DIR/fish/{config.fish,fishfile}; do
     ln -i -s "$fishConfig" "$FISH_CONFIGS_HOME"
 done
-for function in "$REPO_DIR/fish/functions/"*; do
-    ln -i -s "$function" "$FISH_CONFIGS_HOME/functions"
-done
 
 if [ ! -f ~/.config/fish/completions/docker.fish ]; then
     echo "Downloading the latest docker fish completions"
