@@ -19,10 +19,10 @@ function install_fish_files
     for fishConfig in $REPO_DIR/fish/{config.fish,fishfile}
         ln -i -s "$fishConfig" "$FISH_CONFIGS_HOME"
     end
-    # if [ ! -f ~/.config/fish/completions/docker.fish ]; then
-    #     echo "Downloading the latest docker fish completions"
-    #     command -v docker && curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/fish/docker.fish -o ~/.config/fish/completions/docker.fish
-    # fi
+    if not test -e ~/.config/fish/completions/docker.fish
+        echo "Downloading the latest docker fish completions"
+        command -v docker; and curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/fish/docker.fish -o ~/.config/fish/completions/docker.fish
+    fi
 end
 
 function install_st3_files
