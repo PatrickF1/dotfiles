@@ -6,11 +6,6 @@ function install_bash_files
     end
 
     touch ~/.hushlogin
-
-    if not test -e ~/.git-completion.bash
-       echo "Downloading the latest git-completion Bash script."
-       curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
-    end
 end
 
 function install_fish_files
@@ -19,10 +14,11 @@ function install_fish_files
     for fishConfig in $REPO_DIR/fish/{config.fish,fishfile}
         ln -i -s "$fishConfig" "$FISH_CONFIGS_HOME"
     end
+
     if not test -e ~/.config/fish/completions/docker.fish
         echo "Downloading the latest docker fish completions"
         command -v docker; and curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/fish/docker.fish -o ~/.config/fish/completions/docker.fish
-    fi
+    end
 end
 
 function install_st3_files
@@ -62,3 +58,4 @@ install_fish_files
 install_st3_files
 install_git_files
 install_iterm2_files
+echo "Done"

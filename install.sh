@@ -20,7 +20,6 @@ fi
 
 echo "Installing fish configs"
 FISH_CONFIGS_HOME="$HOME/.config/fish"
-mkdir -p $FISH_CONFIGS_HOME/functions
 for fishConfig in $REPO_DIR/fish/{config.fish,fishfile}; do
     ln -i -s "$fishConfig" "$FISH_CONFIGS_HOME"
 done
