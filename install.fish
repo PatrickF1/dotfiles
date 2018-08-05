@@ -15,6 +15,10 @@ function install_fish_files
         ln -i -s "$file" "$fish_configs_home"
     end
 
+    # make the path to this repo's fish functions universally available so that config.fish can
+    # prepend it to fish_function_path
+    set -U dotfile_fish_functions_path "$repo_root/fish/functions"
+
     if not test -e ~/.config/fish/completions/docker.fish
         echo "Downloading the latest docker fish completions"
         command -v docker; and curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/fish/docker.fish -o ~/.config/fish/completions/docker.fish
