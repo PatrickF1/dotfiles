@@ -34,7 +34,7 @@ function install_st3_files
 end
 
 function install_git_files
-    echo "Installing Sublime Text 3 files"
+    echo "Installing git configs"
     for dotfile in $REPO_ROOT/git/.{gitconfig,gitignore_global}
         ln -i -s $dotfile ~
     end
@@ -47,6 +47,7 @@ function install_git_files
 end
 
 function install_iterm2_files
+    echo "Installing iterm2 settings"
     # Specify iTerm2's preferences directory
     defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$REPO_ROOT/iterm2"
     # Configure iTerm2 to load and save preferences from that folder
