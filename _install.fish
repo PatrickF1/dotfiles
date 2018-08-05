@@ -24,7 +24,7 @@ end
 function install_st3_files
     echo "Installing Sublime Text 3 files"
     set -l SUBLIME_PREFERENCES_HOME "~/Library/Application Support/Sublime Text 3/Packages/User"
-    for sublimeSettingsFile in "$REPO_DIR/st3/"
+    for sublimeSettingsFile in "$REPO_DIR/st3/"*
         ln -i -s "$sublimeSettingsFile" "$SUBLIME_PREFERENCES_HOME"
     end
 end
