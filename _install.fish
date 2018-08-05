@@ -1,8 +1,8 @@
 #!/usr/bin/env fish
 function install_bash_files
     echo "Installing bash files"
-    for dotfile in $REPO_ROOT/bash/.{aliases,bashrc,bash_profile,functions}
-        ln -i -s "$dotfile" ~
+    for file in $repo_root/bash/.{aliases,bashrc,bash_profile,functions}
+        ln -i -s "$file" ~
     end
 
     touch ~/.hushlogin
@@ -10,9 +10,9 @@ end
 
 function install_fish_files
     echo "Installing fish configs"
-    set -l FISH_CONFIGS_HOME "$HOME/.config/fish"
-    for fishConfig in $REPO_ROOT/fish/{config.fish,fishfile}
-        ln -i -s "$fishConfig" "$FISH_CONFIGS_HOME"
+    set -l fish_configs_home "$HOME/.config/fish"
+    for file in $repo_root/fish/{config.fish,fishfile}
+        ln -i -s "$file" "$fish_configs_home"
     end
 
     if not test -e ~/.config/fish/completions/docker.fish
@@ -23,16 +23,16 @@ end
 
 function install_st3_files
     echo "Installing Sublime Text 3 files"
-    set -l SUBLIME_PREFERENCES_HOME "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
-    for sublimeSettingsFile in "$REPO_ROOT/st3/"*
-        ln -i -s "$sublimeSettingsFile" "$SUBLIME_PREFERENCES_HOME"
+    set -l sublime_preferences_home "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
+    for file in "$repo_root/st3/"*
+        ln -i -s "$file" "$sublime_preferences_home"
     end
 end
 
 function install_git_files
     echo "Installing git configs"
-    for dotfile in $REPO_ROOT/git/.{gitconfig,gitignore_global}
-        ln -i -s $dotfile ~
+    for file in $repo_root/git/.{gitconfig,gitignore_global}
+        ln -i -s $file ~
     end
 
     if not test -e ~/.git-completion.bash
@@ -45,12 +45,12 @@ end
 function install_iterm2_files
     echo "Installing iterm2 settings"
     # Specify iTerm2's preferences directory
-    defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$REPO_ROOT/iterm2"
+    defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$repo_root/iterm2"
     # Configure iTerm2 to load and save preferences from that folder
     defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 end
 
-set REPO_ROOT (dirname (status --current-filename))
+set repo_root (dirname (status --current-filename))
 
 install_bash_files
 install_fish_files
