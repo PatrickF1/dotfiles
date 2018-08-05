@@ -26,7 +26,7 @@ function install_st3_files
     set -l SUBLIME_PREFERENCES_HOME "~/Library/Application Support/Sublime Text 3/Packages/User"
     for sublimeSettingsFile in "$REPO_DIR/st3/"
         ln -i -s "$sublimeSettingsFile" "$SUBLIME_PREFERENCES_HOME"
-    done
+    end
 end
 
 function install_git_files
@@ -50,7 +50,6 @@ function install_iterm2_files
     defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 end
 
-echo "Installing dotfiles and configs for the current user"
 set -l REPO_ROOT (dirname (status --current-filename))
 
 install_bash_files
@@ -58,4 +57,5 @@ install_fish_files
 install_st3_files
 install_git_files
 install_iterm2_files
+
 echo "Done"
