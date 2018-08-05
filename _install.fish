@@ -10,8 +10,8 @@ end
 
 function install_fish_files
     echo "Installing fish configs"
-    set -l FISH_CONFIGS_HOME "~/.config/fish"
-    for fishConfig in $REPO_DIR/fish/{config.fish,fishfile}
+    set -l FISH_CONFIGS_HOME "$HOME/.config/fish"
+    for fishConfig in $REPO_ROOT/fish/{config.fish,fishfile}
         ln -i -s "$fishConfig" "$FISH_CONFIGS_HOME"
     end
 
@@ -23,8 +23,8 @@ end
 
 function install_st3_files
     echo "Installing Sublime Text 3 files"
-    set -l SUBLIME_PREFERENCES_HOME "~/Library/Application Support/Sublime Text 3/Packages/User"
-    for sublimeSettingsFile in "$REPO_DIR/st3/"*
+    set -l SUBLIME_PREFERENCES_HOME "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
+    for sublimeSettingsFile in "$REPO_ROOT/st3/"*
         ln -i -s "$sublimeSettingsFile" "$SUBLIME_PREFERENCES_HOME"
     end
 end
@@ -50,7 +50,7 @@ function install_iterm2_files
     defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 end
 
-set -l REPO_ROOT (dirname (status --current-filename))
+set REPO_ROOT (dirname (status --current-filename))
 
 install_bash_files
 install_fish_files
