@@ -7,8 +7,8 @@ if test -e ~/.fish_secrets
 end
 
 # make the functions in this repo available by prepending the functions path to fish_function_path
-set -l REPO_FUNCTIONS_DIR (dirname (readlink (status --current-filename)))/functions
-set fish_function_path $REPO_FUNCTIONS_DIR $fish_function_path
+set -l repo_functions_path (dirname (readlink (status --current-filename)))/functions
+set fish_function_path $repo_functions_path $fish_function_path
 
 set -xg VISUAL "vim"
 set -xg EDITOR "vim"
