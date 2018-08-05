@@ -50,7 +50,7 @@ function install_iterm2_files
     defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 end
 
-set repo_root (dirname (status --current-filename))
+set repo_root (dirname (realpath (status --current-filename)))
 
 install_bash_files
 install_fish_files
