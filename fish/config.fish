@@ -10,8 +10,8 @@ end
 # path to fish_function_path
 set fish_function_path $dotfile_fish_functions_path $fish_function_path
 
-set -xg VISUAL "vim"
-set -xg EDITOR "vim"
+set -xg EDITOR "nvim"
+# set some sensible default options to always pass into invocations of less
 set -xg LESS "--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --window=-4"
 
 # visual settings
