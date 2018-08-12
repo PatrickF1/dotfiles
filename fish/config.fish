@@ -1,5 +1,5 @@
-if test -e {$HOME}/.iterm2_shell_integration.fish
-    source {$HOME}/.iterm2_shell_integration.fish
+if test -e ~/.iterm2_shell_integration.fish
+    source ~/.iterm2_shell_integration.fish
 end
 
 if test -e ~/.fish_secrets
@@ -13,6 +13,8 @@ set fish_function_path $dotfile_fish_functions_path $fish_function_path
 set -xg EDITOR "nvim"
 # set some sensible default options to always pass into invocations of less
 set -xg LESS "--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --window=-4"
+# don't store any history of commands executed in less
+set -xg LESSHISTFILE /dev/null
 
 # visual settings
 set -g theme_nerd_fonts yes
