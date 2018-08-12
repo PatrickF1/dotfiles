@@ -6,10 +6,9 @@
 [core]
   excludesfile = ~/.gitignore_global
   editor = subl -nw
-  pager = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified|renamed): '
 [pager]
-  log = less --tabs=4
-  reflog = less --tabs=4
+  diff = diff-so-fancy | less --tabs=4 --RAW-CONTROL-CHARS --pattern '^(Date|added|deleted|modified|renamed): '
+  show = diff-so-fancy | less --tabs=4 --RAW-CONTROL-CHARS --pattern '^(Date|added|deleted|modified|renamed): '
   branch = false
 [alias]
   lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(cyan)%aD%C(reset) %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)%n''          %C(normal)%s%C(reset) %C(normal)  [%an]%C(reset)'

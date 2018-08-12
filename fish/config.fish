@@ -12,6 +12,7 @@ set fish_function_path $dotfile_fish_functions_path $fish_function_path
 
 set -xg VISUAL "vim"
 set -xg EDITOR "vim"
+set -xg LESS "--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --window=-4"
 
 # visual settings
 set -g theme_nerd_fonts yes
