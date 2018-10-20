@@ -16,6 +16,8 @@ if not type -q brew
 end
 
 install_if_not_installed Dash Dash
+install_if_not_installed "Google Chrome" google-chrome
+install_if_not_installed Dropbox dropbox
 install_if_not_installed 1Password 1password
 install_if_not_installed Alfred alfred
 install_if_not_installed "Sublime Text" sublime-text
