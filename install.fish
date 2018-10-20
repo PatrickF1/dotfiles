@@ -24,6 +24,15 @@ function install_fish_files
         ln -i -s "$file" "$fish_configs_home"
     end
 
+    # symlink fish config not checked into repo from Dropbox if it can be found
+    set -l fish_secrets_path "$HOME/Dropbox/Settings/.fish_secrets"
+    if test -e $fish_secrets_path
+        echo "Symlinking .fish_secrets into home directory"
+        ln -i -s $fish_secrets_path ~
+    else
+        echo "Could not find .fish_secrets; your fish configuration may be missing some environment variables"
+    end
+
     # make the path to this repo's fish functions universally available so that config.fish can
     # prepend it to fish_function_path
     set -U dotfile_fish_functions_path "$repo_root/fish/functions"
