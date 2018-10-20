@@ -42,10 +42,10 @@ function install_fish_files
         command -v docker; and curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/fish/docker.fish -o ~/.config/fish/completions/docker.fish
     end
 
-    # install the fisherman framework
     if not type -q fisher
         echo "Installing fisherman and fisherman plugins"
         curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+        fish -c fisher
     end
 end
 
@@ -88,4 +88,4 @@ install_st3_files
 install_git_files
 install_iterm2_files
 
-echo "Done"
+echo "Done. Please start a new shell session for the changes to take effect."
