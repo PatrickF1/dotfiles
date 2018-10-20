@@ -51,7 +51,7 @@ end
 
 function install_st3_files
     echo "Installing Sublime Text 3 files"
-    ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin
+    ln -i -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin
     set -l sublime_preferences_home "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
     for file in "$repo_root/st3/"*
         ln -i -s "$file" "$sublime_preferences_home"
