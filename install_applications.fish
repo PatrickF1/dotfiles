@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 
 # param 1: string that will match the application name if and only if it is installed in /Applications
-# param 2: the name of the application on brew cask, used to install it if it isn't installed
+# param 2: the name of the brew cask, used to install the application if needed
 function install_if_not_installed
     if ls /Applications | grep -q "$argv[1]"
         echo "Not installing $argv[1] because it is already installed."
