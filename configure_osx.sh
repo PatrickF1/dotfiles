@@ -31,21 +31,21 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 # Disable press-and-hold for keys in favor of key repeat
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
-# Disable shadow in screenshots
-defaults write com.apple.screencapture disable-shadow -bool true
-
 # Show indicator lights for open applications in the Dock
 defaults write com.apple.dock show-process-indicators -bool true
 
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
 
-# Keep dock right on the right side to save vertical screen real estate
+# Keep Dock right on the right side to save vertical screen real estate
 # and to prevent it from acccidentally being moved between monitors
 defaults write com.apple.dock 'orientation' -string 'right'
 
 # Prevent Dock icons from bouncing
 defaults write com.apple.dock no-bouncing -bool true
+
+# Don’t show recent applications in Dock
+defaults write com.apple.dock show-recents -bool false
 
 ###############################################################################
 # Miscellaneous                                                               #
@@ -66,6 +66,9 @@ defaults write com.apple.CrashReporter DialogType -string "none"
 
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
+
+# Disable shadow in screenshots
+defaults write com.apple.screencapture disable-shadow -bool true
 
 # Restart affected apps so changes take effect immediately
 killall Dock
