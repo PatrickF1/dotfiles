@@ -48,6 +48,14 @@ defaults write com.apple.dock no-bouncing -bool true
 defaults write com.apple.dock show-recents -bool false
 
 ###############################################################################
+# Input Devices                                                               #
+###############################################################################
+
+# set a moderate tracking and scrolling speed for the mouse
+defaults write "Apple Global Domain" "com.apple.mouse.scaling" 0.65
+defaults write "Apple Global Domain" "com.apple.scrollwheel.scaling" 0.4
+
+###############################################################################
 # Miscellaneous                                                               #
 ###############################################################################
 
