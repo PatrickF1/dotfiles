@@ -13,7 +13,7 @@
 [alias]
   lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(cyan)%aD%C(reset) %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)%n''          %C(normal)%s%C(reset) %C(normal)  [%an]%C(reset)'
   dc = diff --cached
-  st = status
+  st = status -s
   br = branch
   co = checkout
   amend = commit -a --amend --no-edit
