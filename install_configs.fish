@@ -90,12 +90,12 @@ end
 
 set repo_root (dirname (realpath (status --current-filename)))
 
-# set_default_shell (which fish)
-# install_bash_files
-# install_fish_files
-# install_st3_files
-# install_git_files
-# install_iterm2_files
+set_default_shell (which fish)
+install_bash_files
+install_fish_files
+install_st3_files
+install_git_files
+install_iterm2_files
 install_vim_files
 
 echo "Done. Please start a new shell session for the changes to take effect."
