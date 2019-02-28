@@ -47,6 +47,9 @@ defaults write com.apple.dock no-bouncing -bool true
 # Don’t show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
 
+# Minimize windows using the "scale" effect, which is much faster than "genie"
+defaults write com.apple.Dock mineffect scale
+
 ###############################################################################
 # Input Devices                                                               #
 ###############################################################################
