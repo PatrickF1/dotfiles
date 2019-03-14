@@ -25,10 +25,13 @@
 	"line_padding_bottom": 2,
 	"line_padding_top": 2,
 	"margin": 0,
+	"neovintageous_build_version": 11000,
 	"show_encoding": true,
 	"theme": "Material-Theme.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_trailing_white_space_on_save": true,
 	"vintageous_reset_mode_when_switching_tabs": false,
+	"vintageous_use_ctrl_keys": false,
+	"vintageous_use_super_keys": false,
 	"word_wrap": true
 }

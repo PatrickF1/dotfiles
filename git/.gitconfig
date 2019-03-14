@@ -17,3 +17,5 @@
   br = branch
   co = checkout
   amend = commit -a --amend --no-edit
+[diff]
+	algorithm = patience
