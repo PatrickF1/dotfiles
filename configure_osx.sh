@@ -50,6 +50,9 @@ defaults write com.apple.dock show-recents -bool false
 # Minimize windows using the "scale" effect, which is much faster than "genie"
 defaults write com.apple.Dock mineffect scale
 
+# Speed up the animation for hiding and showing the dock
+defaults write com.apple.dock autohide-time-modifier -float 0.25
+
 ###############################################################################
 # Input Devices                                                               #
 ###############################################################################
