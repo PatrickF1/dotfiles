@@ -1,3 +1,8 @@
+" Plugins are stored under ~/.config/nvim/plugged
+call plug#begin()
+Plug 'tpope/vim-sensible'
+call plug#end()
+
 func! WordProcessor()
   " movement changes
   map j gj
