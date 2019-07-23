@@ -64,6 +64,9 @@ function install_git_files
         ln -i -s $file ~
     end
 
+    echo "Installing git shalector"
+    ln -i -s $repo_root/git/git-shalector /usr/local/bin
+
     if not test -f ~/.git-completion.bash
         echo "Downloading the latest git-completion Bash script."
         curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
