@@ -11,6 +11,7 @@
   show = diff-so-fancy | less --tabs=4 --RAW-CONTROL-CHARS --pattern '^(Date|added|deleted|modified|renamed): '
   branch = false
 [alias]
+  aliases = config --get-regexp ^alias\\.
   lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(cyan)%aD%C(reset) %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)%n''          %C(normal)%s%C(reset) %C(normal)  [%an]%C(reset)'
   dc = diff --cached
   st = status -s
