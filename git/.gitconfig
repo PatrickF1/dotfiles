@@ -14,10 +14,11 @@
   aliases = config --get-regexp ^alias\\.
   lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(cyan)%aD%C(reset) %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)%n''          %C(normal)%s%C(reset) %C(normal)  [%an]%C(reset)'
   dc = diff --cached
-  st = status -s
+  st = status --short
   br = branch
   co = checkout
-  amend = commit -a --amend --no-edit
+  amend = commit --all --amend --no-edit
   head = show HEAD
+  fp = push --force
 [diff]
 	algorithm = patience
