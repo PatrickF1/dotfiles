@@ -7,18 +7,18 @@
   excludesfile = ~/.gitignore_global
   editor = nvim
 [pager]
+  branch = false
   diff = diff-so-fancy | less --tabs=4 --RAW-CONTROL-CHARS --pattern '^(Date|added|deleted|modified|renamed): '
   show = diff-so-fancy | less --tabs=4 --RAW-CONTROL-CHARS --pattern '^(Date|added|deleted|modified|renamed): '
-  branch = false
 [alias]
   aliases = config --get-regexp ^alias\\.
-  lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(cyan)%aD%C(reset) %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)%n''          %C(normal)%s%C(reset) %C(normal)  [%an]%C(reset)'
-  dc = diff --cached
-  st = status --short
+  amend = commit --all --amend --no-edit
   br = branch
   co = checkout
-  amend = commit --all --amend --no-edit
-  head = show HEAD
+  dc = diff --cached
   fp = push --force
+  head = show HEAD
+  lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(cyan)%aD%C(reset) %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)%n''          %C(normal)%s%C(reset) %C(normal)  [%an]%C(reset)'
+  st = status --short
 [diff]
 	algorithm = patience
