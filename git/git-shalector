@@ -1,0 +1,33 @@
+#!/usr/bin/env fish
+
+# Fuzzy selector for git commit hash ("sha")
+# Needs to be put in your path and made executable for git to find it.
+# Inspiration: https://github.com/christoomey/dotfiles/issues/105
+# Usage:
+#    git shalector
+if not [ -d .git ]
+    echo 'Not in a git repository.' >&2
+    exit 1
+else if [ (count $argv) -gt 0 ]
+    echo 'git-shalector does not take any arguments.' >&2
+    exit 1
+else if not type -q fzf
+    echo "You must have fzf (https://github.com/junegunn/fzf) installed." >&2
+    echo "If you are on Mac and use homebrew, try 'brew install fzf'" >&2
+    exit 1
+end
+
+set target_commit (
+    git log --color=always --format=format:'%C(bold blue)%H%C(reset) - %C(cyan)%aD%C(reset) %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset) %C(normal)%s%C(reset) %C(normal)  [%an]%C(reset)' | \
+    fzf --ansi --reverse --tiebreak=index
+)
+
+if [ -z $target_commit ]
+    echo 'Cancelled.' >&2
+    exit 2
+end
+
+set commit_hash (echo $target_commit | string sub --start 1 --length 40)
+
+printf "%s" "$commit_hash" | pbcopy
+echo "Commit hash copied to clipboard ($commit_hash)"
