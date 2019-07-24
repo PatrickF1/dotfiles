@@ -18,7 +18,7 @@
   dc = diff --cached
   fp = push --force
   head = show HEAD
-  lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(cyan)%aD%C(reset) %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)%n''          %C(normal)%s%C(reset) %C(normal)  [%an]%C(reset)'
+  lg = log --graph --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(cyan)%aD%C(reset) %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)%n''          %C(normal)%s%C(reset) %C(normal)  [%an]%C(reset)'
   st = status --short
 [diff]
 	algorithm = patience
