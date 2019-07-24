@@ -1,15 +1,12 @@
 #!/usr/bin/env bash
 
 # Fuzzy selector for git commit hash ("sha")
-# pipes it through `fzf` with color,
-# slices out the selected hash and pipes it to pbcopy
-#
-# Usage:
-#   git commit-shalector
+# Needs to be put in your path and made executable for git to find it.
+# Credits: https://github.com/christoomey/dotfiles/issues/105
 
 set -e
 
-# fuzzy-select the commit to be fixed up
+# fuzzy-select the commit
 target_commit="$(git log --oneline --decorate --all --color=always | fzf --ansi --no-sort --reverse --tiebreak=index)"
 
 # slice out the SHA
