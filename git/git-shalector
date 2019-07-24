@@ -18,7 +18,7 @@ else if not type -q fzf
 end
 
 set target_commit (
-    git log --color=always --format=format:'%C(bold blue)%H%C(reset) - %C(cyan)%aD%C(reset) %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset) %C(normal)%s%C(reset) %C(normal)  [%an]%C(reset)' | \
+    git log --color=always --format=format:'%C(bold blue)%H%C(reset) - %C(cyan)%aD%C(reset) %C(yellow)%d%C(reset) %C(normal)%s%C(reset)   %C(dim normal)[%an]%C(reset)' | \
     fzf --ansi --reverse --tiebreak=index
 )
 
