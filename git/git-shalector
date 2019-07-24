@@ -3,6 +3,8 @@
 # Fuzzy selector for git commit hash ("sha")
 # Needs to be put in your path and made executable for git to find it.
 # Inspiration: https://github.com/christoomey/dotfiles/issues/105
+# Usage:
+#    git shalector
 if not [ -d .git ]
     echo 'Not in a git repository.' >&2
     exit 1
