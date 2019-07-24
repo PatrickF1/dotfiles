@@ -16,16 +16,17 @@ else if not type -q fzf
 end
 
 set target_commit (
-    git log --color=always --format=format:'%C(bold blue)%h%C(reset) - %C(cyan)%aD%C(reset) %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset) %C(normal)%s%C(reset) %C(normal)  [%an]%C(reset)' | \
-    fzf --ansi --no-sort --reverse --tiebreak=index | \
-    sed -E 's/.* ([0-9a-f]{7}) .*/\1/' | \
-    tr -d '\n'
+    git log --color=always --format=format:'%C(bold blue)%H%C(reset) - %C(cyan)%aD%C(reset) %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset) %C(normal)%s%C(reset) %C(normal)  [%an]%C(reset)' | \
+    fzf --ansi --no-sort --reverse --tiebreak=index
 )
+
 if [ -z $target_commit ]
     echo 'Cancelled.' >&2
     exit 2
 end
 
-printf "%s" "$target_commit" | pbcopy
+set commit_hash (echo $target_commit | string sub --start 1 --length 40 )
 
-echo "Commit hash copied ($target_commit)"
+printf "%s" "$commit_hash" | pbcopy
+
+echo "Commit hash copied ($commit_hash)"
