@@ -2,7 +2,7 @@
 
 # Fuzzy selector for git commit hash ("sha")
 # Needs to be put in your path and made executable for git to find it.
-# Credits: https://github.com/christoomey/dotfiles/issues/105
+# Inspiration: https://github.com/christoomey/dotfiles/issues/105
 if not [ -d .git ]
     echo 'Not in a git repository.' >&2
     exit 1
@@ -17,7 +17,7 @@ end
 
 set target_commit (
     git log --color=always --format=format:'%C(bold blue)%H%C(reset) - %C(cyan)%aD%C(reset) %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset) %C(normal)%s%C(reset) %C(normal)  [%an]%C(reset)' | \
-    fzf --ansi --no-sort --reverse --tiebreak=index
+    fzf --ansi --reverse --tiebreak=index
 )
 
 if [ -z $target_commit ]
