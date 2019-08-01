@@ -37,16 +37,6 @@ function install_fish_files
     # prepend it to fish_function_path
     set -U dotfile_fish_functions_path "$repo_root/fish/functions"
 
-    if not test -e ~/.config/fish/completions/docker.fish
-        echo "Downloading the latest docker fish completions"
-        command -v docker; and curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/fish/docker.fish -o ~/.config/fish/completions/docker.fish
-    end
-
-    if not type -q fisher
-        echo "Installing fisherman and fisherman plugins"
-        curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
-        fish -c fisher
-    end
 end
 
 function install_st3_files
