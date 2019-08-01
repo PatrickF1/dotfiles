@@ -1,12 +1,4 @@
 #!/usr/bin/env fish
-function set_default_shell
-    set -l path_to_shell $argv[1]
-    if not grep -q "$path_to_shell" /etc/shells
-        echo "Setting default shell to $path_to_shell"
-        echo "$path_to_shell" | sudo tee -a /etc/shells > /dev/null
-        chsh -s "$path_to_shell"
-    end
-end
 
 function install_bash_files
     echo "Installing bash files"
@@ -77,7 +69,6 @@ end
 
 set repo_root (dirname (realpath (status --current-filename)))
 
-set_default_shell (which fish)
 install_bash_files
 install_fish_files
 install_st3_files
