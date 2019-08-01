@@ -58,22 +58,12 @@ function install_vim_files
     ln -i -s $vimrc ~/.config/nvim/init.vim
 end
 
-function install_iterm2_files
-    echo "Installing iterm2 settings"
-    # Specify iTerm2's preferences directory
-    defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$repo_root/iterm2"
-    # Configure iTerm2 to load and save preferences from that folder
-    defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
-end
-
-
 set repo_root (dirname (realpath (status --current-filename)))
 
 install_bash_files
 install_fish_files
 install_st3_files
 install_git_files
-install_iterm2_files
 install_vim_files
 
 echo "Done. Please start a new shell session for the changes to take effect."
