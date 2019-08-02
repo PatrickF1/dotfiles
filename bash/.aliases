@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 alias ls="ls -Gh"
 alias mkdir="mkdir -p"
 alias grep="grep --color=auto"
