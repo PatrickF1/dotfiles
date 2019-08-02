@@ -5,6 +5,7 @@ A collection of my configuration and bootstrap files for `bash`, `fish`, `git`, 
 brew bundle
 fish install_applications.fish
 fish install_configs.fish
+fish install_shell_utilities.fish
 sh configure_osx.sh
 ```
 After installing, do not change the path of the `dotfiles` repository on your machine, lest symlinks and other references will break. If you must move change the path of the `dotfiles` repository, re-run `fish install_configs.fish` after moving.
