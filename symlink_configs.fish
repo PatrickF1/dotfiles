@@ -1,12 +1,4 @@
 #!/usr/bin/env fish
-function set_default_shell
-    set -l path_to_shell $argv[1]
-    if not grep -q "$path_to_shell" /etc/shells
-        echo "Setting default shell to $path_to_shell"
-        echo "$path_to_shell" | sudo tee -a /etc/shells > /dev/null
-        chsh -s "$path_to_shell"
-    end
-end
 
 function install_bash_files
     echo "Installing bash files"
@@ -36,17 +28,6 @@ function install_fish_files
     # make the path to this repo's fish functions universally available so that config.fish can
     # prepend it to fish_function_path
     set -U dotfile_fish_functions_path "$repo_root/fish/functions"
-
-    if not test -e ~/.config/fish/completions/docker.fish
-        echo "Downloading the latest docker fish completions"
-        command -v docker; and curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/fish/docker.fish -o ~/.config/fish/completions/docker.fish
-    end
-
-    if not type -q fisher
-        echo "Installing fisherman and fisherman plugins"
-        curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
-        fish -c fisher
-    end
 end
 
 function install_st3_files
@@ -66,42 +47,22 @@ function install_git_files
 
     echo "Installing git shalector"
     ln -i -s $repo_root/git/git-shalector /usr/local/bin
-
-    if not test -f ~/.git-completion.bash
-        echo "Downloading the latest git-completion Bash script."
-        curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
-    end
-
 end
 
 function install_vim_files
     echo "Installing vim settings"
-    if not test -f ~/.local/share/nvim/site/autoload/plug.vim
-        curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    end
 
     set -l vimrc "$repo_root/vim/.vimrc"
     ln -i -s $vimrc ~/.vimrc
     ln -i -s $vimrc ~/.config/nvim/init.vim
 end
 
-function install_iterm2_files
-    echo "Installing iterm2 settings"
-    # Specify iTerm2's preferences directory
-    defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$repo_root/iterm2"
-    # Configure iTerm2 to load and save preferences from that folder
-    defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
-end
-
-
 set repo_root (dirname (realpath (status --current-filename)))
 
-set_default_shell (which fish)
 install_bash_files
 install_fish_files
 install_st3_files
 install_git_files
-install_iterm2_files
 install_vim_files
 
 echo "Done. Please start a new shell session for the changes to take effect."

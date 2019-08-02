@@ -22,11 +22,15 @@ install_if_not_installed 1Password 1password
 install_if_not_installed Alfred alfred
 install_if_not_installed "Sublime Text" sublime-text
 install_if_not_installed Postico postico
-install_if_not_installed Things things
 install_if_not_installed VLC vlc
 install_if_not_installed Paintbrush paintbrush
-install_if_not_installed TotalFinder totalfinder
 install_if_not_installed Spotify spotify
 install_if_not_installed iTerm iterm2
 install_if_not_installed Focus focus
 install_if_not_installed Mailplane mailplane
+install_if_not_installed Docker docker
+
+echo "Pointing iterm2 to use settings in this repo."
+set repo_root (dirname (realpath (status --current-filename)))
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$repo_root/iterm2"
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
