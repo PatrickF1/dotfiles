@@ -30,6 +30,7 @@ install_if_not_installed Spotify spotify
 install_if_not_installed iTerm iterm2
 install_if_not_installed Focus focus
 install_if_not_installed Mailplane mailplane
+install_if_not_installed Docker docker
 
 echo "Pointing iterm2 to use settings in this repo."
 set repo_root (dirname (realpath (status --current-filename)))
