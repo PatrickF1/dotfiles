@@ -13,17 +13,17 @@ if not test -f ~/.local/share/nvim/site/autoload/plug.vim
 end
 
 if not test -f ~/.git-completion.bash
-    echo "Installing the latest git-completion Bash script."
+    echo "Installing the latest git-completion script for bash."
     curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
 end
 
 if not test -e ~/.config/fish/completions/docker.fish
-    echo "Installing the latest docker fish completions."
+    echo "Installing the latest docker completions for fish."
     command -v docker; and curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/fish/docker.fish -o ~/.config/fish/completions/docker.fish
 end
 
 if not type -q fisher
     echo "Installing fisher and fisher plugins."
-    curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs https://git.io/fisher
+    curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
     fish -c fisher
 end
