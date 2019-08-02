@@ -4,7 +4,7 @@ A collection of my configuration and bootstrap files for `bash`, `fish`, `git`, 
 ```sh
 brew bundle
 fish install_applications.fish
-fish install_configs.fish
+fish symlink_configs.fish
 fish install_shell_utilities.fish
 sh configure_osx.sh
 ```
