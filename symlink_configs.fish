@@ -28,7 +28,6 @@ function install_fish_files
     # make the path to this repo's fish functions universally available so that config.fish can
     # prepend it to fish_function_path
     set -U dotfile_fish_functions_path "$repo_root/fish/functions"
-
 end
 
 function install_st3_files
