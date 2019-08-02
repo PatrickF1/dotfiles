@@ -19,7 +19,7 @@ end
 
 if not test -e ~/.config/fish/completions/docker.fish
     echo "Installing the latest docker completions for fish."
-    command -v docker; and curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/fish/docker.fish -o ~/.config/fish/completions/docker.fish
+    curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/fish/docker.fish -o ~/.config/fish/completions/docker.fish
 end
 
 if not type -q fisher
