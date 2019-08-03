@@ -32,7 +32,7 @@ end
 
 function install_st3_files
     echo "Installing Sublime Text 3 files"
-    ln -i -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin
+    ln -i -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "$HOME/bin"
     set -l sublime_preferences_home "$HOME/Library/Application Support/Sublime Text 3/Packages/User"
     for file in "$repo_root/st3/"*
         ln -i -s "$file" "$sublime_preferences_home"
@@ -46,7 +46,7 @@ function install_git_files
     end
 
     echo "Installing git shalector"
-    ln -i -s $repo_root/git/git-shalector /usr/local/bin
+    ln -i -s $repo_root/git/git-shalector "$HOME/bin"
 end
 
 function install_vim_files
@@ -59,6 +59,7 @@ end
 
 set repo_root (dirname (realpath (status --current-filename)))
 
+mkdir "$HOME/bin"
 install_bash_files
 install_fish_files
 install_st3_files

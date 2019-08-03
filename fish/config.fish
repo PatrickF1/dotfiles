@@ -6,6 +6,9 @@ if test -e ~/.fish_secrets
     source ~/.fish_secrets
 end
 
+# add custom executables (e.g. git-shalector and subl) to path
+set --prepend PATH "$HOME/bin"
+
 # ensure the functions in this repo are available by prepending the functions directory
 # path to fish_function_path
 set --prepend fish_function_path $dotfile_fish_functions_path
