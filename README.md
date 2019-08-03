@@ -3,7 +3,6 @@ A collection of my configuration and bootstrap files for `bash`, `fish`, `git`, 
 ## Installing
 ```sh
 brew bundle
-fish symlink_configs.fish
 fish install_shell_utilities.fish
 fish configure_apps.fish
 sh configure_osx.sh
