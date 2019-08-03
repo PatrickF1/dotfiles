@@ -14,12 +14,12 @@ end
 
 if not test -f ~/.git-completion.bash
     echo "Installing the latest git-completion script for bash."
-    curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.config/bash/git-completion.bash
+    curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o --create-dirs ~/.config/bash/git-completion.bash
 end
 
 if not test -e ~/.config/fish/completions/docker.fish
     echo "Installing the latest docker completions for fish."
-    curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/fish/docker.fish -o ~/.config/fish/completions/docker.fish
+    curl https://raw.githubusercontent.com/docker/cli/master/contrib/completion/fish/docker.fish -o --create-dirs ~/.config/fish/completions/docker.fish
 end
 
 if not type -q fisher

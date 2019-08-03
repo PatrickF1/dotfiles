@@ -15,3 +15,4 @@ echo "gitdir: /Users/patrick.fong/Code/dotfiles/.git" > "$HOME/.git"
 git reset --hard to get changes to materialize
 make sure can edit dotfiles in ~Code/dotfiles
 how to propogate changes after editing dotfiles to ~
+warnings about git add -A and deleting untracked files
