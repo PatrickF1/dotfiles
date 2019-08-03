@@ -1,0 +1,1 @@
+/Users/patrick.fong/Dropbox/Settings/.secrets.fish
