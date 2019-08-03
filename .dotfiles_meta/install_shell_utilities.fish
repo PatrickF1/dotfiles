@@ -14,7 +14,7 @@ end
 
 if not test -f ~/.git-completion.bash
     echo "Installing the latest git-completion script for bash."
-    curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+    curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.config/bash/git-completion.bash
 end
 
 if not test -e ~/.config/fish/completions/docker.fish
