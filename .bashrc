@@ -1,6 +1,8 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+export PATH="$HOME/bin":$PATH
+
 source ~/.aliases
 source ~/.functions
 source ~/.git-completion.bash
