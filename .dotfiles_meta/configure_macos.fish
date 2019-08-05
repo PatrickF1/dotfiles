@@ -61,6 +61,9 @@ defaults write com.apple.dock autohide-time-modifier -float 0.25
 defaults write "Apple Global Domain" "com.apple.mouse.scaling" 0.65
 defaults write "Apple Global Domain" "com.apple.scrollwheel.scaling" 0.4
 
+# prevent Photos from automatically opening when plugging in an iPhone
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+
 ###############################################################################
 # Miscellaneous                                                               #
 ###############################################################################
