@@ -25,4 +25,10 @@ fish install_shell_utilities.fish
 fish configure_apps.fish
 sh configure_osx.sh
 ```
+
+## Workflow for updating dotfiles
+One advantage of this setup is that you effectively have two copies of your dotfiles, one that is active in your home directory, and one that you can easily modify all in one place in `~/Code/dotfiles`. What I like to do when I want to modify my dotfiles is open up `~/Code/dotfiles` in my editor (if you use Sublime Text you can open up the project `.dotfiles_meta/dotfiles.sublime-project`) and edit my dotfiles. Once I have committed, I navigate back to my home directory and do `git --git-dir=Code/dotfiles/.git --work-tree=. reset --hard` to checkout my changes.
+
 I have provided a `dot` autoloaded fish function that you can use to perform git operations on your home directory without having to continually specify the `git-dir` and `work-tree` options.
+
+Be extremely careful about not running `dot add -A` on your home directory.
