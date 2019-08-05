@@ -2,8 +2,8 @@ if test -e ~/.iterm2_shell_integration.fish
     source ~/.iterm2_shell_integration.fish
 end
 
-if test -e ~/.fish_secrets
-    source ~/.fish_secrets
+if test -e ~/.secrets.fish
+    source ~/.secrets.fish
 end
 
 # add custom executables (e.g. git-shalector and subl) to path
