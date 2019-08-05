@@ -13,3 +13,8 @@ Trash
 
 # Ignore other code
 Code
+
+# ignore other common folders
+.cache
+.local
+.ssh
