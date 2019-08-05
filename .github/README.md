@@ -31,4 +31,4 @@ One advantage of this setup is that you effectively have two copies of your dotf
 
 I have provided a `dot` autoloaded fish function that you can use to perform git operations on your home directory without having to continually specify the `git-dir` and `work-tree` options.
 
-Be extremely careful about not running `dot add -A` on your home directory.
+Be very careful about not running `dot add -A` on your home directory.
