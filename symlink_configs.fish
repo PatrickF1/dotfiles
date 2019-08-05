@@ -7,6 +7,14 @@ function install_bash_files
     end
 
     touch ~/.hushlogin
+
+    set -l bash_secrets_path "$HOME/Dropbox/Settings/.secrets.bash"
+    if test -e $bash_secrets_path
+        echo "Symlinking .secrets.bash into home directory"
+        ln -i -s $bash_secrets_path ~
+    else
+        echo "Could not find .secrets.bash; your bash configuration may be missing some environment variables"
+    end
 end
 
 function install_fish_files
@@ -17,12 +25,12 @@ function install_fish_files
     end
 
     # symlink fish config not checked into repo from Dropbox if it can be found
-    set -l fish_secrets_path "$HOME/Dropbox/Settings/.fish_secrets"
+    set -l fish_secrets_path "$HOME/Dropbox/Settings/.secrets.fish"
     if test -e $fish_secrets_path
-        echo "Symlinking .fish_secrets into home directory"
+        echo "Symlinking .secrets.fish into home directory"
         ln -i -s $fish_secrets_path ~
     else
-        echo "Could not find .fish_secrets; your fish configuration may be missing some environment variables"
+        echo "Could not find .secrets.fish; your fish configuration may be missing some environment variables"
     end
 
     # make the path to this repo's fish functions universally available so that config.fish can

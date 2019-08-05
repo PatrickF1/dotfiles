@@ -6,7 +6,7 @@ export PATH="$HOME/bin":$PATH
 source ~/.aliases
 source ~/.functions
 source ~/.git-completion.bash
-test -e ~/.secrets && source ~/.secrets
+test -e ~/.secrets.bash && source ~/.secrets.bash
 
 export PS1="\[$(tput setaf 6)\][\u@\h \w]\\$ \[$(tput sgr0)\]"
 
