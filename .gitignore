@@ -1,2 +1,14 @@
-Code
+# Ignore every default folder in Home directory created by macOS
+Applications
+Desktop
+Documents
+Dropbox
 Library
+Movies
+Music
+Pictures
+Public
+Trash
+
+# Ignore other code
+Code
