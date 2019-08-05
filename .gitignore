@@ -1,2 +1,20 @@
-.secrets
-.fish_secrets
+# Ignore every default folder in Home directory created by macOS
+Applications
+Desktop
+Documents
+Downloads
+Dropbox
+Library
+Movies
+Music
+Pictures
+Public
+Trash
+
+# Ignore other code
+Code
+
+# ignore other common folders
+.cache
+.local
+.ssh
