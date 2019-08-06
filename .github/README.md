@@ -27,7 +27,7 @@ fish configure_macos.fish
 ```
 
 ## Workflow for updating dotfiles
-One advantage of this setup is that we effectively have two copies of the dotfiles, one that is active in our home directory, and one that contains only the tracked files in `~/Code/dotfiles` and are safe and easy to modify. What I like to do when I want to modify my dotfiles is open up `~/Code/dotfiles` in my editor (if you use Sublime Text you can open up the project `.dotfiles_meta/dotfiles.sublime-project`). Once I have committed my changes, I navigate back to my home directory and do `git --git-dir=Code/dotfiles/.git --work-tree=. reset --hard` to checkout my changes and make them active.
+One advantage of this setup is that we effectively have two copies of the dotfiles, one that is active in our home directory, and one that contains only the tracked files in `~/Code/dotfiles` and is safe and easy to modify. The recommended way to modify our dotfiles is open up `~/Code/dotfiles` in our editor (if you use Sublime Text you can open up the project `.dotfiles_meta/dotfiles.sublime-project`) and make the changes there. Once our changes have been finalized and committed into git, navigate back to the home directory and do `git --git-dir=Code/dotfiles/.git --work-tree=. reset --hard` to checkout our changes and make them active.
 
 To make git operations on the home directory dotfiles easier, we can use `dot`, an autoloaded fish function that specifies the `git-dir` and `work-tree` options for us. For example, instead of the above command for checking out changes, we can simply execute `dot reset --hard`.
 
