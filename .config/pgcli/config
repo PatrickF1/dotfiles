@@ -31,7 +31,7 @@ destructive_warning = True
 expand = False
 
 # Enables auto expand mode, which is similar to `\x auto` in psql.
-auto_expand = False
+auto_expand = True
 
 # If set to True, table suggestions will include a table alias
 generate_aliases = False
@@ -43,7 +43,7 @@ generate_aliases = False
 log_file = default
 
 # keyword casing preference. Possible values "lower", "upper", "auto"
-keyword_casing = auto
+keyword_casing = upper
 
 # casing_file location.
 # In Unix/Linux: ~/.config/pgcli/casing
@@ -101,7 +101,7 @@ syntax_style = default
 # When Vi mode is enabled you can use modal editing features offered by Vi in the REPL.
 # When Vi mode is disabled emacs keybindings such as Ctrl-A for home and Ctrl-E
 # for end are available in the REPL.
-vi = False
+vi = True
 
 # Error handling
 # When one of multiple SQL statements causes an error, choose to either
@@ -113,7 +113,7 @@ on_error = STOP
 row_limit = 1000
 
 # Skip intro on startup and goodbye on exit
-less_chatty = False
+less_chatty = True
 
 # Postgres prompt
 # \t - Current date and time
