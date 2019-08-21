@@ -1,3 +1,5 @@
+# heavily adapted from https://github.com/mathiasbynens/dotfiles/blob/master/.macos
+
 echo "Configuring OS X."
 # Close any open System Preferences panes to prevent them from overriding
 # the settings being configured
@@ -25,11 +27,22 @@ defaults write com.apple.finder ShowPathbar -bool true
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
 ###############################################################################
-# Dock                                                                        #
+# Keyboard                                                                    #
 ###############################################################################
+
+# Configure key repeat to be be blazingly fast with a moderate initial delay (ints are in ms)
+defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain InitialKeyRepeat -int 25
 
 # Disable press-and-hold for keys in favor of key repeat
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+# Disable automatically adding a period when double-spacing
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+
+###############################################################################
+# Dock                                                                        #
+###############################################################################
 
 # Show indicator lights for open applications in the Dock
 defaults write com.apple.dock show-process-indicators -bool true
