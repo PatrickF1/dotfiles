@@ -1,6 +1,7 @@
 " Plugins are stored under ~/.config/nvim/plugged
 call plug#begin()
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 func! WordProcessor()
