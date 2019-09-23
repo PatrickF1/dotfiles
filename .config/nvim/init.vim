@@ -1,3 +1,5 @@
+set mouse=a
+inoremap <C-d> <Del>
 " Plugins are stored under ~/.config/nvim/plugged
 call plug#begin()
 Plug 'tpope/vim-sensible'
