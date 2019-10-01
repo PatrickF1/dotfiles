@@ -1,5 +1,10 @@
 set mouse=a
+
+let mapleader = "-"
 inoremap <C-d> <Del>
+vnoremap <Leader>x :!pbcopy<CR>  
+vnoremap <Leader>c :w !pbcopy<CR><CR> 
+
 " Plugins are stored under ~/.config/nvim/plugged
 call plug#begin()
 Plug 'tpope/vim-sensible'
@@ -18,9 +23,9 @@ func! WordProcessor()
   setlocal wrap
   setlocal linebreak
   " spelling and thesaurus
-  setlocal spell spelllang=en_us
-  set thesaurus+=/home/test/.vim/thesaurus/mthesaur.txt
+  " setlocal spell spelllang=en_us
+  " set thesaurus+=/Users/patrick.fong/.local/share/nvim/moby-thesaurus.txt
   " complete+=s makes autocompletion search the thesaurus
-  set complete+=s
+  " set complete+=s
 endfu
 com! WP call WordProcessor()
