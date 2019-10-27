@@ -26,6 +26,8 @@ defaults write com.apple.finder ShowPathbar -bool true
 # When performing a search, search the current folder by default
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
+# Don't show hidden files by default
+defaults write com.apple.finder AppleShowAllFiles -bool false
 ###############################################################################
 # Keyboard                                                                    #
 ###############################################################################
@@ -99,6 +101,10 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
+
+###############################################################################
+# Finish                                                                      #
+###############################################################################
 
 # Restart affected apps so changes take effect immediately
 killall Dock
