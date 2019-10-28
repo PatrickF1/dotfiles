@@ -14,7 +14,14 @@ Public
 # Ignore other code
 Code
 
-# ignore other common folders
+# Ignore other common folders
 .cache
 .local
 .ssh
+
+# Ignore CLI history files
+.python_history
+.scala_history
+.lesshst
+.psql_history
+.node_repl_history
