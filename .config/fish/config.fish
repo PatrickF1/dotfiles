@@ -22,7 +22,8 @@ set -g fish_color_command B7D847
 set -g theme_display_git_stashed_verbose yes
 # __differentiate_tab_colors
 
-# fzf plugin settings
+# integrate fzf into workflow
+bind -M insert \cr '__fzf_reverse_isearch'
 set -g FZF_LEGACY_KEYBINDINGS 0
 set -g FZF_FIND_FILE_COMMAND 'rg --files --hidden --follow --no-ignore-vcs -g !.git -g !node_modules -g !.idea 2> /dev/null'
 set -g FZF_CD_COMMAND bfs -type d -nohidden | sed s/^\./~/
