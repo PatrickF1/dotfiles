@@ -1,4 +1,5 @@
 # Ignore every default folder in Home directory created by macOS
+.Trash
 Applications
 Desktop
 Documents
@@ -9,19 +10,19 @@ Movies
 Music
 Pictures
 Public
-.Trash
 
 # Ignore other code
 Code
 
 # Ignore other common folders
+.aws
 .cache
 .local
 .ssh
 
 # Ignore CLI history files
+.lesshst
+.node_repl_history
+.psql_history
 .python_history
 .scala_history
-.lesshst
-.psql_history
-.node_repl_history
