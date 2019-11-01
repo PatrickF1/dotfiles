@@ -23,6 +23,8 @@ set -g theme_display_git_stashed_verbose yes
 # __differentiate_tab_colors
 
 # integrate fzf into workflow
+bind \cr '__fzf_search_history'
+bind \cf '__fzf_find_files'
 bind \cr -M insert '__fzf_search_history'
 bind \cf -M insert '__fzf_find_files'
 set -g FZF_LEGACY_KEYBINDINGS 0

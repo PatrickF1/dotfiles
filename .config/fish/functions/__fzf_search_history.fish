@@ -4,6 +4,6 @@ function __fzf_search_history --description "Search history for a command to run
         fzf --read0 --tiebreak=index --height 40% --query=(commandline) |
         perl -pe 'chomp if eof' |
         read -lz result
-    and commandline -- $result
-    commandline -f repaint
+    and commandline --replace $result
+    commandline --function repaint
 end
