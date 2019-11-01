@@ -1,4 +1,4 @@
-function __fzf_replace_command -d "Replace your commandline with a command found through fzf"
+function __fzf_search_history --description "Search history for a command to run using fzf."
     history merge
     history --null |
         fzf --read0 --tiebreak=index --height 40% --query=(commandline) |
