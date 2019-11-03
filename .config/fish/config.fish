@@ -25,5 +25,3 @@ set -g theme_display_git_stashed_verbose yes
 # integrate fzf into workflow
 bind \cr '__fzf_search_history'
 bind \cf '__fzf_search_current_dir'
-bind \cr -M insert '__fzf_search_history'
-bind \cf -M insert '__fzf_search_current_dir'

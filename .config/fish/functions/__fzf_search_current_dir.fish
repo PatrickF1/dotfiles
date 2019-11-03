@@ -1,6 +1,6 @@
-function __fzf_search_current_dir --description "Search the current directory for files and directories using fzf and fd. Insert the selected search results into the commandline at the cursor."
+function __fzf_search_current_dir --description "Search the current directory using fzf and fd. Insert the selected results into the commandline at the cursor."
     fd --hidden --follow --exclude=.git 2> /dev/null |
-    fzf --multi |
+    fzf --multi | # allows selecting multiple results using TAB
     while read --local s
         set results $results $s
     end
