@@ -9,10 +9,6 @@ end
 # add custom executables (e.g. git-shalector and subl) to path
 set --prepend PATH "$HOME/bin"
 
-# ensure the functions in this repo are available by prepending the functions directory
-# path to fish_function_path
-set --prepend fish_function_path $dotfile_fish_functions_path
-
 set -xg EDITOR "nvim"
 # set some sensible default options to always pass into invocations of less
 set -xg LESS "--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --window=-4"
