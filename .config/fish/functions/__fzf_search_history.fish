@@ -1,4 +1,4 @@
-function __fzf_search_history --description "Search history for a command to run using fzf."
+function __fzf_search_history --description "Search command history using fzf."
     history merge
     history --null |
         fzf --read0 --tiebreak=index --height 40% --query=(commandline) |
