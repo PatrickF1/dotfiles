@@ -5,6 +5,6 @@ function __fzf_search_current_dir --description "Search the current directory us
         xargs
     )
 
-    commandline --insert --current-token -- $files_selected
+    commandline --insert "$files_selected " # doesn't string escape so won't work with weird filesnames
     commandline --function repaint
 end
