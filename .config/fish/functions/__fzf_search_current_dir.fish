@@ -5,6 +5,9 @@ function __fzf_search_current_dir --description "Search the current directory us
         xargs
     )
 
-    commandline --insert "$files_selected " # doesn't string escape so won't work with weird filesnames
+    if test (count $files_selected) -gt 0 # need to use count because files_selected contains newline if fzf is canceled
+        commandline --insert "$files_selected " # doesn't string escape so won't work with weird filesnames
+    end
+
     commandline --function repaint
 end
