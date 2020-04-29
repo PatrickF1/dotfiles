@@ -26,5 +26,4 @@ set -g theme_display_git_stashed_verbose yes
 bind \cr '__fzf_search_history'
 bind \cf '__fzf_search_current_dir'
 
-# load pyenv
-source (pyenv init -|psub)
+source (brew --prefix asdf)/asdf.fish
