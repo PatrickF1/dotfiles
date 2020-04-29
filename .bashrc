@@ -22,4 +22,5 @@ if [ $ITERM_SESSION_ID ]; then
 fi
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
-eval "$(rbenv init -)"
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
