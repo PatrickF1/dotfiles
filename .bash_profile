@@ -1,3 +1,2 @@
-if [ -f $HOME/.bashrc ]; then
-    source $HOME/.bashrc
-fi
+# make all bash shells invoked have consistent settings by always sourcing same configuration file
+source $HOME/.bashrc
