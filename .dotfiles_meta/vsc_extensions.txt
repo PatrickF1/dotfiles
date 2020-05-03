@@ -1,0 +1,7 @@
+bmalehorn.vscode-fish
+Equinusocio.vsc-material-theme
+equinusocio.vsc-material-theme-icons
+ms-python.python
+rebornix.ruby
+vscodevim.vim
+wingrunr21.vscode-ruby
