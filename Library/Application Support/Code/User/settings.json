@@ -1,7 +1,6 @@
 {
     "editor.fontSize": 18,
     "editor.wordWrap": "on",
-    "editor.accessibilityPageSize": 2,
     "editor.accessibilitySupport": "off",
     "editor.autoClosingOvertype": "never",
     "workbench.colorTheme": "Material Theme",
@@ -32,11 +31,8 @@
         "selection.background": "#C6FF0040"
     },
     "materialTheme.accent": "Acid Lime",
-    "terminal.integrated.fontSize": 20,
-    "terminal.integrated.lineHeight": 1.1,
-    "debug.console.fontSize": 16,
+    "terminal.integrated.fontSize": 18,
     "window.zoomLevel": 0.6,
     "editor.scrollBeyondLastLine": false,
-    "workbench.activityBar.visible": true,
     "editor.minimap.enabled": true
 }
