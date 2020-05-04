@@ -34,5 +34,7 @@
     "terminal.integrated.fontSize": 18,
     "window.zoomLevel": 0.6,
     "editor.scrollBeyondLastLine": false,
-    "editor.minimap.enabled": true
+    "editor.minimap.enabled": true,
+    "ruby.lintDebounceTime": 1000,
+    "git.allowForcePush": true
 }
