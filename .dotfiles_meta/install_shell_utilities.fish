@@ -7,7 +7,7 @@ if not grep -q "$path_to_shell" /etc/shells
     chsh -s "$path_to_shell"
 end
 
-echo "Installing vim-plug for neovim."
+echo "Installing vim-plug for neovim"
 curl --create-dirs --location --output ~/.local/share/nvim/site/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "Installing the latest git-completion script for bash"

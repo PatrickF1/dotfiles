@@ -18,4 +18,4 @@ defaults write at.eggerapps.Postico TableViewFontSize -int 14
 defaults write at.eggerapps.Postico TableViewRowsPerPage -int 200
 
 echo "Installing VSCode extensions"
-cat extensions.list | xargs -L 1 code --install-extension
+cat vsc_extensions.txt | xargs -L 1 code --install-extension
