@@ -44,5 +44,11 @@
     "terminal.integrated.shell.osx": "/usr/local/bin/fish",
     "terminal.integrated.enableBell": true,
     "terminal.integrated.confirmOnExit": true,
-    "terminal.integrated.fontFamily": "FuraCode Nerd Font"
+    "terminal.integrated.fontFamily": "FuraCode Nerd Font",
+    "editor.formatOnPaste": true,
+    "workbench.editor.highlightModifiedTabs": true,
+    "files.associations": {
+        "*.sublime-settings": "json",
+        "*.sublime-keymap": "json"
+    }
 }
