@@ -40,5 +40,9 @@
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "files.trimTrailingWhitespace": true,
-    "vim.useCtrlKeys": false
+    "vim.useCtrlKeys": false,
+    "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+    "terminal.integrated.enableBell": true,
+    "terminal.integrated.confirmOnExit": true,
+    "terminal.integrated.fontFamily": "FuraCode Nerd Font"
 }
