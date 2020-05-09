@@ -1,4 +1,6 @@
 bmalehorn.vscode-fish
+castwide.solargraph
+eamodio.gitlens
 Equinusocio.vsc-material-theme
 equinusocio.vsc-material-theme-icons
 ms-python.python
