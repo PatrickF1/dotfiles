@@ -52,4 +52,9 @@
     },
     "ruby.useLanguageServer": true,
     "git.enableSmartCommit": true,
+    "gitlens.statusBar.enabled": false,
+    "gitlens.menus": false,
+    "gitlens.currentLine.enabled": false,
+    "gitlens.codeLens.enabled": false,
+    "gitlens.hovers.currentLine.over": "line",
 }
