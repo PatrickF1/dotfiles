@@ -23,6 +23,7 @@
     "ruby.useLanguageServer": true,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
+    "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.enableBell": true,
     "terminal.integrated.fontFamily": "FuraCode Nerd Font",
     "terminal.integrated.fontSize": 18,

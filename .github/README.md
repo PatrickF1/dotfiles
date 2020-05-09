@@ -32,3 +32,9 @@ One advantage of this setup is that we effectively have two copies of the dotfil
 To make git operations on the home directory dotfiles easier, we can use `dot`, an autoloaded fish function that specifies the `git-dir` and `work-tree` options for us. For example, instead of the above command for checking out changes, we can simply execute `dot reset --hard`.
 
 Be very careful about not running `dot add -A` on the home directory. To avoid accidentally committed sensitive files and folders, be sure to add them to `.gitignore`. Many common folders that don't make sense to track are already ignored.
+
+## VSCode extensions
+Unfortunately, VSCode doesn't store the list of installed extensions in a file. That is why we store the list of installed extensions in `vsc_extensinos.txt`. To keep update it, run
+```fish
+code --list-extensions > .dotfiles_meta/vsc_extensions.txt
+```
