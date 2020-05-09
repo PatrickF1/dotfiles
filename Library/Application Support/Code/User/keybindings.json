@@ -17,5 +17,15 @@
         "key": "ctrl+d",
         "command": "-extension.vim_ctrl+d",
         "when": "editorTextFocus && vim.active && !inDebugRepl"
+    },
+    {
+        "key": "alt+space",
+        "command": "editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+space",
+        "command": "-editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
     }
 ]
