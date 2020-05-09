@@ -50,5 +50,6 @@
         "*.sublime-settings": "json",
         "*.sublime-keymap": "json"
     },
-    "ruby.useLanguageServer": true
+    "ruby.useLanguageServer": true,
+    "git.enableSmartCommit": true,
 }
