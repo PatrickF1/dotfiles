@@ -1,6 +1,6 @@
 # heavily adapted from https://github.com/mathiasbynens/dotfiles/blob/master/.macos
 
-echo "Configuring OS X."
+echo "Configuring OS X"
 # Close any open System Preferences panes to prevent them from overriding
 # the settings being configured
 osascript -e 'tell application "System Preferences" to quit'
@@ -110,4 +110,4 @@ defaults write com.apple.screencapture disable-shadow -bool true
 killall Dock
 killall Finder
 
-echo "Done."
+echo "Done"
