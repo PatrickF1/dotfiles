@@ -1,7 +1,6 @@
 bmalehorn.vscode-fish
 castwide.solargraph
 eamodio.gitlens
-Equinusocio.vsc-material-theme
 equinusocio.vsc-material-theme-icons
 ms-python.python
 rebornix.ruby
@@ -9,3 +8,4 @@ richie5um2.vscode-sort-json
 streetsidesoftware.code-spell-checker
 vscodevim.vim
 wingrunr21.vscode-ruby
+zhuangtongfa.material-theme

@@ -18,7 +18,6 @@
     "gitlens.hovers.currentLine.over": "line",
     "gitlens.menus": false,
     "gitlens.statusBar.enabled": false,
-    "materialTheme.accent": "Acid Lime",
     "ruby.lintDebounceTime": 1000,
     "ruby.useLanguageServer": true,
     "telemetry.enableCrashReporter": false,
@@ -54,7 +53,7 @@
         "tab.activeBorder": "#C6FF00",
         "textLink.foreground": "#C6FF00"
     },
-    "workbench.colorTheme": "Material Theme",
+    "workbench.colorTheme": "One Dark Pro",
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.iconTheme": "eq-material-theme-icons",
     "workbench.startupEditor": "welcomePage"
