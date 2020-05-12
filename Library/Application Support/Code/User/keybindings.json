@@ -157,7 +157,7 @@
         "command": "workbench.action.showAllSymbols"
     },
 
-    // change gotoSymbol to ctrl+g
+    // change gotoSymbol to alt+g
     {
         "key": "shift+cmd+o",
         "command": "-workbench.action.gotoSymbol"
