@@ -53,19 +53,39 @@
         "command": "-workbench.action.previousEditor"
     },
     {
-        "key": "ctrl+[",
-        "command": "workbench.action.navigateBack"
-    },
-    {
         "key": "ctrl+-",
         "command": "-workbench.action.navigateBack"
     },
     {
-        "key": "ctrl+]",
-        "command": "workbench.action.navigateForward"
-    },
-    {
         "key": "ctrl+shift+-",
         "command": "-workbench.action.navigateForward"
+    },
+    {
+        "key": "ctrl+]",
+        "command": "editor.action.indentLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+]",
+        "command": "-editor.action.indentLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+[",
+        "command": "editor.action.outdentLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+[",
+        "command": "-editor.action.outdentLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+[",
+        "command": "workbench.action.navigateBack"
+    },
+    {
+        "key": "cmd+]",
+        "command": "workbench.action.navigateForward"
     }
 ]
