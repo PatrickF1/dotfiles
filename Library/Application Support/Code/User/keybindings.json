@@ -78,4 +78,16 @@
         "key": "ctrl+[",
         "command": "workbench.action.navigateBack"
     },
+
+    // unbind copying lines up and down
+    {
+        "key": "shift+alt+up",
+        "command": "-editor.action.copyLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+alt+down",
+        "command": "-editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
 ]
