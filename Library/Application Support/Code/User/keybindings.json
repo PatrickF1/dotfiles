@@ -75,7 +75,7 @@
         "command": "workbench.action.previousEditor"
     },
 
-    // change navigating to ctrl+[ and ctrl+]
+    // change navigation to ctrl+[ and ctrl+]
     {
         "key": "ctrl+shift+-",
         "command": "-workbench.action.navigateForward"
