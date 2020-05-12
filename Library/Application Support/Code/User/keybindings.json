@@ -117,14 +117,14 @@
 
     // change goToReferences to cmd+r
     {
-        "key": "cmd+r",
-        "command": "-workbench.action.reloadWindow",
-        "when": "isDevelopment"
-    },
-    {
         "key": "shift+f12",
         "command": "-editor.action.goToReferences",
         "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+    },
+    {
+        "key": "cmd+r",
+        "command": "-workbench.action.reloadWindow",
+        "when": "isDevelopment"
     },
     {
         "key": "cmd+r",
@@ -215,13 +215,13 @@
 
     // change triggerParameterHints to cmd+p
     {
-        "key": "cmd+p", // already unbound in quickOpen section
-        "command": "editor.action.triggerParameterHints",
+        "key": "shift+cmd+space",
+        "command": "-editor.action.triggerParameterHints",
         "when": "editorHasSignatureHelpProvider && editorTextFocus"
     },
     {
-        "key": "shift+cmd+space",
-        "command": "-editor.action.triggerParameterHints",
+        "key": "cmd+p", // already unbound in quickOpen section
+        "command": "editor.action.triggerParameterHints",
         "when": "editorHasSignatureHelpProvider && editorTextFocus"
     },
 
