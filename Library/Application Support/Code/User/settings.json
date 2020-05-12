@@ -3,6 +3,7 @@
     "editor.autoClosingOvertype": "never",
     "editor.fontSize": 18,
     "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
     "editor.minimap.enabled": true,
     "editor.scrollBeyondLastLine": false,
     "editor.wordWrap": "on",
@@ -58,6 +59,6 @@
     },
     "workbench.colorTheme": "One Dark Pro",
     "workbench.editor.highlightModifiedTabs": true,
-    "workbench.startupEditor": "none",
-    "workbench.iconTheme": "eq-material-theme-icons"
+    "workbench.iconTheme": "eq-material-theme-icons",
+    "workbench.startupEditor": "none"
 }

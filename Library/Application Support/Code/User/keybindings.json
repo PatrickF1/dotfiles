@@ -9,7 +9,6 @@
         "command": "-extension.vim_ctrl+d",
         "when": "editorTextFocus && vim.active && !inDebugRepl"
     },
-
     // unbind copying lines up and down
     {
         "key": "shift+alt+up",
@@ -21,7 +20,6 @@
         "command": "-editor.action.copyLinesDownAction",
         "when": "editorTextFocus && !editorReadonly"
     },
-
     // change gotoLine to cmd+l
     {
         "key": "ctrl+g",
@@ -36,7 +34,6 @@
         "key": "cmd+l",
         "command": "workbench.action.gotoLine"
     },
-
     // change triggerSuggest to alt+space
     {
         "key": "ctrl+space",
@@ -48,7 +45,6 @@
         "command": "editor.action.triggerSuggest",
         "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
     },
-
     // change switching editors to ctrl+tab and ctrl+shift+tab
     {
         "key": "alt+cmd+right",
@@ -74,7 +70,6 @@
         "key": "ctrl+shift+tab",
         "command": "workbench.action.previousEditor"
     },
-
     // change indentation to ctrl+[ and ctrl+]
     {
         "key": "cmd+]",
@@ -96,7 +91,6 @@
         "command": "editor.action.outdentLines",
         "when": "editorTextFocus && !editorReadonly"
     },
-
     // change navigation to cmd+[ and cmd+]
     {
         "key": "ctrl+shift+-",
@@ -114,7 +108,6 @@
         "key": "cmd+[", // already unbound in change indentation section
         "command": "workbench.action.navigateBack"
     },
-
     // change goToReferences to cmd+r
     {
         "key": "shift+f12",
@@ -131,7 +124,6 @@
         "command": "editor.action.goToReferences",
         "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
     },
-
     // change goToImplementation to cmd+i
     {
         "key": "cmd+f12",
@@ -140,9 +132,8 @@
     },
     {
         "key": "cmd+i",
-        "command": "references-view.findImplementations"
+        "command": "editor.action.goToImplementation"
     },
-
     // change showAllSymbols to shift+cmd+s
     {
         "key": "cmd+t",
@@ -156,7 +147,6 @@
         "key": "shift+cmd+s",
         "command": "workbench.action.showAllSymbols"
     },
-
     // change gotoSymbol to alt+g
     {
         "key": "shift+cmd+o",
@@ -166,8 +156,7 @@
         "key": "alt+g",
         "command": "workbench.action.gotoSymbol"
     },
-
-    // change showCommands to shift+cmd+p
+    // change showCommands to shift+cmd+c
     {
         "key": "shift+cmd+p",
         "command": "-workbench.action.showCommands"
@@ -181,7 +170,6 @@
         "key": "shift+cmd+c",
         "command": "workbench.action.showCommands"
     },
-
     // change quickOpen to shift+cmd+o
     {
         "key": "cmd+p",
@@ -191,7 +179,6 @@
         "key": "shift+cmd+o", // already unbound in gotoSymbol section
         "command": "workbench.action.quickOpen"
     },
-
     // change rename to shift+cmd+r
     {
         "key": "f2",
@@ -212,7 +199,6 @@
         "command": "editor.action.rename",
         "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
     },
-
     // change triggerParameterHints to cmd+p
     {
         "key": "shift+cmd+space",
@@ -224,7 +210,6 @@
         "command": "editor.action.triggerParameterHints",
         "when": "editorHasSignatureHelpProvider && editorTextFocus"
     },
-
     // change togglePanel to alt+p
     {
         "key": "cmd+j",
@@ -234,7 +219,6 @@
         "key": "alt+p",
         "command": "workbench.action.togglePanel"
     },
-
     // change jumpToBracket to alt+j
     {
         "key": "shift+cmd+\\",
@@ -246,7 +230,6 @@
         "command": "editor.action.jumpToBracket",
         "when": "editorTextFocus"
     },
-
     // change joinLines to cmd+j
     {
         "key": "ctrl+j",
@@ -258,5 +241,4 @@
         "command": "editor.action.joinLines",
         "when": "editorTextFocus && !editorReadonly"
     },
-
 ]
