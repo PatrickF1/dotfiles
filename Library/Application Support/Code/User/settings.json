@@ -3,6 +3,7 @@
     "editor.autoClosingOvertype": "never",
     "editor.fontSize": 18,
     "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
     "editor.minimap.enabled": true,
     "editor.scrollBeyondLastLine": false,
     "editor.wordWrap": "on",
