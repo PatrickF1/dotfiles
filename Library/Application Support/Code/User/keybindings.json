@@ -1,5 +1,7 @@
-// Place your key bindings in this file to override the defaults
-// order of each section key bindings: (1) existing keys to unbind (2) target keys to unbind (3) bind target keys
+// Order of each section's key bindings:
+// 1. undo default bindings for action(s)
+// 2. unbind target key(s)
+// 3. bind target key(s)
 [
     // change goto line to cmd+l
     {
@@ -89,5 +91,22 @@
         "key": "shift+alt+down",
         "command": "-editor.action.copyLinesDownAction",
         "when": "editorTextFocus && !editorReadonly"
+    },
+
+    // change go to references to cmd+r
+    {
+        "key": "cmd+r",
+        "command": "-workbench.action.reloadWindow",
+        "when": "isDevelopment"
+    },
+    {
+        "key": "shift+f12",
+        "command": "-editor.action.goToReferences",
+        "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+    },
+    {
+        "key": "cmd+r",
+        "command": "editor.action.goToReferences",
+        "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
     },
 ]
