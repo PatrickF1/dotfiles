@@ -72,10 +72,10 @@
         "key": "ctrl+-",
         "command": "-workbench.action.navigateBack"
     },
-            {
-                "key": "ctrl+]",
-                "command": "workbench.action.navigateForward"
-            },
+    {
+        "key": "ctrl+]",
+        "command": "workbench.action.navigateForward"
+    },
     {
         "key": "ctrl+[",
         "command": "workbench.action.navigateBack"
@@ -108,5 +108,16 @@
         "key": "cmd+r",
         "command": "editor.action.goToReferences",
         "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+    },
+
+    // change go to implementation to cmd+i
+    {
+        "key": "cmd+f12",
+        "command": "-editor.action.goToImplementation",
+        "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "cmd+i",
+        "command": "editor.action.goToImplementation"
     },
 ]
