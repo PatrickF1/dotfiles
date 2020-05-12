@@ -1,5 +1,5 @@
 // Order of each section's key bindings:
-// 1. undo default bindings for action(s)
+// 1. undo default bindings for command(s)
 // 2. unbind target key(s)
 // 3. bind target key(s)
 [
