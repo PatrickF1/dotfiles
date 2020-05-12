@@ -3,7 +3,7 @@
 // 2. unbind target key(s)
 // 3. bind target key(s)
 [
-    // change goto line to cmd+l
+    // change gotoLine to cmd+l
     {
         "key": "ctrl+g",
         "command": "-workbench.action.gotoLine"
@@ -25,7 +25,7 @@
         "when": "editorTextFocus && vim.active && !inDebugRepl"
     },
 
-    // change trigger suggest to alt+space
+    // change triggerSuggest to alt+space
     {
         "key": "ctrl+space",
         "command": "-editor.action.triggerSuggest",
@@ -93,7 +93,7 @@
         "when": "editorTextFocus && !editorReadonly"
     },
 
-    // change go to references to cmd+r
+    // change goToReferences to cmd+r
     {
         "key": "cmd+r",
         "command": "-workbench.action.reloadWindow",
@@ -110,7 +110,7 @@
         "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
     },
 
-    // change go to implementation to cmd+i
+    // change goToImplementation to cmd+i
     {
         "key": "cmd+f12",
         "command": "-editor.action.goToImplementation",
@@ -118,6 +118,95 @@
     },
     {
         "key": "cmd+i",
-        "command": "editor.action.goToImplementation"
+        "command": "references-view.findImplementations"
     },
+
+    // change showAllSymbols symbols to shift+cmd+s
+    {
+        "key": "cmd+t",
+        "command": "-workbench.action.showAllSymbols"
+    },
+    {
+        "key": "shift+cmd+s",
+        "command": "-workbench.action.files.saveAs"
+    },
+    {
+        "key": "shift+cmd+s",
+        "command": "workbench.action.showAllSymbols"
+    },
+
+    // change gotoSymbol to ctrl+g
+    {
+        "key": "shift+cmd+o",
+        "command": "-workbench.action.gotoSymbol"
+    },
+    {
+        "key": "ctrl+g", // already unbinded in gotoLine section
+        "command": "workbench.action.gotoSymbol"
+    },
+
+    // change showCommands to shift+cmd+p
+    {
+        "key": "shift+cmd+p",
+        "command": "-workbench.action.showCommands"
+    },
+    {
+        "key": "shift+cmd+c",
+        "command": "-workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "shift+cmd+c",
+        "command": "workbench.action.showCommands"
+    },
+
+    // change quickOpen to shift+cmd+o
+    {
+        "key": "cmd+p",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "shift+cmd+o", // already unbinded in gotoSymbol section
+        "command": "workbench.action.quickOpen"
+    },
+
+    // change rename to shift+cmd+r
+    {
+        "key": "f2",
+        "command": "-editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+cmd+r",
+        "command": "-rerunSearchEditorSearch",
+        "when": "inSearchEditor"
+    },
+    {
+        "key": "shift+cmd+r",
+        "command": "-solargraph.search"
+    },
+    {
+        "key": "shift+cmd+r",
+        "command": "editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+p",
+        "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
+        "when": "inFilesPicker && inQuickOpen"
+    },
+
+    // change triggerParameterHints to cmd+p
+    {
+        "key": "cmd+p", // already unbinded in quickOpen section
+        "command": "editor.action.triggerParameterHints",
+        "when": "editorHasSignatureHelpProvider && editorTextFocus"
+    },
+    {
+        "key": "shift+cmd+space",
+        "command": "-editor.action.triggerParameterHints",
+        "when": "editorHasSignatureHelpProvider && editorTextFocus"
+    },
+
+
 ]
