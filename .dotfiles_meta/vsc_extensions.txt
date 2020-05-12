@@ -2,14 +2,10 @@ bmalehorn.vscode-fish
 castwide.solargraph
 eamodio.gitlens
 equinusocio.vsc-material-theme-icons
-mauve.terraform
 ms-python.python
 rebornix.ruby
 richie5um2.vscode-sort-json
-scala-lang.scala
-scalameta.metals
 streetsidesoftware.code-spell-checker
 vscodevim.vim
 wingrunr21.vscode-ruby
 zhuangtongfa.material-theme
-zzzz.hocon-colorizer
