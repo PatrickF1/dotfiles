@@ -3,6 +3,25 @@
 // 2. unbind target key(s)
 // 3. bind target key(s)
 [
+    // stop Vim from hijacking ctrl+d
+    {
+        "key": "ctrl+d",
+        "command": "-extension.vim_ctrl+d",
+        "when": "editorTextFocus && vim.active && !inDebugRepl"
+    },
+
+    // unbind copying lines up and down
+    {
+        "key": "shift+alt+up",
+        "command": "-editor.action.copyLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+alt+down",
+        "command": "-editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+
     // change gotoLine to cmd+l
     {
         "key": "ctrl+g",
@@ -16,13 +35,6 @@
     {
         "key": "cmd+l",
         "command": "workbench.action.gotoLine"
-    },
-
-    // stop Vim from hijacking ctrl+d
-    {
-        "key": "ctrl+d",
-        "command": "-extension.vim_ctrl+d",
-        "when": "editorTextFocus && vim.active && !inDebugRepl"
     },
 
     // change triggerSuggest to alt+space
@@ -79,18 +91,6 @@
     {
         "key": "ctrl+[",
         "command": "workbench.action.navigateBack"
-    },
-
-    // unbind copying lines up and down
-    {
-        "key": "shift+alt+up",
-        "command": "-editor.action.copyLinesUpAction",
-        "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "shift+alt+down",
-        "command": "-editor.action.copyLinesDownAction",
-        "when": "editorTextFocus && !editorReadonly"
     },
 
     // change goToReferences to cmd+r
@@ -190,11 +190,6 @@
         "command": "editor.action.rename",
         "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
     },
-    {
-        "key": "cmd+p",
-        "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
-        "when": "inFilesPicker && inQuickOpen"
-    },
 
     // change triggerParameterHints to cmd+p
     {
@@ -208,5 +203,37 @@
         "when": "editorHasSignatureHelpProvider && editorTextFocus"
     },
 
+    // change togglePanel to alt+p
+    {
+        "key": "cmd+j",
+        "command": "-workbench.action.togglePanel"
+    },
+    {
+        "key": "alt+p",
+        "command": "workbench.action.togglePanel"
+    },
 
+    // change jumpToBracket to alt+j
+    {
+        "key": "shift+cmd+\\",
+        "command": "-editor.action.jumpToBracket",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+j",
+        "command": "editor.action.jumpToBracket",
+        "when": "editorTextFocus"
+    },
+
+    // change joinLines to cmd+j
+    {
+        "key": "ctrl+j",
+        "command": "-editor.action.joinLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+j",
+        "command": "editor.action.joinLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
 ]
