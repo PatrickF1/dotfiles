@@ -141,7 +141,7 @@
         "command": "-workbench.action.gotoSymbol"
     },
     {
-        "key": "ctrl+g", // already unbinded in gotoLine section
+        "key": "alt+g",
         "command": "workbench.action.gotoSymbol"
     },
 
