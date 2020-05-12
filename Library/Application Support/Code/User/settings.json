@@ -15,6 +15,7 @@
     "git.allowForcePush": true,
     "git.enableSmartCommit": true,
     "gitlens.codeLens.enabled": false,
+    "gitlens.currentLine.enabled": false,
     "gitlens.hovers.currentLine.over": "line",
     "gitlens.menus": false,
     "gitlens.statusBar.enabled": false,
