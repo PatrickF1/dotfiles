@@ -1,5 +1,32 @@
-// Place your key bindings in this file to override the defaults
+// Order of each section's key bindings:
+// 1. undo default bindings for command(s)
+// 2. unbind target key(s)
+// 3. bind target key(s)
 [
+    // stop Vim from hijacking ctrl+d
+    {
+        "key": "ctrl+d",
+        "command": "-extension.vim_ctrl+d",
+        "when": "editorTextFocus && vim.active && !inDebugRepl"
+    },
+
+    // unbind copying lines up and down
+    {
+        "key": "shift+alt+up",
+        "command": "-editor.action.copyLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+alt+down",
+        "command": "-editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+
+    // change gotoLine to cmd+l
+    {
+        "key": "ctrl+g",
+        "command": "-workbench.action.gotoLine"
+    },
     {
         "key": "cmd+l",
         "command": "-expandLineSelection",
@@ -9,24 +36,27 @@
         "key": "cmd+l",
         "command": "workbench.action.gotoLine"
     },
+
+    // change triggerSuggest to alt+space
     {
-        "key": "ctrl+g",
-        "command": "-workbench.action.gotoLine"
-    },
-    {
-        "key": "ctrl+d",
-        "command": "-extension.vim_ctrl+d",
-        "when": "editorTextFocus && vim.active && !inDebugRepl"
+        "key": "ctrl+space",
+        "command": "-editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
     },
     {
         "key": "alt+space",
         "command": "editor.action.triggerSuggest",
         "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
     },
+
+    // change switching editors to ctrl+tab and ctrl+shift+tab
     {
-        "key": "ctrl+space",
-        "command": "-editor.action.triggerSuggest",
-        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+        "key": "alt+cmd+right",
+        "command": "-workbench.action.nextEditor"
+    },
+    {
+        "key": "alt+cmd+left",
+        "command": "-workbench.action.previousEditor"
     },
     {
         "key": "ctrl+tab",
@@ -41,31 +71,192 @@
         "command": "workbench.action.nextEditor"
     },
     {
-        "key": "alt+cmd+right",
-        "command": "-workbench.action.nextEditor"
-    },
-    {
         "key": "ctrl+shift+tab",
         "command": "workbench.action.previousEditor"
     },
+
+    // change indentation to ctrl+[ and ctrl+]
     {
-        "key": "alt+cmd+left",
-        "command": "-workbench.action.previousEditor"
+        "key": "cmd+]",
+        "command": "-editor.action.indentLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+[",
+        "command": "-editor.action.outdentLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+]",
+        "command": "editor.action.indentLines",
+        "when": "editorTextFocus && !editorReadonly"
     },
     {
         "key": "ctrl+[",
-        "command": "workbench.action.navigateBack"
+        "command": "editor.action.outdentLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+
+    // change navigation to cmd+[ and cmd+]
+    {
+        "key": "ctrl+shift+-",
+        "command": "-workbench.action.navigateForward"
     },
     {
         "key": "ctrl+-",
         "command": "-workbench.action.navigateBack"
     },
     {
-        "key": "ctrl+]",
+        "key": "cmd+]", // already unbound in change indentation section
         "command": "workbench.action.navigateForward"
     },
     {
-        "key": "ctrl+shift+-",
-        "command": "-workbench.action.navigateForward"
-    }
+        "key": "cmd+[", // already unbound in change indentation section
+        "command": "workbench.action.navigateBack"
+    },
+
+    // change goToReferences to cmd+r
+    {
+        "key": "shift+f12",
+        "command": "-editor.action.goToReferences",
+        "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+    },
+    {
+        "key": "cmd+r",
+        "command": "-workbench.action.reloadWindow",
+        "when": "isDevelopment"
+    },
+    {
+        "key": "cmd+r",
+        "command": "editor.action.goToReferences",
+        "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+    },
+
+    // change goToImplementation to cmd+i
+    {
+        "key": "cmd+f12",
+        "command": "-editor.action.goToImplementation",
+        "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "cmd+i",
+        "command": "references-view.findImplementations"
+    },
+
+    // change showAllSymbols to shift+cmd+s
+    {
+        "key": "cmd+t",
+        "command": "-workbench.action.showAllSymbols"
+    },
+    {
+        "key": "shift+cmd+s",
+        "command": "-workbench.action.files.saveAs"
+    },
+    {
+        "key": "shift+cmd+s",
+        "command": "workbench.action.showAllSymbols"
+    },
+
+    // change gotoSymbol to alt+g
+    {
+        "key": "shift+cmd+o",
+        "command": "-workbench.action.gotoSymbol"
+    },
+    {
+        "key": "alt+g",
+        "command": "workbench.action.gotoSymbol"
+    },
+
+    // change showCommands to shift+cmd+p
+    {
+        "key": "shift+cmd+p",
+        "command": "-workbench.action.showCommands"
+    },
+    {
+        "key": "shift+cmd+c",
+        "command": "-workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "shift+cmd+c",
+        "command": "workbench.action.showCommands"
+    },
+
+    // change quickOpen to shift+cmd+o
+    {
+        "key": "cmd+p",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "shift+cmd+o", // already unbound in gotoSymbol section
+        "command": "workbench.action.quickOpen"
+    },
+
+    // change rename to shift+cmd+r
+    {
+        "key": "f2",
+        "command": "-editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+cmd+r",
+        "command": "-rerunSearchEditorSearch",
+        "when": "inSearchEditor"
+    },
+    {
+        "key": "shift+cmd+r",
+        "command": "-solargraph.search"
+    },
+    {
+        "key": "shift+cmd+r",
+        "command": "editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+
+    // change triggerParameterHints to cmd+p
+    {
+        "key": "shift+cmd+space",
+        "command": "-editor.action.triggerParameterHints",
+        "when": "editorHasSignatureHelpProvider && editorTextFocus"
+    },
+    {
+        "key": "cmd+p", // already unbound in quickOpen section
+        "command": "editor.action.triggerParameterHints",
+        "when": "editorHasSignatureHelpProvider && editorTextFocus"
+    },
+
+    // change togglePanel to alt+p
+    {
+        "key": "cmd+j",
+        "command": "-workbench.action.togglePanel"
+    },
+    {
+        "key": "alt+p",
+        "command": "workbench.action.togglePanel"
+    },
+
+    // change jumpToBracket to alt+j
+    {
+        "key": "shift+cmd+\\",
+        "command": "-editor.action.jumpToBracket",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+j",
+        "command": "editor.action.jumpToBracket",
+        "when": "editorTextFocus"
+    },
+
+    // change joinLines to cmd+j
+    {
+        "key": "ctrl+j",
+        "command": "-editor.action.joinLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+j",
+        "command": "editor.action.joinLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+
 ]
