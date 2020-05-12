@@ -121,7 +121,7 @@
         "command": "references-view.findImplementations"
     },
 
-    // change showAllSymbols symbols to shift+cmd+s
+    // change showAllSymbols to shift+cmd+s
     {
         "key": "cmd+t",
         "command": "-workbench.action.showAllSymbols"
