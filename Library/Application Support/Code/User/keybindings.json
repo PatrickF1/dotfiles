@@ -1,5 +1,5 @@
 // Order of each section's key bindings:
-// 1. undo default bindings for command(s)
+// 1. undo default binding(s) for command(s)
 // 2. unbind target key(s)
 // 3. bind target key(s)
 [
@@ -240,5 +240,29 @@
         "key": "cmd+j",
         "command": "editor.action.joinLines",
         "when": "editorTextFocus && !editorReadonly"
+    },
+    // bind workbench.output.action.clearOutput when output panel is active to cmd+k
+    {
+        "key": "cmd+k",
+        "command": "workbench.output.action.clearOutput",
+        "when": "activePanel == workbench.panel.output"
+    },
+    // bind toggling terminal and creating new terminal tab to cmd+t
+    {
+        "key": "ctrl+`",
+        "command": "-workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "ctrl+shift+`",
+        "command": "-workbench.action.terminal.new"
+    },
+    {
+        "key": "cmd+t",
+        "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "cmd+t",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalFocus"
     },
 ]
