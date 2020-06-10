@@ -26,3 +26,6 @@ Code
 .psql_history
 .python_history
 .scala_history
+
+# Ignore where hub stores GitHub access token
+.config/hub
