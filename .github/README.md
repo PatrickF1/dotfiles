@@ -11,7 +11,7 @@ A collection of my configuration and bootstrap files for `bash`, `fish`, `git`, 
 Unlike most other dotfiles repos that use symlinks or `rsync` to manage your dotfiles, we will use git and only git. See this very excellent [Atlassian article](https://www.atlassian.com/git/tutorials/dotfiles) for an idea on how this works, though this setup is a bit diffreent. The basic idea is that this repository's directory structure mirrors `$HOME`'s directory structure when all the dotfiles exist in their proper place. By setting up this repository in this way, we will be able to set our git working directory to the home directory and checkout dotfiles directly into the directories they should go.
 ```sh
 # clone the repo into the expected place (~/Code/dotfiles)
-cd
+cd # start installation steps from home directory
 mkdir -p Code/dotfiles
 git clone https://github.com/patrickf3139/dotfiles ~/Code/dotfiles
 
@@ -19,7 +19,7 @@ git clone https://github.com/patrickf3139/dotfiles ~/Code/dotfiles
 git --git-dir=Code/dotfiles/.git --work-tree=. reset --hard
 
 # run all the install scripts, which are located in .dotfiles_meta
-cd .dotfiles_meta
+cd Code/dotfiles/.dotfiles_meta
 brew bundle
 fish install_shell_utilities.fish
 fish configure_apps.fish
