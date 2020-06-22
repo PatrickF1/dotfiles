@@ -1,6 +1,6 @@
 # heavily adapted from https://github.com/mathiasbynens/dotfiles/blob/master/.macos
 
-echo "Configuring OS X"
+echo "Configuring macOS"
 # Close any open System Preferences panes to prevent them from overriding
 # the settings being configured
 osascript -e 'tell application "System Preferences" to quit'
@@ -28,6 +28,7 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
 # Don't show hidden files by default
 defaults write com.apple.finder AppleShowAllFiles -bool false
+
 ###############################################################################
 # Keyboard                                                                    #
 ###############################################################################
@@ -68,6 +69,9 @@ defaults write com.apple.Dock mineffect scale
 # Speed up the animation for hiding and showing the dock
 defaults write com.apple.dock autohide-time-modifier -float 0.25
 
+# Shrink the size of Dock app icons for more horizontal screen real estate
+defaults write com.apple.dock tilesize -int 52
+
 ###############################################################################
 # Input Devices                                                               #
 ###############################################################################
@@ -84,7 +88,7 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 ###############################################################################
 
 # Use a very audible but not jarring system alert sound
-defaults write -g  com.apple.sound.beep.sound /System/Library/Sounds/Purr.aiff
+defaults write -g com.apple.sound.beep.sound /System/Library/Sounds/Purr.aiff
 
 # Expand the save and print panels by default
 defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
