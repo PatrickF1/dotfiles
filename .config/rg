@@ -12,5 +12,5 @@
 # Search hidden files and directories
 --hidden
 
-# Never search in .git directory. This is necessary to include because of the --hidden flag above
+# Never search in the .git directory. This is necessary to include because of the --hidden flag above
 --glob=!.git

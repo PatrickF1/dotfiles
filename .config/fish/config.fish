@@ -14,7 +14,7 @@ set -xg EDITOR "nvim"
 set -xg LESS "--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --window=-4"
 # don't store any history of commands executed in less
 set -xg LESSHISTFILE /dev/null
-# point ripgrep at config file
+# point ripgrep at its config file
 set -xg RIPGREP_CONFIG_PATH ~/.config/rg
 
 # visual settings
