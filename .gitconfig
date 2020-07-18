@@ -3,6 +3,8 @@
   name = Patrick Fong
 [push]
   default = simple
+[pull]
+  ff = only
 [core]
   editor = nvim
   excludesfile = ~/.gitignore_global
