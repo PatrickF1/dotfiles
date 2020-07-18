@@ -4,6 +4,3 @@
 *.gz
 *.tar
 .DS_Store
-
-# Sublime Text workspace files are user-specific
-*.sublime-workspace

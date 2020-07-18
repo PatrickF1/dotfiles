@@ -6,7 +6,7 @@ if test -e ~/.secrets.fish
     source ~/.secrets.fish
 end
 
-# add custom executables (e.g. git-shalector and subl) to path
+# add custom executables (right now, that is only git-shalector) to path
 set --prepend PATH "$HOME/bin"
 
 set -xg EDITOR "nvim"

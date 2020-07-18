@@ -1,5 +1,5 @@
 # dotfiles
-A collection of my configuration and bootstrap files for `bash`, `fish`, `git`, `iTerm2`, `Sublime Text 3`, and even `brew`, `macOS settings`, and `Mac OS applications`.  Includes scripts to automate installation. These settings are for me, and I doubt they will work well for anyone else's workflow and preferences. That said, I did my best to make my dotfiles as lightweight and sensible as possible so they may be worth forking as a starting point for your dotfiles.
+A collection of my configuration and bootstrap files for `bash`, `fish`, `git`, `iTerm2`, `Visual Studio Code`, and even `brew`, `macOS settings`, and `Mac OS applications`.  Includes scripts to automate installation. These settings are for me, and I doubt they will work well for anyone else's workflow and preferences. That said, I did my best to make my dotfiles as lightweight and sensible as possible so they may be worth forking as a starting point for your dotfiles.
 
 ## Assumptions
 - your primary, day-to-day shell is the `fish` shell
@@ -27,9 +27,9 @@ fish configure_macos.fish
 ```
 
 ## Workflow for updating dotfiles
-One advantage of this setup is that we effectively have two copies of the dotfiles, one that is active in our home directory, and one that contains only the tracked files in `~/Code/dotfiles` and is safe and easy to modify. The recommended way to modify our dotfiles is open up `~/Code/dotfiles` in our editor (if you use Sublime Text you can open up the project `.dotfiles_meta/dotfiles.sublime-project`) and make the changes there. Once our changes have been finalized and committed into git, navigate back to the home directory and do `git --git-dir=Code/dotfiles/.git --work-tree=. reset --hard` to checkout our changes and make them active.
+One advantage of this setup is that we effectively have two copies of the dotfiles, one that is active in our home directory, and one that contains only the tracked files in `~/Code/dotfiles` and is safe and easy to modify. The recommended way to modify our dotfiles is open up `~/Code/dotfiles` in our editor  and make the changes there. Once our changes have been finalized and committed into git, navigate back to the home directory and do `git --git-dir=Code/dotfiles/.git --work-tree=. reset --hard` to checkout our changes and make them active.
 
-To make git operations on the home directory dotfiles easier, we can use `dot`, an autoloaded fish function that specifies the `git-dir` and `work-tree` options for us. For example, instead of the above command for checking out changes, we can simply execute `dot reset --hard`.
+To make git operations on the home directory dotfiles easier, we can use `dot`, an [autoloaded fish function](https://fishshell.com/docs/current/tutorial.html#autoloading-functions) that specifies the `git-dir` and `work-tree` options for us. For example, instead of the above command for checking out changes, we can simply execute `dot reset --hard`.
 
 Be very careful about not running `dot add -A` on the home directory. To avoid accidentally committed sensitive files and folders, be sure to add them to `.gitignore`. Many common folders that don't make sense to track are already ignored.
 
