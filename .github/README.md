@@ -1,5 +1,5 @@
 # dotfiles
-A collection of my configuration and bootstrap files for `bash`, `fish`, `git`, `iTerm2`, `Sublime Text 3`, and even `brew`, `macOS settings`, and `Mac OS applications`.  Includes scripts to automate installation. These settings are for me, and I doubt they will work well for anyone else's workflow and preferences. That said, I did my best to make my dotfiles as lightweight and sensible as possible so they may be worth forking as a starting point for your dotfiles.
+A collection of my configuration and bootstrap files for `bash`, `fish`, `git`, `iTerm2`, `Visual Studio Code`, and even `brew`, `macOS settings`, and `Mac OS applications`.  Includes scripts to automate installation. These settings are for me, and I doubt they will work well for anyone else's workflow and preferences. That said, I did my best to make my dotfiles as lightweight and sensible as possible so they may be worth forking as a starting point for your dotfiles.
 
 ## Assumptions
 - your primary, day-to-day shell is the `fish` shell
