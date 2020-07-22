@@ -2,10 +2,11 @@
 
 # Fuzzy selector for git commit hash ("sha")
 # Needs to be put in your path and made executable for git to find it.
+# See https://www.atlassian.com/git/articles/extending-git for more info.
 # Inspiration: https://github.com/christoomey/dotfiles/issues/105
 # Usage:
 #    git shalector
-if not git rev-parse --git-dir > /dev/null 2>&1
+if not git rev-parse --git-dir >/dev/null 2>&1
     echo 'Not in a git repository.' >&2
     exit 1
 else if [ (count $argv) -gt 0 ]
@@ -17,17 +18,20 @@ else if not type -q fzf
     exit 1
 end
 
-set target_commit (
-    git log --color=always --format=format:'%C(bold blue)%H%C(reset) - %C(cyan)%aD%C(reset) %C(yellow)%d%C(reset) %C(normal)%s%C(reset)   %C(dim normal)[%an]%C(reset)' | \
-    fzf --ansi --reverse --tiebreak=index
+set selected_log_line (
+    # see documentation for git format placeholders at https://git-scm.com/docs/git-log#Documentation/git-log.txt-emnem
+    # %h gives you the abbreviated commit hash, which is useful for saving screen space, but we will have to expand it later below
+    git log --color=always --format=format:'%C(bold blue)%h%C(reset) - %C(cyan)%aD%C(reset) %C(yellow)%d%C(reset) %C(normal)%s%C(reset)   %C(dim normal)[%an]%C(reset)' | \
+    fzf --ansi --tiebreak=index
 )
 
-if [ -z $target_commit ]
+if [ -z $selected_log_line ]
     echo 'Cancelled.' >&2
     exit 2
 end
 
-set commit_hash (echo $target_commit | string sub --start 1 --length 40)
+set abbreviated_commit_hash (string split --max 1 " " $selected_log_line)[1]
+set commit_hash (git rev-parse $abbreviated_commit_hash)
 
 printf "%s" "$commit_hash" | pbcopy
 echo "Commit hash copied to clipboard ($commit_hash)"
