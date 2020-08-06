@@ -28,7 +28,7 @@
     "terminal.integrated.enableBell": true,
     "terminal.integrated.enableFileLinks": false,
     "terminal.integrated.experimentalUseTitleEvent": true,
-    "terminal.integrated.fontFamily": "FuraCode Nerd Font",
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
     "terminal.integrated.fontSize": 18,
     "terminal.integrated.scrollback": 10000,
     "terminal.integrated.shell.osx": "/usr/local/bin/fish",
