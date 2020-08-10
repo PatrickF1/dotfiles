@@ -22,6 +22,5 @@ set -g theme_nerd_fonts yes
 set -g theme_color_scheme light
 set -g fish_color_command B7D847
 set -g theme_display_git_stashed_verbose yes
-# __differentiate_tab_colors
 
 source (brew --prefix asdf)/asdf.fish
