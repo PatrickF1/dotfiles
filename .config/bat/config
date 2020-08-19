@@ -1,0 +1,5 @@
+# Show line numbers and, when outputting noncontiguous line ranges, a divider
+--style=numbers,snip
+
+# Use italic text, which is not supported in all terminals
+--italic-text=always
