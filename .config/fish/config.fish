@@ -1,6 +1,6 @@
-# if test -e ~/.iterm2_shell_integration.fish
-#     source ~/.iterm2_shell_integration.fish
-# end
+# suppress the default login message
+function fish_greeting
+end
 
 if test -e ~/.secrets.fish
     source ~/.secrets.fish
