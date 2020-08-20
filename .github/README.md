@@ -18,6 +18,9 @@ git clone https://github.com/patrickf3139/dotfiles ~/Code/dotfiles
 # checkout all the files into our home directory by making it the git working directory
 git --git-dir=Code/dotfiles/.git --work-tree=. reset --hard
 
+# hide untracked files when querying the status of the dotfiles repo
+git --git-dir=Code/dotfiles/.git config --local status.showUntrackedFiles no
+
 # run all the install scripts, which are located in .dotfiles_meta
 cd Code/dotfiles/.dotfiles_meta
 brew bundle
