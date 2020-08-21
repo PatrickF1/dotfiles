@@ -14,11 +14,6 @@
     "files.trimTrailingWhitespace": true,
     "git.allowForcePush": true,
     "git.enableSmartCommit": true,
-    "gitlens.codeLens.enabled": false,
-    "gitlens.currentLine.enabled": false,
-    "gitlens.hovers.currentLine.over": "line",
-    "gitlens.menus": false,
-    "gitlens.statusBar.enabled": false,
     "ruby.lintDebounceTime": 1000,
     "ruby.useLanguageServer": true,
     "telemetry.enableCrashReporter": false,
@@ -61,5 +56,5 @@
     "workbench.colorTheme": "One Dark Pro",
     "workbench.editor.highlightModifiedTabs": true,
     "workbench.iconTheme": "eq-material-theme-icons",
-    "workbench.startupEditor": "none"
+    "workbench.startupEditor": "none",
 }
