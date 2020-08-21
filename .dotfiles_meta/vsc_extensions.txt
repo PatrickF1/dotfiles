@@ -1,8 +1,6 @@
 bmalehorn.vscode-fish
-castwide.solargraph
 equinusocio.vsc-material-theme-icons
 ms-python.python
-rebornix.ruby
 richie5um2.vscode-sort-json
 scala-lang.scala
 streetsidesoftware.code-spell-checker

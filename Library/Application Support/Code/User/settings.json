@@ -14,8 +14,6 @@
     "files.trimTrailingWhitespace": true,
     "git.allowForcePush": true,
     "git.enableSmartCommit": true,
-    "ruby.lintDebounceTime": 1000,
-    "ruby.useLanguageServer": true,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "terminal.integrated.cursorStyle": "line",
