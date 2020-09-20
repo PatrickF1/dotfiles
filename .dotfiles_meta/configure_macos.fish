@@ -107,6 +107,15 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 defaults write com.apple.screencapture disable-shadow -bool true
 
 ###############################################################################
+# Root level configuration                                                    #
+###############################################################################
+echo "The last few configurations will require root access."
+
+# On sleep, copy the contents of memory to disk and turn off memory, saving
+# power but adding an ~8 second delay to waking up
+sudo pmset -a hibernatemode 25
+
+###############################################################################
 # Finish                                                                      #
 ###############################################################################
 
