@@ -106,6 +106,9 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
 
+# Set highlight color to green
+defaults write NSGlobalDomain AppleHighlightColor -string "0.752941 0.964706 0.678431 Green"
+
 ###############################################################################
 # Root level configuration                                                    #
 ###############################################################################
