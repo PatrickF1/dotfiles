@@ -123,7 +123,8 @@ sudo pmset -a hibernatemode 25
 ###############################################################################
 
 # Restart affected apps so changes take effect immediately
-killall Dock
-killall Finder
+for app in Dock Finder cfprefsd SystemUIServer
+    killall $app
+end
 
-echo "Done"
+echo "Done. You may need to restart currently running applications for new settings to kick in."
