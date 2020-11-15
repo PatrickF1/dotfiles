@@ -14,8 +14,8 @@ echo "Installing the latest git-completion script for bash"
 curl --create-dirs --location --output ~/.config/bash/git-completion.bash https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
 
 echo "Installing fisher and fisher plugins"
-curl --create-dirs --location --output ~/.config/fish/functions/fisher.fish https://git.io/fisher
-fish -c fisher
+curl -sL git.io/fisher | source && fisher install jorgebucaran/fisher
+fish -c fisher update
 
 echo "Installing plugins for asdf"
 asdf plugin add python
