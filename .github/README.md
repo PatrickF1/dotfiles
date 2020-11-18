@@ -13,7 +13,7 @@ Unlike most other dotfiles repos that use symlinks or `rsync` to manage your dot
 # clone the repo into the expected place (~/Code/dotfiles)
 cd # start installation steps from home directory
 mkdir -p Code/dotfiles
-git clone https://github.com/patrickf3139/dotfiles ~/Code/dotfiles
+git clone https://github.com/patrickf1/dotfiles ~/Code/dotfiles
 
 # checkout all the files into our home directory by making it the git working directory
 git --git-dir=Code/dotfiles/.git --work-tree=. reset --hard
