@@ -1,0 +1,21 @@
+# Don't print a new line at the start of the prompt
+add_newline = true
+
+# Make the prompt a single line
+[line_break]
+disabled = true
+
+[git_branch]
+symbol = " "
+truncation_length = 25
+
+[python]
+symbol = " "
+disabled = true
+
+[ruby]
+symbol = " "
+
+[battery]
+disabled = true
+
