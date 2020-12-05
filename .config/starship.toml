@@ -1,5 +1,5 @@
 # Don't print a new line at the start of the prompt
-add_newline = true
+add_newline = false
 
 # Make the prompt a single line
 [line_break]
@@ -16,6 +16,12 @@ disabled = true
 [ruby]
 symbol = " "
 
+# disabled modules
 [battery]
 disabled = true
 
+[package]
+disabled = true
+
+[cmd_duration]
+disabled = true
