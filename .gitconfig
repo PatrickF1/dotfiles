@@ -5,6 +5,7 @@
   default = simple
 [pull]
   ff = only
+  rebase = true
 [core]
   editor = nvim
   excludesfile = ~/.gitignore_global
@@ -16,6 +17,7 @@
   aliases = config --get-regexp ^alias\\.
   amend = commit --all --amend --no-edit
   br = branch
+  cm = commit
   co = checkout
   d = diff
   dc = diff --cached
@@ -25,10 +27,12 @@
   rh = reset --hard
   rpath = rev-parse --show-prefix
   st = status --short
-  undo = "reset --hard HEAD^"
+  undo = reset --hard HEAD^
 [diff]
   algorithm = patience
 [fetch]
   prune = true
 [init]
-	defaultBranch = main
+  defaultBranch = main
+[help]
+  autocorrect = 25
