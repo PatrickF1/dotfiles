@@ -29,8 +29,11 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 # Don't show hidden files by default
 defaults write com.apple.finder AppleShowAllFiles -bool false
 
+# Disable animation for opening the Get Info window
+defaults write com.apple.finder DisableAllAnimations -bool true
+
 ###############################################################################
-# Keyboard                                                                    #
+# Keyboard & Mouse                                                            #
 ###############################################################################
 
 # Configure key repeat to be be blazingly fast with a moderate initial delay (ints are in ms)
@@ -42,6 +45,14 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Disable automatically adding a period when double-spacing
 defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+
+# Enable full keyboard access for all controls
+# (e.g. enable Tab in modal dialogs)
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+# Set a moderate tracking and scrolling speed for the mouse
+defaults write "Apple Global Domain" "com.apple.mouse.scaling" 0.65
+defaults write "Apple Global Domain" "com.apple.scrollwheel.scaling" 0.4
 
 ###############################################################################
 # Dock                                                                        #
@@ -73,17 +84,6 @@ defaults write com.apple.dock autohide-time-modifier -float 0.25
 defaults write com.apple.dock tilesize -int 52
 
 ###############################################################################
-# Input Devices                                                               #
-###############################################################################
-
-# set a moderate tracking and scrolling speed for the mouse
-defaults write "Apple Global Domain" "com.apple.mouse.scaling" 0.65
-defaults write "Apple Global Domain" "com.apple.scrollwheel.scaling" 0.4
-
-# prevent Photos from automatically opening when plugging in an iPhone
-defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
-
-###############################################################################
 # Miscellaneous                                                               #
 ###############################################################################
 
@@ -100,6 +100,9 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 # Disable the crash reporter
 defaults write com.apple.CrashReporter DialogType -string "none"
 
+# Prevent Photos from automatically opening when plugging in an iPhone
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
@@ -108,6 +111,13 @@ defaults write com.apple.screencapture disable-shadow -bool true
 
 # Set highlight color to green
 defaults write NSGlobalDomain AppleHighlightColor -string "0.752941 0.964706 0.678431 Green"
+
+# Don’t automatically rearrange Spaces based on most recent use
+defaults write com.apple.dock mru-spaces -bool false
+
+# Sort Activity Monitor results by highest CPU usage first
+defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
+defaults write com.apple.ActivityMonitor SortDirection -int 0
 
 ###############################################################################
 # Root level configuration                                                    #
