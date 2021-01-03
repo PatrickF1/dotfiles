@@ -9,16 +9,16 @@ end
 # add custom executables (right now, that is only git-shalector) to path
 set --prepend PATH "$HOME/bin"
 
-set -xg EDITOR "nvim"
+set -x EDITOR "nvim"
 # set some sensible default options to always pass into invocations of less
-set -xg LESS "--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --window=-4"
+set -x LESS "--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --window=-4"
 # don't store any history of commands executed in less
-set -xg LESSHISTFILE /dev/null
+set -x LESSHISTFILE /dev/null
 # point ripgrep at its config file
-set -xg RIPGREP_CONFIG_PATH ~/.config/rg
+set -x RIPGREP_CONFIG_PATH ~/.config/rg
 
 # visual settings
-set -g fish_color_command B7D847
+set fish_color_command B7D847
 
 source (brew --prefix asdf)/asdf.fish
 starship init fish | source
