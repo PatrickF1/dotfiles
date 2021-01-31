@@ -12,12 +12,15 @@ Public
 
 # Ignore other code
 Code
+workspace
 
 # Ignore other common folders
 .asdf
 .aws
 .cache
 .local
+.node-gyp
+.npm
 .ssh
 .vscode
 
