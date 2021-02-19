@@ -8,7 +8,7 @@
   rebase = true
 [core]
   editor = nvim
-  excludesfile = ~/.gitignore_global
+  excludesfile = ~/.config/git/global_ignore
 [pager]
   branch = false
   diff = diff-so-fancy | less --tabs=4 --RAW-CONTROL-CHARS --pattern '^(Date|added|deleted|modified|renamed): '
