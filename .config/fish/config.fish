@@ -1,6 +1,5 @@
 # suppress the default login message
-function fish_greeting
-end
+set -g fish_greeting
 
 if test -e ~/.secrets.fish
     source ~/.secrets.fish
@@ -9,7 +8,7 @@ end
 # add custom executables (right now, that is only git-shalector) to path
 set --prepend PATH "$HOME/bin"
 
-set -x EDITOR "nvim"
+set -x EDITOR nvim
 # set some sensible default options to always pass into invocations of less
 set -x LESS "--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --window=-4"
 # don't store any history of commands executed in less
@@ -22,4 +21,3 @@ set fish_color_command B7D847
 
 source (brew --prefix asdf)/asdf.fish
 starship init fish | source
-
