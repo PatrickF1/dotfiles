@@ -36,3 +36,5 @@
   defaultBranch = main
 [help]
   autocorrect = 25
+[advice]
+  detachedHead = false
