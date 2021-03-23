@@ -17,6 +17,6 @@ set -x LESSHISTFILE /dev/null
 set -x RIPGREP_CONFIG_PATH ~/.config/rg
 
 # visual settings
-set fish_color_command B7D847
+set -x fish_color_command B7D847
 
 source (brew --prefix asdf)/asdf.fish
