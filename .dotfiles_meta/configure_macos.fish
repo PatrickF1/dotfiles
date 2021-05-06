@@ -87,8 +87,8 @@ defaults write com.apple.dock tilesize -int 52
 # Miscellaneous                                                               #
 ###############################################################################
 
-# Use a very audible but not jarring system alert sound
-defaults write -g com.apple.sound.beep.sound /System/Library/Sounds/Purr.aiff
+# Use a clear, short, but non-jarring system alert sound
+defaults write -g com.apple.sound.beep.sound /System/Library/Sounds/Tink.aiff
 
 # Expand the save and print panels by default
 defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
