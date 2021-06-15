@@ -19,4 +19,6 @@ set -x RIPGREP_CONFIG_PATH ~/.config/rg
 # visual settings
 set -x fish_color_command B7D847
 
+fzf_configure_bindings --directory=\cf --git_log=\cl --git_status=\cs
+
 source (brew --prefix asdf)/asdf.fish
