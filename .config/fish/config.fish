@@ -1,9 +1,7 @@
-# suppress the default login message
-set -g fish_greeting
-
-if test -e ~/.secrets.fish
-    source ~/.secrets.fish
-end
+# not currently using .secrets.fish
+# if test -e ~/.secrets.fish
+#     source ~/.secrets.fish
+# end
 
 # add custom executables (right now, that is only git-shalector) to path
 set --prepend PATH "$HOME/bin"
@@ -16,9 +14,16 @@ set -x LESSHISTFILE /dev/null
 # point ripgrep at its config file
 set -x RIPGREP_CONFIG_PATH ~/.config/rg
 
-# visual settings
-set -x fish_color_command B7D847
+source (brew --prefix asdf)/asdf.fish
+
+###################################
+# Interactive mode configurations #
+###################################
+status is-interactive || exit
 
 fzf_configure_bindings --directory=\cf --git_log=\cl --git_status=\cs
 
-source (brew --prefix asdf)/asdf.fish
+set -x fish_color_command B7D847
+
+# suppress the default login message
+set -g fish_greeting
