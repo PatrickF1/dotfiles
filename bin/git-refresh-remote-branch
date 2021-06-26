@@ -1,0 +1,10 @@
+#!/usr/bin/env fish
+
+# Deletes the current branch on origin and re-pushes it up
+set curr (git branch --show-current)
+if contains $curr main master
+    echo "Not a good idea to delete $curr branch on origin"
+    exit
+end
+git push origin :"$1"
+git push origin $curr
