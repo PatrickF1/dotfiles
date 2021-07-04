@@ -1,2 +1,1 @@
-python 3.8.2
-ruby 2.5.7
+# used by ASDF to specify versions globally
