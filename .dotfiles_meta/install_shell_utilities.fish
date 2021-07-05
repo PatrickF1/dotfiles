@@ -15,7 +15,7 @@ curl --create-dirs --location --output ~/.config/bash/git-completion.bash https:
 
 echo "Installing fisher and fisher plugins"
 curl -sL git.io/fisher | source && fisher install jorgebucaran/fisher
-fish -c fisher update
+fish -c "fisher update"
 
 echo "Installing plugins for asdf"
 asdf plugin add python
