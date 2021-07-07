@@ -11,20 +11,20 @@ osascript -e 'tell application "System Preferences" to quit'
 
 # Use list view in all Finder windows by default
 # Codes for the other view modes: `icnv`, `clmv`, `Flwv`
-defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+defaults write com.apple.finder FXPreferredViewStyle -string Nlsv
 
 # Disable the warning shown when changing a file extension
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
 # Set the Home folder as the default path for new Finder tabs
-defaults write com.apple.finder NewWindowTarget -string "PfLo"
+defaults write com.apple.finder NewWindowTarget -string PfLo
 defaults write com.apple.finder NewWindowTargetPath -string "file://$HOME"
 
 # Show the Finder path bar
 defaults write com.apple.finder ShowPathbar -bool true
 
 # When performing a search, search the current folder by default
-defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+defaults write com.apple.finder FXDefaultSearchScope -string SCcf
 
 # Don't show hidden files by default
 defaults write com.apple.finder AppleShowAllFiles -bool false
@@ -66,7 +66,7 @@ defaults write com.apple.dock showhidden -bool true
 
 # Keep Dock right on the right side to save vertical screen real estate
 # and to prevent it from acccidentally being moved between monitors
-defaults write com.apple.dock 'orientation' -string 'right'
+defaults write com.apple.dock orientation -string right
 
 # Prevent Dock icons from bouncing
 defaults write com.apple.dock no-bouncing -bool true
@@ -98,7 +98,7 @@ defaults write -g PMPrintingExpandedStateForPrint -bool true
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
 # Disable the crash reporter
-defaults write com.apple.CrashReporter DialogType -string "none"
+defaults write com.apple.CrashReporter DialogType -string none
 
 # Prevent Photos from automatically opening when plugging in an iPhone
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
@@ -116,7 +116,7 @@ defaults write NSGlobalDomain AppleHighlightColor -string "0.752941 0.964706 0.6
 defaults write com.apple.dock mru-spaces -bool false
 
 # Sort Activity Monitor results by highest CPU usage first
-defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
+defaults write com.apple.ActivityMonitor SortColumn -string CPUUsage
 defaults write com.apple.ActivityMonitor SortDirection -int 0
 
 ###############################################################################
@@ -133,7 +133,7 @@ sudo pmset -a hibernatemode 25
 ###############################################################################
 
 # Restart affected apps so changes take effect immediately
-for app in Dock Finder cfprefsd SystemUIServer
+for app in Finder Dock cfprefsd SystemUIServer
     killall $app
 end
 
