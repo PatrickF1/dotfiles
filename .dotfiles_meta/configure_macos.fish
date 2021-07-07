@@ -32,6 +32,10 @@ defaults write com.apple.finder AppleShowAllFiles -bool false
 # Disable animation for opening the Get Info window
 defaults write com.apple.finder DisableAllAnimations -bool true
 
+# Set desktop wallpaper to something minimal and slightly soothing
+set wallpaper_path (realpath (status dirname))/rings_wallpaper.png
+osascript -e "tell application \"Finder\" to set desktop picture to \"$wallpaper_path\" as POSIX file"
+
 ###############################################################################
 # Keyboard & Mouse                                                            #
 ###############################################################################
