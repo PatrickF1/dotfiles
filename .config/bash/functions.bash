@@ -5,3 +5,7 @@ function greph () {
     echo "$header"
     grep "$@"
 }
+
+function git-root() {
+    cd "$(git rev-parse --show-toplevel)"
+}
