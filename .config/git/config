@@ -35,6 +35,6 @@
 [init]
   defaultBranch = main
 [help]
-  autocorrect = 25
+  autocorrect = 20
 [advice]
   detachedHead = false
