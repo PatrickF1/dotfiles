@@ -1,6 +1,8 @@
 bmalehorn.vscode-fish
 equinusocio.vsc-material-theme-icons
+esbenp.prettier-vscode
 ms-python.python
+redhat.vscode-yaml
 richie5um2.vscode-sort-json
 scala-lang.scala
 streetsidesoftware.code-spell-checker
