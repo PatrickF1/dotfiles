@@ -29,8 +29,9 @@ set -x fish_color_command B7D847
 set -g fish_greeting
 
 # e: open text files in terminal
+# i: show current file info
 # u: use selection, don't prompt to choose between selection and hovered entry
 # d: show file details
 # Q: disable confirmation on quit with multiple contexts active
-set -x NNN_OPTS eudQ
+set -x NNN_OPTS eiudQ
 set -x NNN_PLUG 'c:fzcd'
