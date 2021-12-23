@@ -34,8 +34,8 @@ set -g fish_greeting
 # H: show hidden files
 # U: show file's owner and group in status bar
 # Q: disable confirmation on quit with multiple contexts active
-# - skips directory refresh, ! executes commands, * skips user confirmation
 set -x NNN_OPTS eiuHUQ
 set -x NNN_FIFO /tmp/nnn.fifo # needed for preview-tui plugin to function
+# - skips directory refresh, ! executes commands, * skips user confirmation
 set -x NNN_PLUG (string join ';' c:fzcd z:autojump p:-preview-tui 's:-!|git status' 'd:-!git diff*')
-set -x NNN_BMS (string join ';' .:~/Code/dotfiles f:~/Code/fzf.fish d:~/Downloads k:~/Desktop x:~)
+set -x NNN_BMS (string join ';' .:~/Code/dotfiles f:~/Code/fzf.fish d:~/Downloads k:~/Desktop x:~/Dropbox)
