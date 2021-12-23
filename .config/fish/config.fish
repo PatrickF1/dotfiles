@@ -27,3 +27,5 @@ set -x fish_color_command B7D847
 
 # suppress the default login message
 set -g fish_greeting
+
+set -x NNN_PLUG 'c:fzcd'
