@@ -34,5 +34,5 @@ set -g fish_greeting
 # U: show file's owner and group in status bar
 # Q: disable confirmation on quit with multiple contexts active
 set -x NNN_OPTS eiuUQ
-set -x NNN_PLUG 'c:fzcd;z:autojump;s:suedit'
+set -x NNN_PLUG 'c:fzcd;z:autojump;s:suedit;d:diffs'
 set -x NNN_BMS 'd:~/Code/dotfiles;f:~/Code/fzf.fish;n:~/Downloads;k:~/Desktop'
