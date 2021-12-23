@@ -38,4 +38,4 @@ set -g fish_greeting
 set -x NNN_OPTS eiuHUQ
 set -x NNN_FIFO /tmp/nnn.fifo # needed for preview-tui plugin to function
 set -x NNN_PLUG (string join ';' c:fzcd z:autojump p:-preview-tui 's:-!|git status' 'd:-!git diff*')
-set -x NNN_BMS (string join ';' d:~/Code/dotfiles f:~/Code/fzf.fish n:~/Downloads k:~/Desktop)
+set -x NNN_BMS (string join ';' .:~/Code/dotfiles f:~/Code/fzf.fish d:~/Downloads k:~/Desktop x:~)
