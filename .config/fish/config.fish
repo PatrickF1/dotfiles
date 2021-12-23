@@ -35,3 +35,4 @@ set -g fish_greeting
 # Q: disable confirmation on quit with multiple contexts active
 set -x NNN_OPTS eiudQ
 set -x NNN_PLUG 'c:fzcd;z:autojump'
+set -x NNN_BMS 'd:~/Code/dotfiles;f:~/Code/fzf.fish;n:~/Downloads;k:~/Desktop'
