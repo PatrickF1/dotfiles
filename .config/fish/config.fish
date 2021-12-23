@@ -34,6 +34,7 @@ set -g fish_greeting
 # H: show hidden files
 # U: show file's owner and group in status bar
 # Q: disable confirmation on quit with multiple contexts active
+# - skips directory refresh after running plugin
 set -x NNN_OPTS eiuHUQ
-set -x NNN_PLUG 'c:fzcd;z:autojump;s:suedit;d:diffs'
+set -x NNN_PLUG 'c:fzcd;z:autojump;s:-suedit;d:-diffs'
 set -x NNN_BMS 'd:~/Code/dotfiles;f:~/Code/fzf.fish;n:~/Downloads;k:~/Desktop'
