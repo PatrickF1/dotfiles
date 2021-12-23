@@ -31,8 +31,8 @@ set -g fish_greeting
 # e: open text files in terminal
 # i: show current file info
 # u: use selection, don't prompt to choose between selection and hovered entry
-# d: show file details
+# U: show file's owner and group in status bar
 # Q: disable confirmation on quit with multiple contexts active
-set -x NNN_OPTS eiudQ
-set -x NNN_PLUG 'c:fzcd;z:autojump'
+set -x NNN_OPTS eiuUQ
+set -x NNN_PLUG 'c:fzcd;z:autojump;s:suedit'
 set -x NNN_BMS 'd:~/Code/dotfiles;f:~/Code/fzf.fish;n:~/Downloads;k:~/Desktop'

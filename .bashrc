@@ -18,8 +18,8 @@ shopt -s histappend # append to bash history instead of overwriting
 export LESS="--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --window=-4"
 export LESSHISTFILE='/dev/null'
 
-export NNN_OPTS='eiudQ'
-export NNN_PLUG='c:fzcd;z:autojump'
+export NNN_OPTS='eiuUQ'
+export NNN_PLUG='c:fzcd;z:autojump;s:suedit'
 
 # name iTerm tabs after current directory (https://gist.github.com/phette23/5270658)
 if [ $ITERM_SESSION_ID ]; then
