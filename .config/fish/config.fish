@@ -36,5 +36,6 @@ set -g fish_greeting
 # Q: disable confirmation on quit with multiple contexts active
 # - skips directory refresh, ! executes commands, * skips user confirmation
 set -x NNN_OPTS eiuHUQ
-set -x NNN_PLUG 'c:fzcd;z:autojump;s:-!|git status;d:-!git diff*'
+set -x NNN_FIFO /tmp/nnn.fifo # needed for preview-tui plugin to function
+set -x NNN_PLUG 'c:fzcd;z:autojump;s:-!|git status;d:-!git diff*;p:preview-tui'
 set -x NNN_BMS 'd:~/Code/dotfiles;f:~/Code/fzf.fish;n:~/Downloads;k:~/Desktop'
