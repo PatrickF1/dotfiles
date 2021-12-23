@@ -34,4 +34,4 @@ set -g fish_greeting
 # d: show file details
 # Q: disable confirmation on quit with multiple contexts active
 set -x NNN_OPTS eiudQ
-set -x NNN_PLUG 'c:fzcd'
+set -x NNN_PLUG 'c:fzcd;z:autojump'
