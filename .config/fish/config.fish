@@ -28,4 +28,9 @@ set -x fish_color_command B7D847
 # suppress the default login message
 set -g fish_greeting
 
+# e: open text files in terminal
+# u: use selection, don't prompt to choose between selection and hovered entry
+# d: show file details
+# Q: disable confirmation on quit with multiple contexts active
+set -x NNN_OPTS eudQ
 set -x NNN_PLUG 'c:fzcd'
