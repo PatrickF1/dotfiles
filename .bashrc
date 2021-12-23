@@ -19,7 +19,7 @@ export LESS="--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --window=-
 export LESSHISTFILE='/dev/null'
 
 export NNN_OPTS='eiuHUQ'
-export NNN_PLUG='c:fzcd;z:autojump;s:-suedit;d:-diffs'
+export NNN_PLUG='c:fzcd;z:autojump;s:-!|git status;d:-!git diff*'
 
 # name iTerm tabs after current directory (https://gist.github.com/phette23/5270658)
 if [ $ITERM_SESSION_ID ]; then
