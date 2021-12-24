@@ -20,3 +20,6 @@ fish -c "fisher update"
 echo "Installing plugins for asdf"
 asdf plugin add python
 asdf plugin add ruby
+
+echo "Installing plugins for nnn"
+curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
