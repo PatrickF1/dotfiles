@@ -1,5 +1,5 @@
 # source: https://github.com/jarun/nnn/blob/master/misc/quitcd/quitcd.fish
-function n --wraps nnn --description 'support nnn quit and change directory'
+function n --wraps nnn --description 'support nnn cd on quit'
     # Block nesting of nnn in subshells
     if test -n "$NNNLVL"
         if [ (expr $NNNLVL + 0) -ge 1 ]
@@ -13,17 +13,7 @@ function n --wraps nnn --description 'support nnn quit and change directory'
     #    set NNN_TMPFILE "$XDG_CONFIG_HOME/nnn/.lastd"
     #    (or, to a custom path: set NNN_TMPFILE "/tmp/.lastd")
     # or, export NNN_TMPFILE after nnn invocation
-    if test -n "$XDG_CONFIG_HOME"
-        set -x NNN_TMPFILE "$XDG_CONFIG_HOME/nnn/.lastd"
-    else
-        set -x NNN_TMPFILE "$HOME/.config/nnn/.lastd"
-    end
-
-    # Unmask ^Q (, ^V etc.) (if required, see `stty -a`) to Quit nnn
-    # stty start undef
-    # stty stop undef
-    # stty lwrap undef
-    # stty lnext undef
+    set -x NNN_TMPFILE "$HOME/.config/nnn/.lastd"
 
     nnn $argv
 
