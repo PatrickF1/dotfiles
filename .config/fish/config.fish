@@ -39,5 +39,5 @@ set -g fish_greeting
 set -x NNN_OPTS nAeiuHUQ
 set -x NNN_FIFO /tmp/nnn.fifo # needed for preview-tui plugin to function
 # - skips directory refresh, ! executes commands, * skips user confirmation
-set -x NNN_PLUG (string join ';' c:fzcd z:autojumpp:-preview-tui r:gitroot 's:-!|git status' 'd:-!git diff*' 'b:-!echo "$PWD/$nnn" | pbcopy*')
+set -x NNN_PLUG (string join ';' c:fzcd z:autojumpp:-preview-tui b:-.cbcp r:gitroot 's:-!|git status' 'd:-!git diff*' )
 set -x NNN_BMS (string join ';' .:~/Code/dotfiles f:~/Code/fzf.fish d:~/Downloads k:~/Desktop x:~/Dropbox)
