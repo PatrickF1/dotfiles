@@ -33,6 +33,5 @@ workspace
 .scala_history
 .viminfo
 
-# Ignore where hub and gh store GitHub access tokens
-.config/hub
+# Ignore where gh stores GitHub access token
 .config/gh/hosts.yml
