@@ -28,15 +28,14 @@ set -x fish_color_command B7D847
 # suppress the default login message
 set -g fish_greeting
 
-# n: start in type-to-nav mode, where typing automatically filters directories
-# A: disable automatically jumping into directories in type-to-nav mode
+# A: disable automatically jumping into directories when in type-to-nav mode
 # e: open text files in terminal
 # i: show current file info
 # u: use selection, don't prompt to choose between selection and hovered entry
 # H: show hidden files
 # U: show file's owner and group in status bar
 # Q: disable confirmation on quit with multiple contexts active
-set -x NNN_OPTS nAeiuHUQ
+set -x NNN_OPTS AeiuHUQ
 set -x NNN_FIFO /tmp/nnn.fifo # needed for preview-tui plugin to function
 # - skips directory refresh, ! executes commands, * skips user confirmation
 set -x NNN_PLUG (string join ';' c:fzcd z:autojumpp:-preview-tui b:-.cbcp r:gitroot 's:-!|git status' 'd:-!git diff*' )
