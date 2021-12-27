@@ -23,11 +23,13 @@
   dc = diff --cached
   fp = push --force
   lg = log --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(cyan)%aD%C(reset) %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)%n          %C(normal)%s%C(reset)   %C(dim normal)[%an]%C(reset)'
+  pl = pull
+  ps = push
   rb = push --set-upstream origin HEAD
   rh = reset --hard
   rpath = rev-parse --show-prefix
   st = status --short
-  undo = reset --hard HEAD^
+  undo = reset HEAD^
 [diff]
   algorithm = patience
 [fetch]
@@ -35,6 +37,6 @@
 [init]
   defaultBranch = main
 [help]
-  autocorrect = 20
+  autocorrect = 8
 [advice]
   detachedHead = false
