@@ -1,1 +1,1 @@
-/Users/patrick.fong/Dropbox/Settings/.secrets.bash
+/Users/pfong/Dropbox/Settings/.secrets.bash

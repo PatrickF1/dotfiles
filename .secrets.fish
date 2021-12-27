@@ -1,1 +1,1 @@
-/Users/patrick.fong/Dropbox/Settings/.secrets.fish
+/Users/pfong/Dropbox/Settings/.secrets.fish
