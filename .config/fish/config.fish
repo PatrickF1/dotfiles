@@ -27,7 +27,7 @@ set -g fish_greeting
 
 fzf_configure_bindings --directory=\cf --git_log=\cl --git_status=\cs
 
-set --export FZF_DEFAULT_OPTS --cycle --layout=reverse --border --height=90% --preview-window=wrap --marker="*"
+set -x FZF_DEFAULT_OPTS --cycle --layout=reverse --border --height=90% --preview-window=wrap --marker="*"
 
 # A: disable automatically jumping into directories when in type-to-nav mode
 # e: open text files in terminal
