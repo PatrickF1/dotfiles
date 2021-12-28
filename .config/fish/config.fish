@@ -40,4 +40,6 @@ set -x NNN_FIFO /tmp/nnn.fifo # needed for preview-tui plugin to function
 set -x NNN_PLUG (string join ';' c:fzcd z:autojump p:-preview-tui b:-.cbcp r:gitroot 'v:-!code $nnn*' 's:-!|git status' 'd:-!git diff*' )
 set -x NNN_BMS (string join ';' .:~/Code/dotfiles f:~/Code/fzf.fish d:~/Downloads k:~/Desktop x:~/Dropbox c:~/.config)
 
+# zoxide's env variables must be set before it is initalized
+set -x _ZO_DATA_DIR ~/Library/ApplicationSupport/zoxide/fish
 zoxide init fish | source
