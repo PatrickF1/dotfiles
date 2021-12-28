@@ -21,12 +21,13 @@ source (brew --prefix asdf)/asdf.fish
 ###################################
 status is-interactive || exit
 
-fzf_configure_bindings --directory=\cf --git_log=\cl --git_status=\cs
-
 set -x fish_color_command B7D847
-
 # suppress the default login message
 set -g fish_greeting
+
+fzf_configure_bindings --directory=\cf --git_log=\cl --git_status=\cs
+
+set -x FZF_DEFAULT_OPTS --cycle --layout=reverse --border --height=90% --preview-window=wrap --marker="*"
 
 # A: disable automatically jumping into directories when in type-to-nav mode
 # e: open text files in terminal
@@ -40,3 +41,7 @@ set -x NNN_FIFO /tmp/nnn.fifo # needed for preview-tui plugin to function
 # - skips directory refresh, ! executes commands, * skips user confirmation
 set -x NNN_PLUG (string join ';' c:fzcd z:autojump p:-preview-tui b:-.cbcp r:gitroot 'v:-!code $nnn*' 's:-!|git status' 'd:-!git diff*' )
 set -x NNN_BMS (string join ';' .:~/Code/dotfiles f:~/Code/fzf.fish d:~/Downloads k:~/Desktop x:~/Dropbox c:~/.config)
+
+# zoxide's env variables must be set before it is initalized
+set -x _ZO_DATA_DIR ~/Library/ApplicationSupport/zoxide/fish
+zoxide init fish | source

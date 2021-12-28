@@ -18,6 +18,8 @@ shopt -s histappend # append to bash history instead of overwriting
 export LESS="--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --window=-4"
 export LESSHISTFILE='/dev/null'
 
+export FZF_DEFAULT_OPTS="--cycle --layout=reverse --border --height=90% --preview-window=wrap --marker='*'"
+
 # name iTerm tabs after current directory (https://gist.github.com/phette23/5270658)
 if [ $ITERM_SESSION_ID ]; then
   unset PROMPT_COMMAND
@@ -29,3 +31,5 @@ test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shel
 . $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
 
 export NNN_OPTS=AeiuHUQ
+export _ZO_DATA_DIR=~/Library/ApplicationSupport/zoxide/bash
+eval "$(zoxide init bash)"
