@@ -51,6 +51,8 @@ Unfortunately, VSCode doesn't store the list of installed extensions in a file. 
 code --list-extensions > .dotfiles_meta/vsc_extensions.txt
 ```
 
+`configure_apps.fish` will install the extensions listed in the file.
+
 ## VSCode settings
 
 VSCode doesn't support automatic syncing of the `settings.json` file that is friendly for dotfiles. As a result, we have to manually keep it in sync. After updating VSCode settings

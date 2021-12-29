@@ -1,2 +1,2 @@
-# make all bash shells invoked have consistent settings by always sourcing same configuration file
+# make all bash shells have consistent settings by always sourcing same configuration file
 source $HOME/.bashrc

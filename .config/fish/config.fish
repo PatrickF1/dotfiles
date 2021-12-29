@@ -3,7 +3,7 @@
 #     source ~/.secrets.fish
 # end
 
-# add custom executables (right now, that is only git-shalector) to path
+# add custom executables (e.g. git-shalector) to path
 set --prepend PATH "$HOME/bin"
 
 set -x EDITOR nvim
