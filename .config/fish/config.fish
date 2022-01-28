@@ -12,7 +12,7 @@ set -x LESS "--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --window=-
 # don't store any history of commands executed in less
 set -x LESSHISTFILE /dev/null
 # point ripgrep at its config file
-set -x RIPGREP_CONFIG_PATH ~/.config/rg
+set -x RIPGREP_CONFIG_PATH ~/.config/ripgrep
 
 source (brew --prefix asdf)/asdf.fish
 
