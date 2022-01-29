@@ -25,7 +25,7 @@ set -x fish_color_command B7D847
 # suppress the default login message
 set -g fish_greeting
 
-fzf_configure_bindings --directory=\cf --git_log=\cl --git_status=\cs
+fzf_configure_bindings --directory=\cf --git_log=\cl --git_status=\cs --processes=\cp
 
 set -x FZF_DEFAULT_OPTS --cycle --layout=reverse --border --height=90% --preview-window=wrap --marker="*"
 
