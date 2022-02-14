@@ -29,6 +29,7 @@ fzf_configure_bindings --directory=\cf --git_log=\cl --git_status=\cs --processe
 
 set -x FZF_DEFAULT_OPTS --cycle --layout=reverse --border --height=90% --preview-window=wrap --marker="*"
 
+# n: start in type-to-nav mode
 # A: disable automatically jumping into directories when in type-to-nav mode
 # e: open text files in terminal
 # i: show current file info
@@ -36,7 +37,7 @@ set -x FZF_DEFAULT_OPTS --cycle --layout=reverse --border --height=90% --preview
 # H: show hidden files
 # U: show file's owner and group in status bar
 # Q: disable confirmation on quit with multiple contexts active
-set -x NNN_OPTS AeiuHUQ
+set -x NNN_OPTS nAeiuHUQ
 set -x NNN_FIFO /tmp/nnn.fifo # needed for preview-tui plugin to function
 # - skips directory refresh, ! executes commands, * skips user confirmation
 set -x NNN_PLUG (string join ';' c:fzcd z:autojump p:-preview-tui b:-.cbcp r:gitroot 'v:-!code $nnn*' 's:-!|git status' 'd:-!git diff*' )
