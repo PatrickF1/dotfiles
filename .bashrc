@@ -27,8 +27,8 @@ if [ $ITERM_SESSION_ID ]; then
 fi
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
-. $(brew --prefix asdf)/asdf.sh
-. $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
+# . $(brew --prefix asdf)/asdf.sh
+# . $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
 
 export NNN_OPTS=nAeiuHUQ
 export _ZO_DATA_DIR=~/Library/ApplicationSupport/zoxide/bash

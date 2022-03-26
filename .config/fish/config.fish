@@ -14,7 +14,7 @@ set -x LESSHISTFILE /dev/null
 # point ripgrep at its config file
 set -x RIPGREP_CONFIG_PATH ~/.config/ripgrep
 
-source (brew --prefix asdf)/asdf.fish
+# source (brew --prefix asdf)/asdf.fish
 
 ###################################
 # Interactive mode configurations #
@@ -40,7 +40,7 @@ set -x FZF_DEFAULT_OPTS --cycle --layout=reverse --border --height=90% --preview
 set -x NNN_OPTS nAeiuHUQ
 set -x NNN_FIFO /tmp/nnn.fifo # needed for preview-tui plugin to function
 # - skips directory refresh, ! executes commands, * skips user confirmation
-set -x NNN_PLUG (string join ';' c:fzcd z:autojump p:-preview-tui b:-.cbcp r:gitroot 'v:-!code $nnn*' 's:-!|git status' 'd:-!git diff*' )
+set -x NNN_PLUG (string join ';' c:fzcd z:autojump b:-.cbcp r:gitroot 'v:-!code $nnn*' 's:-!|git status' 'd:-!git diff*' )
 set -x NNN_BMS (string join ';' .:~/Code/dotfiles f:~/Code/fzf.fish d:~/Downloads k:~/Desktop x:~/Dropbox c:~/.config)
 
 # zoxide's env variables must be set before it is initalized
