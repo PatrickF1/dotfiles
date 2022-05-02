@@ -1,0 +1,17 @@
+#!/usr/bin/env fish
+
+# Copy absolute paths of selection to system clipboard as newline-separated entries.
+# If nothing selected, then copy the absolute path of the hovered file.
+# Inspired by https://github.com/jarun/nnn/blob/master/plugins/.cbcp
+
+string length -q $NNN_SEL; and set selection $NNN_SEL; or set selection ~/.config/nnn/.selection
+
+# Use the selection file if it exists is only non-empty
+# (if you select something then unselect, the selection file exists but is empty)
+if test -s "$selection"
+    tr '\0' '\n' <"$selection" | pbcopy
+else
+    # omit the newline when echoing so the single path can be readily pasted into a command without hassle
+    # get the realpath without following symlinks to emulate nnn's behavior
+    echo -n (realpath --no-symlinks $nnn) | pbcopy
+end
