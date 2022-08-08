@@ -32,6 +32,7 @@
   undo = reset HEAD^
 [diff]
   algorithm = patience
+  colorMoved = dimmed-zebra
 [fetch]
   prune = true
 [init]
