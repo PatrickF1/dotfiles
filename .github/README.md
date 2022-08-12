@@ -1,6 +1,6 @@
 # dotfiles
 
-A collection of my configuration and bootstrap files for `bash`, `fish`, `git`, `iTerm2`, `Visual Studio Code`, and even `brew`, `macOS settings`, and `Mac OS applications`. Includes scripts to automate installation. These settings are for me, and I doubt they will work well for anyone else's workflow and preferences. That said, I did my best to make my dotfiles as lightweight and sensible as possible so they may be worth forking as a starting point for your dotfiles.
+My configuration and bootstrap files for `bash`, `fish`, `git`, `iTerm2`, `Visual Studio Code`, and even `brew`, `macOS settings`, and the settings for some applications. Includes scripts to automate installation. These are my bespoke dotfiles and workflow and therefore are likely ill-suited for everyone else. That said, I did my best to make my dotfiles as lightweight and sensible as possible so they may be worth forking as a starting point for your dotfiles.
 
 ## Assumptions
 
@@ -22,7 +22,7 @@ git clone https://github.com/patrickf1/dotfiles ~/Code/dotfiles
 # checkout all the files into our home directory by making it the git working directory
 git --git-dir=Code/dotfiles/.git --work-tree=. reset --hard
 
-# hide untracked files when querying the status of the dotfiles repo
+# hide untracked files so the output of git status is not overwhelming
 git --git-dir=Code/dotfiles/.git config --local status.showUntrackedFiles no
 
 # run all the install scripts, which are located in .dotfiles_meta
@@ -35,11 +35,13 @@ fish configure_macos.fish
 
 ## Workflow for updating dotfiles
 
-One advantage of this setup is that we effectively have two copies of the dotfiles, one that is active in our home directory, and one that contains only the tracked files in `~/Code/dotfiles` and is safe and easy to modify. The recommended way to modify our dotfiles is open up `~/Code/dotfiles` in our editor and make the changes there. Once our changes have been finalized and committed into git, navigate back to the home directory and do `git --git-dir=Code/dotfiles/.git --work-tree=. reset --hard` to checkout our changes and make them active.
+One feature of this setup is that we keep two copies of the dotfiles, one rooted in `$HOME`, and one in `~/Code/dotfiles` (this is not technically a bare git repo). The former copy is our live version, actively being read and used by the system. However, we do not usually want to directly modify the live dotfiles. One mistake can break your workflow, making it difficult to rectify that mistake. Furthermore, opening up `$HOME` in our editor is not ideal because we will load way too many irrelevant files we don't want to edit. That's where the latter copy comes into play. The dotfiles stored as an inert git repository are safe to modify and easy to open up in our editor.
 
-To make git operations on the home directory dotfiles easier, we can use `dot`, an [autoloaded fish function](https://fishshell.com/docs/current/tutorial.html#autoloading-functions) that specifies the `git-dir` and `work-tree` options for us. For example, instead of the above command for checking out changes, we can simply execute `dot reset --hard`.
+For most modifications to the dotfiles, open up `~/Code/dotfiles` in our editor and make the changes there. Once our changes have been finalized and committed into git, navigate back to the home directory and do `git --git-dir=Code/dotfiles/.git --work-tree=. reset --hard` to checkout our changes and make them active. To make git operations on the home directory dotfiles easier, we can use `dot`, an [autoloaded fish function](https://fishshell.com/docs/current/tutorial.html#autoloading-functions) that specifies the `git-dir` and `work-tree` options for us. For example, instead of the above verbose command, we can execute `dot reset --hard`.
 
 Be very careful about not running `dot add -A` on the home directory. To avoid accidentally committed sensitive files and folders, be sure to add them to `.gitignore`. Many common folders that don't make sense to track are already ignored.
+
+When adding new files, remember that untracked files are not shown by git status.
 
 # Specific instructions for updating
 
