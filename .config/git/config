@@ -3,6 +3,7 @@
   name = Patrick Fong
 [push]
   default = simple
+  autoSetupRemote = true
 [pull]
   ff = only
   rebase = true
@@ -25,7 +26,6 @@
   lg = log --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(cyan)%aD%C(reset) %C(green)(%ar)%C(reset)%C(yellow)%d%C(reset)%n          %C(normal)%s%C(reset)   %C(dim normal)[%an]%C(reset)'
   pl = pull
   ps = push
-  rb = push --set-upstream origin HEAD
   rh = reset --hard
   rpath = rev-parse --show-prefix
   st = status --short
