@@ -42,6 +42,8 @@ set -x NNN_FIFO /tmp/nnn.fifo # needed for preview-tui plugin to function
 # - skips directory refresh, ! executes commands, * skips user confirmation
 set -x NNN_PLUG (string join ';' c:fzcd z:autojump b:-clipboard r:gitroot 'v:-!code $nnn*' 's:-!|git status' 'd:-!git diff*' )
 set -x NNN_BMS (string join ';' .:~/Code/dotfiles f:~/Code/fzf.fish d:~/Downloads k:~/Desktop x:~/Dropbox c:~/.config)
+bind --mode default \cn _nnn_select_paths
+bind --mode insert \cn _nnn_select_paths
 
 # zoxide's env variables must be set before it is initalized
 set -x _ZO_DATA_DIR ~/Library/ApplicationSupport/zoxide/fish
