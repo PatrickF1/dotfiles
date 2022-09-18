@@ -20,11 +20,6 @@ export LESSHISTFILE='/dev/null'
 
 export FZF_DEFAULT_OPTS="--cycle --layout=reverse --border --height=90% --preview-window=wrap --marker='*'"
 
-# name iTerm tabs after current directory (https://gist.github.com/phette23/5270658)
-if [ $ITERM_SESSION_ID ]; then
-  unset PROMPT_COMMAND
-  export PROMPT_COMMAND='echo -ne "\033];${PWD##*/}\007"; ':"$PROMPT_COMMAND";
-fi
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 # . $(brew --prefix asdf)/asdf.sh

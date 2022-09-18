@@ -1,8 +1,3 @@
-# not currently using .secrets.fish
-# if test -e ~/.secrets.fish
-#     source ~/.secrets.fish
-# end
-
 # add custom executables (e.g. git-shalector) to path
 set --prepend PATH "$HOME/bin"
 
