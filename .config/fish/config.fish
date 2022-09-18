@@ -48,3 +48,6 @@ bind --mode insert \cn _nnn_select_paths
 # zoxide's env variables must be set before it is initalized
 set -x _ZO_DATA_DIR ~/Library/ApplicationSupport/zoxide/fish
 zoxide init fish | source
+
+bind --mode default \cb _cd_git_root
+bind --mode insert \cb _cd_git_root
