@@ -27,7 +27,8 @@
   pl = pull
   ps = push
   rh = reset --hard
-  rpath = rev-parse --show-prefix
+  rb = rebase
+  rpath = rev-parse --show-prefix # get path relative to root
   st = status --short
   undo = reset HEAD^
 [diff]
