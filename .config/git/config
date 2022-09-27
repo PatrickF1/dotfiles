@@ -2,7 +2,7 @@
   email = patrickf3139@gmail.com
   name = Patrick Fong
 [push]
-  default = simple
+  default = current
   autoSetupRemote = true
 [pull]
   ff = only
