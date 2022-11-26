@@ -107,9 +107,6 @@ defaults write com.apple.CrashReporter DialogType -string none
 # Prevent Photos from automatically opening when plugging in an iPhone
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
-# Disable the “Are you sure you want to open this application?” dialog
-defaults write com.apple.LaunchServices LSQuarantine -bool false
-
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
 
