@@ -22,9 +22,6 @@ export FZF_DEFAULT_OPTS="--cycle --layout=reverse --border --height=90% --previe
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
-# . $(brew --prefix asdf)/asdf.sh
-# . $(brew --prefix asdf)/etc/bash_completion.d/asdf.bash
-
 export NNN_OPTS=nAeiuHUQ
 export _ZO_DATA_DIR=~/Library/ApplicationSupport/zoxide/bash
 eval "$(zoxide init bash)"
