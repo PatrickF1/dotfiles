@@ -47,8 +47,10 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 25
 # Disable press-and-hold for keys in favor of key repeat
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
-# Disable automatically adding a period when double-spacing
+# Disable automatic substitutions that get in the way when typing code
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)
@@ -128,6 +130,12 @@ echo "The last few configurations will require root access."
 # On sleep, copy the contents of memory to disk and turn off memory, saving
 # power but adding an ~8 second delay to waking up
 sudo pmset -a hibernatemode 25
+
+# System Settings > General > About > Name
+sudo scutil --set ComputerName "Patrick's MacBook"
+
+# System Settings > Sharing > Local hostname
+sudo scutil --set LocalHostName Patrick-MacBook
 
 ###############################################################################
 # Finish                                                                      #
