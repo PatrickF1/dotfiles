@@ -127,9 +127,11 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 ###############################################################################
 echo "The last few configurations will require root access."
 
-# On sleep, copy the contents of memory to disk and turn off memory, saving
-# power but adding an ~8 second delay to waking up
-sudo pmset -a hibernatemode 25
+# Don't back up memory during sleep
+sudo pmset -a hibernatemode 0
+
+# Don't wake for network access
+sudo pmset -a womp 0
 
 # System Settings > General > About > Name
 sudo scutil --set ComputerName "Patrick's MacBook"
