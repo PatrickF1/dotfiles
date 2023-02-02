@@ -20,8 +20,6 @@ set -x LESSHISTFILE /dev/null
 # point ripgrep at its config file
 set -x RIPGREP_CONFIG_PATH ~/.config/ripgrep
 
-source (brew --prefix asdf)/libexec/asdf.fish
-
 ###################################
 # Interactive mode configurations #
 ###################################

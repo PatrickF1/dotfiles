@@ -14,7 +14,6 @@ Public
 Code
 
 # Ignore other common folders
-.asdf
 .aws
 .cache
 .local
