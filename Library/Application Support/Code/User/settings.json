@@ -24,6 +24,7 @@
   "terminal.integrated.macOptionIsMeta": true,
   "terminal.integrated.scrollback": 10000,
   "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+  "vim.sneak": true,
   "vim.useCtrlKeys": false,
   "window.zoomLevel": 0.7,
   "workbench.colorCustomizations": {
