@@ -8,3 +8,5 @@ aliases:
     co: pr checkout
     open: repo view --web
     pv: pr view --web
+    pc: pr create --web
+
