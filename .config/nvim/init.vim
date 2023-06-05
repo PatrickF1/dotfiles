@@ -10,23 +10,6 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'justinmk/vim-sneak'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
-func! WordProcessor()
-  " movement changes
-  map j gj
-  map k gk
-  map 0 g0
-  map $ g$
-  " formatting text
-  setlocal formatoptions=1
-  setlocal noexpandtab
-  setlocal wrap
-  setlocal linebreak
-  " spelling and thesaurus
-  " setlocal spell spelllang=en_us
-  " set thesaurus+=/Users/patrick.fong/.local/share/nvim/moby-thesaurus.txt
-  " complete+=s makes autocompletion search the thesaurus
-  " set complete+=s
-endfu
-com! WP call WordProcessor()
