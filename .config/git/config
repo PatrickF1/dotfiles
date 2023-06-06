@@ -8,8 +8,11 @@
   ff = only
   rebase = true
 [core]
+  pager = delta
   editor = nvim
   excludesfile = ~/.config/git/global_ignore
+[interactive]
+  diffFilter = delta --color-only
 [pager]
   branch = false
 [alias]
@@ -31,7 +34,9 @@
   undo = reset HEAD^
 [diff]
   algorithm = patience
-  colorMoved = dimmed-zebra
+  colorMoved = default
+[merge]
+  conflictstyle = diff3
 [fetch]
   prune = true
 [init]
@@ -40,3 +45,6 @@
   autocorrect = 8
 [advice]
   detachedHead = false
+[delta]
+  navigate = true    # enables using n and N to move between diff sections
+  light = false      # set to true to use colors appropriate for a light terminal background
