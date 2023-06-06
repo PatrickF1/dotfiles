@@ -12,8 +12,6 @@
   excludesfile = ~/.config/git/global_ignore
 [pager]
   branch = false
-  diff = diff-so-fancy | less --tabs=4 --RAW-CONTROL-CHARS --pattern '^(Date|added|deleted|modified|renamed): '
-  show = diff-so-fancy | less --tabs=4 --RAW-CONTROL-CHARS --pattern '^(Date|added|deleted|modified|renamed): '
 [alias]
   aliases = config --get-regexp ^alias\\.
   amend = commit --all --amend --no-edit
