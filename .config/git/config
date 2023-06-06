@@ -34,7 +34,7 @@
   undo = reset HEAD^
 [diff]
   algorithm = patience
-  colorMoved = default
+  colorMoved = zebra
 [merge]
   conflictstyle = diff3
 [fetch]
