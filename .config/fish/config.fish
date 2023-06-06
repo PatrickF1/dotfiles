@@ -49,9 +49,7 @@ set -x NNN_BMS (string join ';' .:~/Code/dotfiles f:~/Code/fzf.fish d:~/Download
 bind --mode default \cn _nnn_select_paths
 bind --mode insert \cn _nnn_select_paths
 
-# zoxide's env variables must be set before it is initalized
-set -x _ZO_DATA_DIR ~/Library/ApplicationSupport/zoxide/fish
-zoxide init fish | source
-
 bind --mode default \cb _cd_git_root
 bind --mode insert \cb _cd_git_root
+
+zoxide init fish | source
