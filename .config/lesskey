@@ -4,8 +4,6 @@ t toggle-option --ignore-case\n
 
 #env
 # set some sensible default options to always pass into invocations of less
-LESS += --quit-on-intr
-LESS += "--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --window=-4"
+LESS = --ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --window=-4 --quit-on-intr
 # don't store any history of commands executed in less
-LESSHISTFILE += /dev/null
-
+LESSHISTFILE = /dev/null
