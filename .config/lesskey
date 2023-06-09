@@ -1,0 +1,7 @@
+# less automatically loads ~/.config/lesskey to configure itself, no need to set environment variable
+#command
+t toggle-option --ignore-case\n
+
+#env
+LESS += --quit-on-intr
+
