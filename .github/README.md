@@ -27,7 +27,7 @@ git --git-dir=Code/dotfiles/.git config --local status.showUntrackedFiles no
 
 # run all the install scripts, which are located in .dotfiles_meta
 cd Code/dotfiles/.dotfiles_meta
-brew bundle
+brew bundle install
 fish install_shell_utilities.fish
 fish configure_apps.fish
 fish configure_macos.fish
@@ -45,21 +45,11 @@ Be very careful about not running `dot add -A` on the home directory. To avoid a
 
 When adding new files, remember that untracked files are not shown by git status.
 
-# Specific instructions for updating
-
-## VSCode extensions
-
-Unfortunately, VSCode doesn't store the list of installed extensions in a file. That is why we store the list of installed extensions in `vsc_extensions.txt`. To update it, run
-
-```fish
-code --list-extensions > .dotfiles_meta/vsc_extensions.txt
-```
-
-`configure_apps.fish` will install the extensions listed in the file.
+# Specific instructions for updating non-automated apps
 
 ## VSCode settings
 
-VSCode doesn't support automatic syncing of the `settings.json` file that is friendly for dotfiles. As a result, we have to manually keep it in sync. After updating VSCode settings
+VSCode doesn't support automatic syncing of the `settings.json` file in a way that is friendly for dotfiles. As a result, we have to manually keep it in sync. After updating VSCode settings
 
 1. open up the settings
 2. click on Open Settings (JSON) on the top right

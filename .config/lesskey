@@ -1,0 +1,9 @@
+# less automatically loads ~/.config/lesskey to configure itself, no need to set environment variable
+#command
+t  toggle-option --ignore-case\n
+
+#env
+# $ is necessary to delinate some options
+LESS = --mouse --wheel-lines=5 --quit-on-intr --ignore-case --RAW-CONTROL-CHARS --tabs=4 --window=-4 --color=d+b$ --color=u+g$ --color=s+y$ --prompt=sInput= %f, Lines= %lt-%lb / %L$
+# don't store any history of commands executed in less
+LESSHISTFILE = /dev/null

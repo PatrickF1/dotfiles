@@ -13,10 +13,6 @@ set -q INFOPATH; or set INFOPATH ''
 set -gx INFOPATH /opt/homebrew/share/info $INFOPATH
 
 set -x EDITOR nvim
-# set some sensible default options to always pass into invocations of less
-set -x LESS "--ignore-case --LONG-PROMPT --RAW-CONTROL-CHARS --tabs=4 --window=-4"
-# don't store any history of commands executed in less
-set -x LESSHISTFILE /dev/null
 # point ripgrep at its config file
 set -x RIPGREP_CONFIG_PATH ~/.config/ripgrep
 

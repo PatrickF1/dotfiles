@@ -1,0 +1,3 @@
+#!/usr/bin/env dash
+# Show the commits of the current git user from the current repo
+git log --author="$(git config user.name)"

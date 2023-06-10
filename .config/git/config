@@ -30,6 +30,7 @@
   rh = reset --hard
   rb = rebase
   rpath = rev-parse --show-prefix # get path relative to root
+  rst = restore
   st = status --short
   undo = reset HEAD^
 [diff]
