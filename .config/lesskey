@@ -1,6 +1,8 @@
 # less automatically loads ~/.config/lesskey to configure itself, no need to set environment variable
 #command
-t toggle-option --ignore-case\n
+t  toggle-option --ignore-case\n
+# clear search highlighting with escape escape
+\e clear-search
 
 #env
 # set some sensible default options to always pass into invocations of less
