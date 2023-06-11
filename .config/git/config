@@ -49,7 +49,6 @@
 [advice]
   detachedHead = false
 [delta]
-  navigate = true    # enables using n and N to move between diff sections
   light = false      # set to true to use colors appropriate for a light terminal background
   paging = always
   hyperlinks = true
