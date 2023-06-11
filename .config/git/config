@@ -35,6 +35,7 @@
   undo = reset HEAD^
 [diff]
   algorithm = patience
+  # cannot be dimmed-zebra or delta will be unable to distinguish between old and new moved
   colorMoved = zebra
 [merge]
   conflictstyle = diff3
@@ -51,3 +52,6 @@
   light = false      # set to true to use colors appropriate for a light terminal background
   paging = always
   hyperlinks = true
+  # give zebra-painted (moved) lines syntax highlighting and a new background
+  # bold purple = line before move, bold cyan = line after move
+  map-styles = bold purple => syntax DimGray, bold cyan => syntax DarkCyan
