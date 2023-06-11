@@ -8,12 +8,14 @@
   ff = only
   rebase = true
 [core]
+  pager = delta
   editor = nvim
   excludesfile = ~/.config/git/global_ignore
+[interactive]
+  # https://git-scm.com/docs/git-config#Documentation/git-config.txt-interactivediffFilter
+  diffFilter = delta --color-only
 [pager]
   branch = false
-  diff = diff-so-fancy | less --tabs=4 --RAW-CONTROL-CHARS --pattern '^(Date|added|deleted|modified|renamed): '
-  show = diff-so-fancy | less --tabs=4 --RAW-CONTROL-CHARS --pattern '^(Date|added|deleted|modified|renamed): '
 [alias]
   aliases = config --get-regexp ^alias\\.
   amend = commit --all --amend --no-edit
@@ -34,7 +36,10 @@
   undo = reset HEAD^
 [diff]
   algorithm = patience
-  colorMoved = dimmed-zebra
+  # cannot be dimmed-zebra or delta will be unable to distinguish between old and new moved
+  colorMoved = zebra
+[merge]
+  conflictstyle = diff3
 [fetch]
   prune = true
 [init]
@@ -43,3 +48,11 @@
   autocorrect = 8
 [advice]
   detachedHead = false
+[delta]
+  light = false      # set to true to use colors appropriate for a light terminal background
+  paging = always
+  hyperlinks = true
+  hyperlinks-file-link-format = vscode://file/{path}:{line}
+  # give zebra-painted (moved) lines syntax highlighting and a new background
+  # bold purple = line before move, bold cyan = line after move
+  map-styles = bold purple => syntax DimGray, bold cyan => syntax DarkCyan
