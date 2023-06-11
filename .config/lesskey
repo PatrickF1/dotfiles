@@ -5,7 +5,7 @@ t   toggle-option --ignore-case\n
 \ku back-line 5
 \kd forw-line 5
 # search for the symbols that delta sets in git patches to delineate files and hunks
-D   forw-search \^Δ|•\n
+D   forw-search \^(Δ|•)\n
 
 #env
 # $ is necessary to delinate some options
