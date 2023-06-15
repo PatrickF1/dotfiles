@@ -8,7 +8,21 @@ t   toggle-option --ignore-case\n
 D   forw-search \^(Δ|•)\n
 
 #env
-# $ is necessary to delinate some options
-LESS = --quit-on-intr --ignore-case --RAW-CONTROL-CHARS --tabs=4 --window=-4 --color=d+b$ --color=u+g$ --color=s+y$ --prompt=sInput= %f, Lines= %lt-%lb / %L$
+# explicitly append a space to env variables formed with += so that options are not cobbled together
+# $ is necessary to delinate color and prompt options
+# quit-on-intr so can easily quit less with Ctrl+C
+# ignore-case for smart-cased search
+# RAW-CONTROL-CHARS to allow ANSI color codes but not other ANSI codes
+# tabs=4 because most languages use 4 spaces for indentation
+# window=-4 so scrolling by window leaves some context from previous window
+# color add color to, and preserve effects of, bold, underline, standout text
+# prompt show input file and lines in screen currently over total lines
+LESS =  --quit-on-intr 
+LESS += --ignore-case 
+LESS += --RAW-CONTROL-CHARS 
+LESS += --tabs=4 
+LESS += --window=-4 
+LESS += --color=d+b$ --color=u+g$ --color=s+y$ 
+LESS += --prompt=sInput= %f, Lines= %lt-%lb / %L$ 
 # don't store any history of commands executed in less
 LESSHISTFILE = /dev/null
