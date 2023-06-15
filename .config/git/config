@@ -36,8 +36,10 @@
   undo = reset HEAD^
 [diff]
   algorithm = patience
-  # cannot be dimmed-zebra or delta will be unable to distinguish between old and new moved
-  colorMoved = zebra
+  # don't use dimmed-zebra; once delta removes the +/-, both {old, new}Moved lines
+  # are same shade of gray with no way to distinguish between them
+  # don't use zebra; it results in too many colors being used
+  colorMoved = blocks
 [merge]
   conflictstyle = diff3
 [fetch]
@@ -54,6 +56,6 @@
   paging = always
   hyperlinks = true
   hyperlinks-file-link-format = vscode://file/{path}:{line}
-  # give zebra-painted (moved) lines syntax highlighting and a new background
-  # bold purple = line before move, bold cyan = line after move
-  map-styles = bold purple => syntax DimGray, bold cyan => syntax DarkCyan
+  # give moved lines syntax highlighting and a new background
+  # oldMoved = bold purple, newMoved = bold cyan
+  map-styles = bold purple => normal DimGray, bold cyan => syntax DarkCyan
