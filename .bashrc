@@ -10,6 +10,8 @@ test -e ~/.secrets.bash && source ~/.secrets.bash
 
 export PS1="\[$(tput setaf 6)\][\u@\h \w]\\$ \[$(tput sgr0)\]"
 
+export LESSHISTFILE='/dev/null'
+
 export HISTSIZE='3000'
 export HISTTIMEFORMAT='%F %T '
 shopt -s histverify # don't immediately execute commands from history but copy them onto command line

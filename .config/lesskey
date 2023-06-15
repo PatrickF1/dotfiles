@@ -4,8 +4,6 @@ t   toggle-option --ignore-case\n
 # adjust forw/back-line to move faster, also affects mouse wheel
 \ku back-line 5
 \kd forw-line 5
-# search for the symbols that delta sets in git patches to delineate files and hunks
-D   forw-search \^(Δ|•)\n
 
 #env
 # explicitly append a space to env variables formed with += so that options are not cobbled together
@@ -24,5 +22,3 @@ LESS += --tabs=4
 LESS += --window=-4 
 LESS += --color=d+b$ --color=u+g$ --color=s+y$ 
 LESS += --prompt=sInput= %f, Lines= %lt-%lb / %L$ 
-# don't store any history of commands executed in less
-LESSHISTFILE = /dev/null
