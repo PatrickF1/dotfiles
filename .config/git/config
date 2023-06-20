@@ -21,6 +21,7 @@
   amend = commit --all --amend --no-edit
   br = branch
   cm = commit
+  cmn = commit --no-verify
   co = checkout
   d = diff
   dc = diff --cached
