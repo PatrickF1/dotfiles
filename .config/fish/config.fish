@@ -19,6 +19,8 @@ set -x RIPGREP_CONFIG_PATH ~/.config/ripgrep
 ###################################
 status is-interactive || exit
 
+abbr --add g git
+
 set -x EDITOR nvim
 set -x LESSHISTFILE /dev/null
 
