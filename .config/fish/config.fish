@@ -46,10 +46,9 @@ set -x NNN_FIFO /tmp/nnn.fifo # needed for preview-tui plugin to function
 set -x NNN_PLUG (string join ';' c:fzcd z:autojump b:-clipboard r:gitroot 'v:-!code $nnn*' 's:-!|git status' 'd:-!git diff*' )
 set -x NNN_BMS (string join ';' .:~/Code/dotfiles f:~/Code/fzf.fish d:~/Downloads k:~/Desktop x:~/Dropbox c:~/.config)
 
-bind --mode default \cn _nnn_select_paths
-bind --mode insert \cn _nnn_select_paths
-
-bind --mode default \cb _cd_git_root
-bind --mode insert \cb _cd_git_root
+bind \cn _nnn_select_paths
+bind \cb _cd_git_root
+bind \e, 'prevd && commandline --function repaint'
+bind \e. 'nextd && commandline --function repaint'
 
 zoxide init fish | source
