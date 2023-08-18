@@ -52,6 +52,7 @@
 [advice]
   detachedHead = false
 [delta]
+  tabs = 4
   navigate = true
   light = false      # set to true to use colors appropriate for a light terminal background
   paging = always
