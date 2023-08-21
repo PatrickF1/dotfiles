@@ -18,7 +18,7 @@
   branch = false
 [alias]
   aliases = config --get-regexp ^alias\\.
-  amend = commit --all --amend --no-edit
+  amend = commit --all --amend --no-edit --date=now
   br = branch
   cm = commit
   cmn = commit --no-verify
