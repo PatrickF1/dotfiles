@@ -33,6 +33,7 @@
   rb = rebase
   rpath = rev-parse --show-prefix # get path relative to root
   rst = restore
+  sh = show
   st = status --short
   undo = reset HEAD^
 [diff]
