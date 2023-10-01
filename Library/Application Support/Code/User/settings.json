@@ -1,7 +1,7 @@
 {
   "editor.accessibilitySupport": "off",
   "editor.autoClosingOvertype": "never",
-  "editor.fontSize": 18,
+  "editor.fontSize": 16,
   "editor.formatOnSave": true,
   "editor.minimap.enabled": true,
   "editor.scrollBeyondLastLine": false,
@@ -18,9 +18,9 @@
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.cursorWidth": 2,
   "terminal.integrated.enableBell": true,
-  "terminal.integrated.enableFileLinks": false,
-  "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
-  "terminal.integrated.fontSize": 18,
+  "terminal.integrated.enableFileLinks": "on",
+  "terminal.integrated.fontFamily": "JetBrains Mono NL",
+  "terminal.integrated.fontSize": 16,
   "terminal.integrated.macOptionIsMeta": true,
   "terminal.integrated.scrollback": 10000,
   "terminal.integrated.shell.osx": "/usr/local/bin/fish",
@@ -58,5 +58,10 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "python.formatting.provider": "black"
+  "python.formatting.provider": "black",
+  "editor.fontFamily": "JetBrains Mono NL, Menlo, monospace",
+  "editor.fontLigatures": false,
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
