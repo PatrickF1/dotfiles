@@ -60,7 +60,6 @@
   },
   "python.formatting.provider": "black",
   "editor.fontFamily": "JetBrains Mono NL, Menlo, monospace",
-  "editor.fontLigatures": false,
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
