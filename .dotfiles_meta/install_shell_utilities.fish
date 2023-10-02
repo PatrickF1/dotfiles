@@ -19,3 +19,9 @@ fish -c "fisher update"
 
 echo "Installing plugins for nnn"
 curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
+
+# Remove semibold variant so no editor will automatically pick it
+# The problem with the semibold variant is that it is almost
+# indistinguishable from the regular variant
+echo "Removing JetBrains Mono SemiBold fonts"
+rm -f ~/Library/Fonts/JetBrainsMono{,NL}-{SemiBold, SemiBoldItalic}.ttf
