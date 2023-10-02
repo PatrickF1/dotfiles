@@ -1,6 +1,10 @@
 {
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "editor.accessibilitySupport": "off",
   "editor.autoClosingOvertype": "never",
+  "editor.fontFamily": "JetBrains Mono NL, Menlo, monospace",
   "editor.fontSize": 16,
   "editor.formatOnSave": true,
   "editor.minimap.enabled": true,
@@ -13,6 +17,7 @@
   "files.trimTrailingWhitespace": true,
   "git.allowForcePush": true,
   "git.enableSmartCommit": true,
+  "python.formatting.provider": "black",
   "security.workspace.trust.enabled": false,
   "telemetry.telemetryLevel": "off",
   "terminal.integrated.cursorStyle": "line",
@@ -54,10 +59,5 @@
   "workbench.colorTheme": "One Dark Pro",
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.iconTheme": "eq-material-theme-icons",
-  "workbench.startupEditor": "none",
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "python.formatting.provider": "black",
-  "editor.fontFamily": "JetBrains Mono NL, Menlo, monospace",
+  "workbench.startupEditor": "none"
 }
