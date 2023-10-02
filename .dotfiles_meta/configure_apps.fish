@@ -18,6 +18,3 @@ defaults write at.eggerapps.Postico IndentWithSpaces -bool true
 defaults write at.eggerapps.Postico QueryViewFontSize -int 14
 defaults write at.eggerapps.Postico TableViewFontSize -int 14
 defaults write at.eggerapps.Postico TableViewRowsPerPage -int 200
-
-echo "Installing VSCode extensions"
-cat vsc_extensions.txt | xargs -L 1 code --install-extension

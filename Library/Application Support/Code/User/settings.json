@@ -1,4 +1,10 @@
 {
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "editor.accessibilitySupport": "off",
   "editor.autoClosingOvertype": "never",
   "editor.fontSize": 18,
@@ -13,17 +19,16 @@
   "files.trimTrailingWhitespace": true,
   "git.allowForcePush": true,
   "git.enableSmartCommit": true,
+  "python.formatting.provider": "black",
   "security.workspace.trust.enabled": false,
   "telemetry.telemetryLevel": "off",
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.cursorWidth": 2,
   "terminal.integrated.enableBell": true,
-  "terminal.integrated.enableFileLinks": false,
   "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
   "terminal.integrated.fontSize": 18,
   "terminal.integrated.macOptionIsMeta": true,
   "terminal.integrated.scrollback": 10000,
-  "terminal.integrated.shell.osx": "/usr/local/bin/fish",
   "vim.sneak": true,
   "vim.useCtrlKeys": false,
   "window.zoomLevel": 0.7,
@@ -54,9 +59,5 @@
   "workbench.colorTheme": "One Dark Pro",
   "workbench.editor.highlightModifiedTabs": true,
   "workbench.iconTheme": "eq-material-theme-icons",
-  "workbench.startupEditor": "none",
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "python.formatting.provider": "black"
+  "workbench.startupEditor": "none"
 }
