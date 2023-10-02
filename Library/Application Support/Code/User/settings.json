@@ -18,7 +18,7 @@
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.cursorWidth": 2,
   "terminal.integrated.enableBell": true,
-  "terminal.integrated.enableFileLinks": "on",
+  "terminal.integrated.enableFileLinks": false,
   "terminal.integrated.fontFamily": "JetBrains Mono NL",
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.macOptionIsMeta": true,
@@ -60,7 +60,4 @@
   },
   "python.formatting.provider": "black",
   "editor.fontFamily": "JetBrains Mono NL, Menlo, monospace",
-  "[yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
 }
