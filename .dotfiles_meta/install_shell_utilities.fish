@@ -17,11 +17,16 @@ echo "Installing fisher and fisher plugins"
 curl -sL git.io/fisher | source && fisher install jorgebucaran/fisher
 fish -c "fisher update"
 
+echo "Configuring Tide prompt"
+tide configure --auto --style=Rainbow --prompt_colors='True color' --show_time=No --rainbow_prompt_separators=Angled --powerline_prompt_heads=Sharp --powerline_prompt_tails=Flat --powerline_prompt_style='One line' --prompt_spacing=Compact --icons='Few icons' --transient=Yes
+# only show a few items on right side of prompt to keep it short and unintrusive
+set tide_right_prompt_items status cmd_duration context
+tide reload # reload makes the changes take effect
+
 echo "Installing plugins for nnn"
 curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
 
-# Remove semibold variant so no editor will automatically pick it
-# The problem with the semibold variant is that it is almost
-# indistinguishable from the regular variant
+# Remove semibold variant so no editor will automatically pick it for bold
+# because it is almost indistinguishable from the regular variant
 echo "Removing JetBrains Mono SemiBold fonts"
 rm -f ~/Library/Fonts/JetBrainsMono{,NL}-{SemiBold, SemiBoldItalic}.ttf
