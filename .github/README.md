@@ -29,7 +29,6 @@ git --git-dir=Code/dotfiles/.git config --local status.showUntrackedFiles no
 cd Code/dotfiles/.dotfiles_meta
 brew bundle install
 fish install_shell_utilities.fish
-fish configure_apps.fish
 fish configure_macos.fish
 ```
 

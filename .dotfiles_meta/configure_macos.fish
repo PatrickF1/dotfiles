@@ -1,6 +1,6 @@
-# heavily adapted from https://github.com/mathiasbynens/dotfiles/blob/master/.macos
+#!/usr/bin/env fish
 
-echo "Configuring macOS"
+echo "Configuring macOS and built-in apps"
 # Close any open System Preferences panes to prevent them from overriding
 # the settings being configured
 osascript -e 'tell application "System Preferences" to quit'
@@ -125,7 +125,7 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 ###############################################################################
 # Root level configuration                                                    #
 ###############################################################################
-echo "The last few configurations will require root access."
+echo "Configuring root level settings"
 
 # Don't back up memory during sleep
 sudo pmset -a hibernatemode 0
@@ -140,12 +140,35 @@ sudo scutil --set ComputerName "Patrick's MacBook"
 sudo scutil --set LocalHostName Patrick-MacBook
 
 ###############################################################################
+# Third party apps                                                            #
+###############################################################################
+
+echo "Configuring third party apps"
+
+set settings_path "$HOME/Dropbox/Settings"
+# Point iterm2, Dash, and Alfred to settings stored in Dropbox
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string $settings_path
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+defaults write com.kapeli.dashdoc syncFolderPath -string $settings_path
+defaults write com.runningwithcrayons.Alfred-Preferences syncfolder -string $settings_path
+
+# Disable checking if keyboard shortcuts are on in Mailplane
+defaults write com.mailplaneapp.Mailplane3 DisableCheckKeyboardShortcuts -bool true
+
+# Configure Postico
+defaults write at.eggerapps.Postico AlternatingRows -bool true
+defaults write at.eggerapps.Postico IndentWithSpaces -bool true
+defaults write at.eggerapps.Postico QueryViewFontSize -int 14
+defaults write at.eggerapps.Postico TableViewFontSize -int 14
+defaults write at.eggerapps.Postico TableViewRowsPerPage -int 200
+
+###############################################################################
 # Finish                                                                      #
 ###############################################################################
 
 # Restart affected apps so changes take effect immediately
-for app in Finder Dock cfprefsd SystemUIServer
-    killall $app
+for app in Finder Dock cfprefsd SystemUIServer iTerm2 Dash Alfred Mailplane Postico
+    killall -q $app
 end
 
 echo "Done. You may need to restart currently running applications for new settings to kick in."
