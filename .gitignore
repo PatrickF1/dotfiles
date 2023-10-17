@@ -12,6 +12,7 @@ Public
 
 # Ignore other code
 Code
+Amplitude
 
 # Ignore other common folders
 .aws
@@ -30,5 +31,6 @@ Code
 .python_history
 .viminfo
 
-# Ignore where gh stores GitHub access token
+# Ignore secrets
 .config/gh/hosts.yml
+secrets.fish

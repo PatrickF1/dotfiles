@@ -1,1 +1,0 @@
-/Users/pfong/Dropbox/Settings/.secrets.bash

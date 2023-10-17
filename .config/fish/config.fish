@@ -51,3 +51,5 @@ bind \e, 'prevd && commandline --function repaint'
 bind \e. 'nextd && commandline --function repaint'
 
 zoxide init fish | source
+
+source ~/secrets.fish

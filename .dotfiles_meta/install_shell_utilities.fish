@@ -43,3 +43,6 @@ if test -e ~/Library/Fonts/JetBrainsMono-SemiBold.ttf
     echo "Removing JetBrains Mono SemiBold fonts"
     rm -f ~/Library/Fonts/JetBrainsMono{,NL}-{SemiBold, SemiBoldItalic}.ttf
 end
+
+# make it obvious where to put secrets
+touch ~/secrets.fish
