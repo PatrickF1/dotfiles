@@ -1,0 +1,15 @@
+#!/usr/bin/env fish
+set ghostty_path /Applications/Ghostty.app/Contents/MacOS/ghostty
+set file_name ghostty-macos-universal.zip
+
+ps -A | rg "$ghostty_path" | rg --quiet --invert-match rg
+if test $status -eq 0
+    echo "Ghostty is still running. Please kill Ghostty before attempting to update."
+    exit 1
+end
+
+gh release download tip --pattern "$file_name" --dir /tmp --clobber --repo mitchellh/ghostty
+# rm -rf instead of using unzip -o because latter method doesn't remove files not in the zip
+rm -rf /Applications/Ghostty.app/
+unzip -q -d /Applications -- /tmp/"$file_name"
+$ghostty_path --version
