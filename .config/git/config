@@ -23,6 +23,7 @@
   cm = commit
   cmn = commit --no-verify
   co = checkout
+  cp = cherry-pick
   d = diff
   dc = diff --cached
   fp = push --force
