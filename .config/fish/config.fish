@@ -21,6 +21,9 @@ status is-interactive || exit
 
 set -x EDITOR nvim
 set -x LESSHISTFILE /dev/null
+# This should be unnecessary, seems to be a macOS/man bug
+# https://stackoverflow.com/questions/77526472/man-is-using-system-installtion-of-less-ignoring-path
+set -x MANPAGER less
 
 set -x fish_color_command B7D847
 # suppress the default login message
