@@ -7,4 +7,6 @@ cursor-color = fee16c
 
 # required to use key bindings involving Alt
 macos-option-as-alt = true
-
+clipboard-paste-protection = false
+# avoid invisible text
+minimum-contrast = 1.1
