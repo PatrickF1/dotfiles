@@ -10,3 +10,6 @@ macos-option-as-alt = true
 clipboard-paste-protection = false
 # avoid invisible text
 minimum-contrast = 1.1
+# dim unfocused splits
+unfocused-split-opacity = 0.5
+
