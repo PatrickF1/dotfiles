@@ -1,0 +1,10 @@
+#!/usr/bin/env fish
+# When a brew service is running, info subcommand outputs its pid
+brew services info postgresql@13 | rg --quiet PID
+if test $status -eq 0
+    brew services stop postgresql@13
+    brew services start postgresql@15
+else
+    brew services stop postgresql@15
+    brew services start postgresql@13
+end
