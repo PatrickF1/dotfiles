@@ -7,6 +7,8 @@
 [pull]
   ff = only
   rebase = true
+[commit]
+  verbose = true
 [rebase]
   autoStash = true
 [core]
@@ -40,13 +42,13 @@
   st = status --short
   undo = reset HEAD^
 [diff]
-  algorithm = patience
+  algorithm = histogram
   # don't use dimmed-zebra; once delta removes the +/-, both {old, new}Moved lines
   # are same shade of gray with no way to distinguish between them
   # don't use zebra; it results in too many colors being used
   colorMoved = blocks
 [merge]
-  conflictstyle = diff3
+  conflictstyle = zdiff3
 [fetch]
   prune = true
 [init]
