@@ -1,25 +1,5 @@
-[user]
-  email = patrickf3139@gmail.com
-  name = Patrick Fong
-[push]
-  default = current
-  autoSetupRemote = true
-[pull]
-  ff = only
-  rebase = true
-[commit]
-  verbose = true
-[rebase]
-  autoStash = true
-[core]
-  pager = delta
-  editor = nvim
-  excludesfile = ~/.config/git/global_ignore
-[interactive]
-  # https://git-scm.com/docs/git-config#Documentation/git-config.txt-interactivediffFilter
-  diffFilter = delta --color-only
-[pager]
-  branch = false
+[advice]
+  detachedHead = false
 [alias]
   aliases = config --get-regexp ^alias\\.
   amend = commit --all --amend --no-edit --date=now
@@ -41,29 +21,49 @@
   sh = show
   st = status --short
   undo = reset HEAD^
+[commit]
+  verbose = true
+[core]
+  editor = nvim
+  excludesfile = ~/.config/git/global_ignore
+  pager = delta
+[delta]
+  hyperlinks = true
+  hyperlinks-file-link-format = vscode://file/{path}:{line}
+  light = false      # set to true to use colors appropriate for a light terminal background
+  # give moved lines syntax highlighting and a new background
+  # oldMoved = bold purple, newMoved = bold cyan
+  map-styles = bold purple => normal DimGray, bold cyan => syntax DarkCyan
+  navigate = true
+  paging = always
+  tabs = 4
 [diff]
   algorithm = histogram
   # don't use dimmed-zebra; once delta removes the +/-, both {old, new}Moved lines
   # are same shade of gray with no way to distinguish between them
   # don't use zebra; it results in too many colors being used
   colorMoved = blocks
-[merge]
-  conflictstyle = zdiff3
 [fetch]
   prune = true
-[init]
-  defaultBranch = main
 [help]
   autocorrect = 8
-[advice]
-  detachedHead = false
-[delta]
-  tabs = 4
-  navigate = true
-  light = false      # set to true to use colors appropriate for a light terminal background
-  paging = always
-  hyperlinks = true
-  hyperlinks-file-link-format = vscode://file/{path}:{line}
-  # give moved lines syntax highlighting and a new background
-  # oldMoved = bold purple, newMoved = bold cyan
-  map-styles = bold purple => normal DimGray, bold cyan => syntax DarkCyan
+[init]
+  defaultBranch = main
+[interactive]
+  # https://git-scm.com/docs/git-config#Documentation/git-config.txt-interactivediffFilter
+  diffFilter = delta --color-only
+[merge]
+  conflictstyle = zdiff3
+[pager]
+  branch = false
+[pull]
+  ff = only
+  rebase = true
+[push]
+  autoSetupRemote = true
+  default = current
+[rebase]
+  autoStash = true
+[user]
+  email = patrickf3139@gmail.com
+  name = Patrick Fong
