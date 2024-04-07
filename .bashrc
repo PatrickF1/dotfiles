@@ -16,7 +16,7 @@ export HISTTIMEFORMAT='%F %T '
 shopt -s histverify # don't immediately execute commands from history but copy them onto command line
 shopt -s histappend # append to bash history instead of overwriting
 
-export FZF_DEFAULT_OPTS="--cycle --layout=reverse --border --height=90% --preview-window=wrap --marker='*'"
+export FZF_DEFAULT_OPTS_FILE="$HOME/.config/fzf"
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 

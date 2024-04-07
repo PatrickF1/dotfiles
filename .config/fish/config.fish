@@ -32,7 +32,7 @@ set -g fish_greeting
 fzf_configure_bindings --directory=\cf --git_log=\cl --git_status=\cs --processes=\cp
 set fzf_diff_highlighter delta --paging=never --width=20
 
-set -x FZF_DEFAULT_OPTS --cycle --layout=reverse --border --height=90% --preview-window=wrap --marker="*"
+set -x FZF_DEFAULT_OPTS_FILE ~/.config/fzf
 
 # n: start in type-to-nav mode
 # A: disable automatically jumping into directories when in type-to-nav mode
