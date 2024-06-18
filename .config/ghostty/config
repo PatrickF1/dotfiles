@@ -12,4 +12,5 @@ clipboard-paste-protection = false
 minimum-contrast = 1.1
 # dim unfocused splits
 unfocused-split-opacity = 0.5
-
+# focus split currently moused over
+focus-follows-mouse = true
