@@ -1,9 +1,9 @@
 font-size = 14
 font-family = JetBrains Mono NL
-
 theme = MaterialDesignColors
 background = 233136
 cursor-color = fee16c
+scrollback-limit = 50000000 # 50 MB
 
 # required to use key bindings involving Alt
 macos-option-as-alt = true
