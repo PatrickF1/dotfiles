@@ -3,7 +3,8 @@ font-family = JetBrains Mono NL
 theme = MaterialDesignColors
 background = 233136
 cursor-color = fee16c
-scrollback-limit = 50000000 # 50 MB
+# Increase scrollback memory limit to 50 MB
+scrollback-limit = 50_000_000
 
 # required to use key bindings involving Alt
 macos-option-as-alt = true
