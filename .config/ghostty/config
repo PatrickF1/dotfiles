@@ -15,3 +15,5 @@ minimum-contrast = 1.1
 unfocused-split-opacity = 0.5
 # focus split currently moused over
 focus-follows-mouse = true
+
+keybind = global:alt+grave_accent=toggle_quick_terminal
