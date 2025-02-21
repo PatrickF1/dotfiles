@@ -14,6 +14,8 @@ set -gx INFOPATH /opt/homebrew/share/info $INFOPATH
 # point ripgrep at its config file
 set -x RIPGREP_CONFIG_PATH ~/.config/ripgrep
 
+source ~/secrets.fish
+
 ###################################
 # Interactive mode configurations #
 ###################################
@@ -55,4 +57,3 @@ bind \e. 'nextd && commandline --function repaint'
 
 zoxide init fish | source
 
-source ~/secrets.fish
