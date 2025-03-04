@@ -32,11 +32,6 @@ if test (count $tide_right_prompt_items) -gt 10
     tide reload # reload makes the changes take effect
 end
 
-if ! test -e ~/.config/nnn/plugins
-    echo "Installing plugins for nnn"
-    curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
-end
-
 if test -e ~/Library/Fonts/JetBrainsMono-SemiBold.ttf
     # Remove semibold variant so no editor will automatically pick it for bold
     # because it is almost indistinguishable from the regular variant

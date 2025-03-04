@@ -36,21 +36,6 @@ set fzf_diff_highlighter delta --paging=never --width=20
 
 set -x FZF_DEFAULT_OPTS_FILE ~/.config/fzf
 
-# n: start in type-to-nav mode
-# A: disable automatically jumping into directories when in type-to-nav mode
-# e: open text files in terminal
-# i: show current file info
-# u: use selection, don't prompt to choose between selection and hovered entry
-# H: show hidden files
-# U: show file's owner and group in status bar
-# Q: disable confirmation on quit with multiple contexts active
-set -x NNN_OPTS nAeiuHUQ
-set -x NNN_FIFO /tmp/nnn.fifo # needed for preview-tui plugin to function
-# - skips directory refresh, ! executes commands, * skips user confirmation
-set -x NNN_PLUG (string join ';' c:fzcd z:autojump b:-clipboard r:gitroot 'v:-!code $nnn*' 's:-!|git status' 'd:-!git diff*' )
-set -x NNN_BMS (string join ';' .:~/Code/dotfiles f:~/Code/fzf.fish d:~/Downloads k:~/Desktop x:~/Dropbox c:~/.config)
-
-bind \cn _nnn_select_paths
 bind \cb _cd_git_root
 bind \e, 'prevd && commandline --function repaint'
 bind \e. 'nextd && commandline --function repaint'
