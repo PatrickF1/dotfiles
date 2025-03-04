@@ -19,6 +19,4 @@ shopt -s histappend # append to bash history instead of overwriting
 export FZF_DEFAULT_OPTS_FILE="$HOME/.config/fzf"
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
-
-export NNN_OPTS=nAeiuHUQ
 eval "$(zoxide init bash)"
