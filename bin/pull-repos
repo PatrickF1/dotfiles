@@ -1,0 +1,16 @@
+#!/bin/dash
+
+# Pull all top level Git repositories in the current directory in parallel
+ls -d */.git 2>/dev/null | while read -r gitdir; do
+  repo="${gitdir%/.git}"  # Strip off "/.git" to get the repo directory
+
+  (
+    echo "Pulling in $repo..."
+    cd "$repo" && git pull --quiet \
+      && echo "✅ Updated $repo" \
+      || echo "❌ Failed to update $repo"
+  ) &
+done
+
+wait
+echo "All repositories pulled   ."
