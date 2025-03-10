@@ -1,0 +1,13 @@
+#!/usr/bin/env fish
+# Serially update all top level git repos in the current directory
+for gitdir in */.git
+    set repo (dirname "$gitdir") # strip off /.git from path
+    echo "Updating $repo..."
+    pushd "$repo"
+    if git pull --quiet
+        echo "✅ Successfully updated $repo"
+    else
+        echo "❌ Failed to update $repo"
+    end
+    popd
+end
