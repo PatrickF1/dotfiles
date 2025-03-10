@@ -1,0 +1,5 @@
+[manager]
+linemode = "mtime"
+
+[preview]
+wrap = "yes"
