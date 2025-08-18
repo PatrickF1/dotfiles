@@ -4,3 +4,4 @@
 *.gz
 *.tar
 .DS_Store
+.claude
