@@ -1,6 +1,6 @@
 font-size = 14
 font-family = JetBrains Mono NL
-theme = MaterialDesignColors
+theme = Material Design Colors
 background = 233136
 cursor-color = fee16c
 # Increase scrollback memory limit to 50 MB
