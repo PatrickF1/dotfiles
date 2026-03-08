@@ -12,7 +12,7 @@ Public
 
 # Ignore other code
 Code
-Amplitude
+Projects
 
 # Ignore other common folders
 .aws
@@ -33,4 +33,5 @@ Amplitude
 
 # Ignore secrets
 .config/gh/hosts.yml
+secrets.bash
 secrets.fish
