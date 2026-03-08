@@ -1,0 +1,27 @@
+#!/usr/bin/env fish
+
+# Creates a branch "m" as a symbolic ref to main or master.
+# This lets you use "m" everywhere instead of remembering which one the repo uses.
+# Usage:
+#    git alias-default-branch
+
+if not git rev-parse --git-dir >/dev/null 2>&1
+    echo 'Not in a git repository.' >&2
+    exit 1
+end
+
+if git show-ref --verify --quiet refs/heads/m
+    echo 'm already exists' >&2
+    exit 1
+end
+
+if git show-ref --verify --quiet refs/heads/main
+    git symbolic-ref refs/heads/m refs/heads/main
+    echo 'Created m → main'
+else if git show-ref --verify --quiet refs/heads/master
+    git symbolic-ref refs/heads/m refs/heads/master
+    echo 'Created m → master'
+else
+    echo 'Neither main nor master branch found' >&2
+    exit 1
+end
