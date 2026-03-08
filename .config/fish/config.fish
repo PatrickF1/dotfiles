@@ -31,14 +31,13 @@ set -x fish_color_command B7D847
 # suppress the default login message
 set -g fish_greeting
 
-fzf_configure_bindings --directory=\cf --git_status=\cs --processes=\cp
+fzf_configure_bindings --directory=ctrl-f --git_status=ctrl-s --processes=ctrl-p
 set fzf_diff_highlighter delta --paging=never --width=20
 
 set -x FZF_DEFAULT_OPTS_FILE ~/.config/fzf
 
-bind \cb _cd_git_root
-bind \e, 'prevd && commandline --function repaint'
-bind \e. 'nextd && commandline --function repaint'
+bind ctrl-b _cd_git_root
+bind alt-comma 'prevd && commandline --function repaint'
+bind alt-. 'nextd && commandline --function repaint'
 
 zoxide init fish | source
-
