@@ -1,9 +1,9 @@
 #!/usr/bin/env fish
 
 echo "Configuring macOS and built-in apps"
-# Close any open System Preferences panes to prevent them from overriding
+# Close any open System Settings panes to prevent them from overriding
 # the settings being configured
-osascript -e 'tell application "System Preferences" to quit'
+osascript -e 'tell application "System Settings" to quit'
 
 ###############################################################################
 # Finder                                                                      #
@@ -34,7 +34,7 @@ defaults write com.apple.finder DisableAllAnimations -bool true
 
 # Set desktop wallpaper to something minimal and slightly soothing
 set wallpaper_path (realpath (status dirname))/rings_wallpaper.png
-osascript -e "tell application \"Finder\" to set desktop picture to \"$wallpaper_path\" as POSIX file"
+osascript -e 'tell application "System Events" to tell every desktop to set picture to "'"$wallpaper_path"'"'
 
 ###############################################################################
 # Keyboard & Mouse                                                            #
