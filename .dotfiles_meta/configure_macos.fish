@@ -37,7 +37,7 @@ set wallpaper_path (realpath (status dirname))/rings_wallpaper.png
 osascript -e 'tell application "System Events" to tell every desktop to set picture to "'"$wallpaper_path"'"'
 
 ###############################################################################
-# Keyboard & Mouse                                                            #
+# Keyboard, Mouse, Trackpad                                                  #
 ###############################################################################
 
 # Configure key repeat to be be blazingly fast with a moderate initial delay (ints are in ms)
@@ -59,6 +59,9 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 # Set a moderate tracking and scrolling speed for the mouse
 defaults write "Apple Global Domain" "com.apple.mouse.scaling" 0.65
 defaults write "Apple Global Domain" "com.apple.scrollwheel.scaling" 0.4
+
+# Set Trackpad click weight to light
+defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 0
 
 ###############################################################################
 # Dock                                                                        #
@@ -118,9 +121,10 @@ defaults write NSGlobalDomain AppleHighlightColor -string "0.752941 0.964706 0.6
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
 
-# Sort Activity Monitor results by highest CPU usage first
+# Sort Activity Monitor results by highest CPU usage first, update more frequently
 defaults write com.apple.ActivityMonitor SortColumn -string CPUUsage
 defaults write com.apple.ActivityMonitor SortDirection -int 0
+defaults write com.apple.ActivityMonitor UpdatePeriod -int 3
 
 ###############################################################################
 # Root level configuration                                                    #
