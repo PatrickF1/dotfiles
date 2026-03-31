@@ -1,13 +1,13 @@
 # dotfiles
 
-My configuration and bootstrap files for `bash`, `fish`, `git`, `iTerm2`, `Visual Studio Code`, and even `brew`, `macOS settings`, and the settings for some applications. Includes scripts to automate installation. These are my bespoke dotfiles and workflow and therefore are likely ill-suited for everyone else. That said, I did my best to make my dotfiles as lightweight and sensible as possible so they may be worth forking as a starting point for your dotfiles.
+My configuration and bootstrap files for `bash`, `fish`, `git`, `Visual Studio Code`, and even `brew`, `macOS settings`, and the settings for some applications. Includes scripts to automate installation. These are my bespoke dotfiles and workflow and therefore are likely ill-suited for everyone else. That said, I did my best to make my dotfiles as lightweight and sensible as possible so they may be worth forking as a starting point for your dotfiles.
 
 ## Assumptions
 
 - your primary, day-to-day shell is the `fish` shell
 - you only use macOS
 - you keep your code in `~/Code`
-- you use Dropbox to backup settings for your apps (e.g. iTerm)
+- you use Dropbox to backup settings for your apps (e.g. Alfred)
 
 ## Installing
 

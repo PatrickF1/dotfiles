@@ -146,14 +146,8 @@ sudo scutil --set LocalHostName Patrick-MacBook
 echo "Configuring third party apps"
 
 set settings_path "$HOME/Dropbox/Settings"
-# Point iterm2, Dash, and Alfred to settings stored in Dropbox
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string $settings_path
-defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
-defaults write com.kapeli.dashdoc syncFolderPath -string $settings_path
+# Point Alfred to settings stored in Dropbox
 defaults write com.runningwithcrayons.Alfred-Preferences syncfolder -string $settings_path
-
-# Disable checking if keyboard shortcuts are on in Mailplane
-defaults write com.mailplaneapp.Mailplane3 DisableCheckKeyboardShortcuts -bool true
 
 # Configure Postico
 defaults write at.eggerapps.Postico AlternatingRows -bool true
@@ -167,7 +161,7 @@ defaults write at.eggerapps.Postico TableViewRowsPerPage -int 200
 ###############################################################################
 
 # Restart affected apps so changes take effect immediately
-for app in Finder Dock cfprefsd SystemUIServer iTerm2 Dash Alfred Mailplane Postico
+for app in Finder Dock cfprefsd SystemUIServer Alfred Postico
     killall -q $app
 end
 
