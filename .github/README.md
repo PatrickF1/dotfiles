@@ -54,3 +54,11 @@ VSCode doesn't support automatic syncing of the `settings.json` file in a way th
 2. click on Open Settings (JSON) on the top right
 3. JSON sort the file
 4. copy into the `settings.json` that is checked into this repo
+
+## VSCode extensions
+
+VSCode extensions are managed via `vscode` entries in the Brewfile. To sync extensions:
+
+1. run `brew bundle install` in `.dotfiles_meta` to install any new extensions from the Brewfile
+2. run `brew bundle dump --force --file=.dotfiles_meta/Brewfile` to capture newly installed extensions into the Brewfile
+3. commit the updated Brewfile
