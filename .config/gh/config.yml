@@ -4,9 +4,15 @@ git_protocol: ssh
 editor: code --wait
 # Aliases allow you to create nicknames for gh commands
 aliases:
-    aliases: alias list
-    co: pr checkout
-    open: repo view --web
-    pv: pr view --web
-    pc: pr create --web
-
+  aliases: alias list
+  co: pr checkout
+  open: repo view --web
+  pv: pr view --web
+  pc: pr create --web
+  # Prune local branches that have already been squash-merged into main/master
+  prune-merged: >-
+    !base=$(gh repo view --json defaultBranchRef --jq .defaultBranchRef.name);
+    gh pr list --state merged --base "$base" --limit 500 --json headRefName --jq ".[].headRefName" |
+    while read -r b; do
+      git show-ref --verify --quiet refs/heads/"$b" && git branch -d "$b"
+    done
