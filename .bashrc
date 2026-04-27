@@ -1,7 +1,7 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-export PATH="$HOME/bin":$PATH
+export PATH="$HOME/.local/bin":$PATH
 
 source ~/.config/bash/aliases.bash
 source ~/.config/bash/functions.bash

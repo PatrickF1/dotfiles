@@ -1,5 +1,5 @@
 # add custom executables (e.g. git-shalector) to path
-set --prepend PATH "$HOME/bin"
+set --prepend PATH "$HOME/.local/bin"
 
 # Set PATH, MANPATH, etc., for Homebrew
 set -gx HOMEBREW_PREFIX /opt/homebrew

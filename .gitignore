@@ -17,7 +17,8 @@ Projects
 # Ignore other common folders
 .aws
 .cache
-.local
+.local/*
+!.local/bin
 .node-gyp
 .npm
 .ssh
