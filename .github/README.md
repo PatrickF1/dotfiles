@@ -48,17 +48,14 @@ When adding new files, remember that untracked files are not shown by git status
 
 This repo is public, so anything sensitive or machine-specific lives outside of it in three gitignored files:
 
-| File              | Purpose                                                                                  | Loaded by                  |
-| ----------------- | ---------------------------------------------------------------------------------------- | -------------------------- |
-| `~/.env`          | Cross-shell env vars in plain `KEY=value` format (one per line, no `export` or quotes).  | `.bashrc`, `config.fish`   |
-| `~/secrets.bash`  | Bash-only setup that can't be expressed as `KEY=value` (NVM init, derived URLs, etc.).   | `.bashrc`                  |
-| `~/secrets.fish`  | Fish-only setup (`fish_add_path`, derived URLs, etc.).                                   | `config.fish`              |
+| File             | Purpose                                                                                 | Loaded by                |
+| ---------------- | --------------------------------------------------------------------------------------- | ------------------------ |
+| `~/.env`         | Cross-shell env vars in plain `KEY=value` format (one per line, no `export` or quotes). | `.bashrc`, `config.fish` |
+| `~/secrets.bash` | Bash-only setup that can't be expressed as `KEY=value` (NVM init, derived URLs, etc.).  | `.bashrc`                |
+| `~/secrets.fish` | Fish-only setup (`fish_add_path`, derived URLs, etc.).                                  | `config.fish`            |
 
-The point of `~/.env` is to have a single source of truth for env vars across both shells. `.bashrc` reads it with the POSIX `set -a; . ~/.env; set +a` trick (which auto-exports every assignment). `config.fish` reads it via the `load_env` autoloaded function, which parses `KEY=value` lines and runs `set -gx` on each.
-
-`~/secrets.bash` and `~/secrets.fish` are sourced after `~/.env`, so they can reference any var defined there. Keep them thin — anything that's a plain `KEY=value` belongs in `~/.env`. Only put things in the shell-specific files when they genuinely need shell-specific syntax (`fish_add_path`, NVM init, parameter expansion for URL-encoding, etc.).
-
-To add or rotate a secret: edit `~/.env` once, open a new shell, and both bash and fish pick it up.
+`~/.env` servces as single source of truth for env vars across both shells; `.bashrc` and `config.fish` load it.
+Anything that's a plain `KEY=value` belongs in `~/.env`; only put things in the shell-specific files when they need shell-specific syntax.
 
 # Specific instructions for updating non-automated apps
 
