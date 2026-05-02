@@ -10,9 +10,14 @@ function load_env --description 'Load KEY=value lines from a .env-style file int
         test (count $parts) -eq 2; or continue
         set -l key (string trim -- $parts[1])
         set -l val (string trim -- $parts[2])
-        # strip optional surrounding single or double quotes
+        # Strip optional surrounding single or double quotes so that the same
+        # ~/.env file behaves identically when bash sources it: bash parses
+        # KEY="value" as shell code and naturally drops the quotes, so fish
+        # must do the same to avoid setting the var to a literal `"value"`.
         set val (string replace -r '^"(.*)"$' '$1' -- $val)
         set val (string replace -r "^'(.*)'\$" '$1' -- $val)
+        # -g persists past this function's scope; -x exports to child processes.
+        # Together this matches what bash's `set -a; .` produces for the same file.
         set -gx $key $val
     end < $file
 end
