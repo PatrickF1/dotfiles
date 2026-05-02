@@ -54,8 +54,7 @@ This repo is public, so anything sensitive or machine-specific lives outside of 
 | `~/secrets.bash` | Bash-only setup that can't be expressed as `KEY=value` (NVM init, derived URLs, etc.).  | `.bashrc`                |
 | `~/secrets.fish` | Fish-only setup (`fish_add_path`, derived URLs, etc.).                                  | `config.fish`            |
 
-`~/.env` servces as single source of truth for env vars across both shells; `.bashrc` and `config.fish` load it.
-Anything that's a plain `KEY=value` belongs in `~/.env`; only put things in the shell-specific files when they need shell-specific syntax.
+`~/.env` serves as single source of truth for env vars across both shells. Anything that's a plain `KEY=value` belongs in `~/.env`; only put things in the shell-specific files when they need shell-specific syntax.
 
 # Specific instructions for updating non-automated apps
 
