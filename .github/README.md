@@ -46,7 +46,7 @@ When adding new files, remember that untracked files are not shown by git status
 
 ## Secrets and machine-local config
 
-This repo is public, so anything sensitive or machine-specific lives outside of it in three gitignored files:
+Any sensitive or machine-specific config lives outside the repo in three gitignored files:
 
 | File             | Purpose                                                                                 | Loaded by                |
 | ---------------- | --------------------------------------------------------------------------------------- | ------------------------ |
@@ -54,7 +54,8 @@ This repo is public, so anything sensitive or machine-specific lives outside of 
 | `~/secrets.bash` | Bash-only setup that can't be expressed as `KEY=value` (NVM init, derived URLs, etc.).  | `.bashrc`                |
 | `~/secrets.fish` | Fish-only setup (`fish_add_path`, derived URLs, etc.).                                  | `config.fish`            |
 
-`~/.env` serves as single source of truth for env vars across both shells. Anything that's a plain `KEY=value` belongs in `~/.env`; only put things in the shell-specific files when they need shell-specific syntax.
+`~/.env` serves as single source of truth for env vars across both shells.
+Anything that's a plain `KEY=value` belongs in `~/.env`; only put things in the shell-specific files when they need shell-specific syntax.
 
 # Specific instructions for updating non-automated apps
 
