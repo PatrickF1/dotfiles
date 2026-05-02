@@ -23,6 +23,7 @@
   sh = show
   st = status --short
   undo = reset HEAD^
+  wt = worktree
 [commit]
   verbose = true
 [core]
