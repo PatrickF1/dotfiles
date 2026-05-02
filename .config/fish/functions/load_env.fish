@@ -17,7 +17,6 @@ function load_env --description 'Load KEY=value lines from a .env-style file int
         set val (string replace -r '^"(.*)"$' '$1' -- $val)
         set val (string replace -r "^'(.*)'\$" '$1' -- $val)
         # -g persists past this function's scope; -x exports to child processes.
-        # Together this matches what bash's `set -a; .` produces for the same file.
         set -gx $key $val
-    end < $file
+    end <$file
 end
