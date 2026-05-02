@@ -12,6 +12,7 @@ if [ -f "$HOME/.env" ]; then
 fi
 
 # Bash-specific machine-local config (gitignored): NVM init, derived URLs, etc.
+# Must be sourced after ~/.env, since it references vars defined there.
 [ -f "$HOME/secrets.bash" ] && . "$HOME/secrets.bash"
 
 source ~/.config/bash/aliases.bash
