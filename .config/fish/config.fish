@@ -14,7 +14,12 @@ set -gx INFOPATH /opt/homebrew/share/info $INFOPATH
 # point ripgrep at its config file
 set -x RIPGREP_CONFIG_PATH ~/.config/ripgrep
 
-source ~/secrets.fish
+# Load cross-shell env vars from ~/.env (KEY=value, gitignored).
+load_env ~/.env
+
+# Fish-specific machine-local config (gitignored): fish_add_path, derived URLs, etc.
+# Must be sourced after ~/.env, since it references vars defined there.
+test -f ~/secrets.fish; and source ~/secrets.fish
 
 ###################################
 # Interactive mode configurations #
