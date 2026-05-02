@@ -32,7 +32,8 @@ Projects
 .python_history
 .viminfo
 
-# Ignore secrets
+# Ignore secrets and machine-local config
 .config/gh/hosts.yml
+.env
 secrets.bash
 secrets.fish

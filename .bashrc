@@ -3,6 +3,17 @@
 
 export PATH="$HOME/.local/bin":$PATH
 
+# Load cross-shell env vars from ~/.env (KEY=value, gitignored).
+# `set -a` auto-exports every assignment in the sourced file.
+if [ -f "$HOME/.env" ]; then
+    set -a
+    . "$HOME/.env"
+    set +a
+fi
+
+# Bash-specific machine-local config (gitignored): NVM init, derived URLs, etc.
+[ -f "$HOME/secrets.bash" ] && . "$HOME/secrets.bash"
+
 source ~/.config/bash/aliases.bash
 source ~/.config/bash/functions.bash
 source ~/.config/bash/git-completion.bash
