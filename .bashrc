@@ -1,15 +1,18 @@
-# If not running interactively, don't do anything
-[ -z "$PS1" ] && return
-
-export PATH="$HOME/.local/bin":$PATH
-
 # Load cross-shell env vars from ~/.env (KEY=value, gitignored).
 # `set -a` auto-exports every assignment in the sourced file.
+# Loaded BEFORE the interactive early-return below so non-interactive bash
+# subshells (e.g. tools spawned by GUI apps that don't inherit an interactive
+# parent's env) still see these vars.
 if [ -f "$HOME/.env" ]; then
     set -a
     . "$HOME/.env"
     set +a
 fi
+
+# If not running interactively, don't do anything else
+[ -z "$PS1" ] && return
+
+export PATH="$HOME/.local/bin":$PATH
 
 # Bash-specific machine-local config (gitignored): NVM init, derived URLs, etc.
 # Must be sourced after ~/.env, since it references vars defined there.
