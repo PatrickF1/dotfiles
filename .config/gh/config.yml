@@ -9,11 +9,18 @@ aliases:
   open: repo view --web
   pv: pr view --web
   pc: pr create --web
-  # Prune local branches that have already been squash-merged into main/master
-  prune-merged: >-
-    !git for-each-ref --format='%(refname:short)' refs/heads/ |
-    grep -vE '^(main|master)$' |
-    while read -r b; do
-      state=$(gh pr list --head "$b" --state merged --limit 1 --json state --jq '.[0].state' 2>/dev/null);
-      [ "$state" = "MERGED" ] && git branch -D "$b";
+  # Prune local branches (and their worktrees) once their PR is squash-merged.
+  # Skips worktrees with uncommitted changes; never touches the main worktree.
+  prune-merged: |-
+    !git for-each-ref --format='%(refname:short) %(worktreepath)' refs/heads/ |
+    while read -r b wt; do
+      case "$b" in main|master) continue;; esac
+      state=$(gh pr list --head "$b" --state merged --limit 1 --json state --jq '.[0].state' 2>/dev/null)
+      if [ "$state" != "MERGED" ]; then
+        continue
+      fi
+      if [ -n "$wt" ]; then
+        git worktree remove "$wt" || continue
+      fi
+      git branch -D "$b"
     done
