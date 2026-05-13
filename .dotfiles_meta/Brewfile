@@ -1,4 +1,3 @@
-tap "homebrew/services"
 brew "bash"
 brew "bat"
 brew "eza"
