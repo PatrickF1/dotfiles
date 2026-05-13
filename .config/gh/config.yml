@@ -7,7 +7,22 @@ aliases:
   aliases: alias list
   co: pr checkout
   open: repo view --web
-  pv: pr view --web
+  # Augments `gh pr view --web`: in addition to PR number/URL/branch,
+  # also accepts a commit-ish and looks up its associated PR.
+  pv: |-
+    !arg="$1"
+    if [ -z "$arg" ]; then
+      exec gh pr view --web
+    fi
+    gh pr view --web "$arg" 2>/dev/null && exit
+    sha=$(git rev-parse --verify "$arg" 2>/dev/null) || sha="$arg"
+    pr=$(gh api "repos/{owner}/{repo}/commits/$sha/pulls" --jq '.[0].number' 2>/dev/null)
+    if printf '%s' "$pr" | grep -qE '^[0-9]+$'; then
+      gh pr view --web "$pr"
+    else
+      echo "No PR found for $arg" >&2
+      exit 1
+    fi
   pc: pr create --web
   # Prune local branches (and their worktrees) once their PR is squash-merged.
   # Skips worktrees with uncommitted changes; never touches the main worktree.
