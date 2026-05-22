@@ -4,40 +4,41 @@ git_protocol: ssh
 editor: code --wait
 # Aliases allow you to create nicknames for gh commands
 aliases:
-  aliases: alias list
-  co: pr checkout
-  open: repo view --web
-  # Augments `gh pr view --web`: in addition to PR number/URL/branch,
-  # also accepts a commit-ish and looks up its associated PR.
-  pv: |-
-    !arg="$1"
-    if [ -z "$arg" ]; then
-      exec gh pr view --web
-    fi
-    gh pr view --web "$arg" 2>/dev/null && exit
-    sha=$(git rev-parse --verify "$arg" 2>/dev/null) || sha="$arg"
-    pr=$(gh api "repos/{owner}/{repo}/commits/$sha/pulls" --jq '.[0].number' 2>/dev/null)
-    if printf '%s' "$pr" | grep -qE '^[0-9]+$'; then
-      gh pr view --web "$pr"
-    else
-      echo "No PR found for $arg" >&2
-      exit 1
-    fi
-  pc: pr create --web
-  # Prune local branches (and their worktrees) once their PR is closed —
-  # either merged or declined. Skips branches with an open PR or no PR,
-  # skips worktrees with uncommitted changes, and never touches main.
-  prune-merged: |-
-    !git for-each-ref --format='%(refname:short) %(worktreepath)' refs/heads/ |
-    while read -r b wt; do
-      case "$b" in main|master) continue;; esac
-      state=$(gh pr list --head "$b" --state all --limit 1 --json state --jq '.[0].state' 2>/dev/null)
-      case "$state" in
-        MERGED|CLOSED) ;;
-        *) continue ;;
-      esac
-      if [ -n "$wt" ]; then
-        git worktree remove "$wt" || continue
-      fi
-      git branch -D "$b"
-    done
+    aliases: alias list
+    co: pr checkout
+    open: repo view --web
+    # Augments `gh pr view --web`: in addition to PR number/URL/branch,
+    # also accepts a commit-ish and looks up its associated PR.
+    pv: |-
+        !arg="$1"
+        if [ -z "$arg" ]; then
+          exec gh pr view --web
+        fi
+        gh pr view --web "$arg" 2>/dev/null && exit
+        sha=$(git rev-parse --verify "$arg" 2>/dev/null) || sha="$arg"
+        pr=$(gh api "repos/{owner}/{repo}/commits/$sha/pulls" --jq '.[0].number' 2>/dev/null)
+        if printf '%s' "$pr" | grep -qE '^[0-9]+$'; then
+          gh pr view --web "$pr"
+        else
+          echo "No PR found for $arg" >&2
+          exit 1
+        fi
+    pc: pr create --web
+    # Prune local branches (and their worktrees) once their PR is closed —
+    # either merged or declined. Skips branches with an open PR or no PR,
+    # skips worktrees with uncommitted changes, and never touches main.
+    prune-merged: |-
+        !git for-each-ref --format='%(refname:short) %(worktreepath)' refs/heads/ |
+        while read -r b wt; do
+          case "$b" in main|master) continue;; esac
+          state=$(gh pr list --head "$b" --state all --limit 1 --json state --jq '.[0].state' 2>/dev/null)
+          case "$state" in
+            MERGED|CLOSED) ;;
+            *) continue ;;
+          esac
+          if [ -n "$wt" ]; then
+            git worktree remove "$wt" || continue
+          fi
+          git branch -D "$b"
+        done
+version: "1"
