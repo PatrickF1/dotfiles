@@ -1,0 +1,68 @@
+#!/usr/bin/env fish
+# Unwedge macOS networking without rebooting.
+# Symptoms: internet dies, switching Wi-Fi/Ethernet/hotspot doesn't help, only restart fixes it.
+# Usual culprits: stuck mDNSResponder, wedged configd, or a Tailscale daemon that won't let go.
+
+# Find the interface carrying the default route (usually en0 Wi-Fi, but could be Ethernet/USB)
+set -l iface (route get default 2>/dev/null | awk '/interface:/{print $2}')
+test -z "$iface"; and set iface en0  # fallback if no default route exists right now
+
+echo "==> Bouncing Tailscale (App Store build)"
+# Tailscale's MagicDNS hijacks system DNS via 100.100.100.99; if tailscaled wedges,
+# all name resolution dies even when you're not using the tunnel. Restart it first.
+if test -d /Applications/Tailscale.app
+    osascript -e 'quit app "Tailscale"' 2>/dev/null  # graceful quit so it tears down the tunnel cleanly
+    # Poll up to ~5s for the process to actually exit before relaunching (avoids racing a still-quitting instance)
+    for i in (seq 10)
+        pgrep -qf '/Applications/Tailscale.app'; or break
+        sleep 0.5
+    end
+    open -a Tailscale  # relaunch; the menu-bar app re-establishes the tunnel + DNS
+end
+
+echo "==> Restarting mDNSResponder + flushing DNS cache"
+# mDNSResponder is macOS's DNS client daemon — if it's stuck, name lookups silently fail
+sudo killall -HUP mDNSResponder       # SIGHUP = reload config + reset internal state
+sudo dscacheutil -flushcache          # wipe the userland DNS cache so old/poisoned answers don't linger
+
+echo "==> Kicking configd (system network config daemon)"
+# configd owns interface state, DHCP, routes, DNS resolver order. When it locks up
+# every interface looks "up" but nothing actually works — this is the big hammer.
+sudo killall -HUP configd
+
+echo "==> Bouncing interface $iface"
+# Force the link down/up to re-trigger DHCP and clear any stuck driver state
+sudo ifconfig $iface down
+sleep 1                               # give the driver a moment to fully release
+sudo ifconfig $iface up
+
+echo "==> Probing connectivity (waiting up to 10s for network to settle)"
+# Two-stage probe isolates which layer is still broken. We poll instead of one-shot
+# because DHCP, default route, and Tailscale tunnel all need a few seconds post-bounce.
+
+# Routing probe: 1.1.1.1 = Cloudflare's public resolver, used as a known-reachable IP
+# literal. Pinging it tests pure L3 routing (no DNS needed) — succeeds the moment the
+# default route is back.
+set -l routing_ok 0
+for i in (seq 10)
+    if ping -c 1 -W 1000 1.1.1.1 >/dev/null 2>&1
+        set routing_ok 1
+        echo "    routing OK after $i""s (1.1.1.1 reachable)"
+        break
+    end
+    sleep 1
+end
+test $routing_ok -eq 0; and echo "    NO route to 1.1.1.1 after 10s — VPN or interface still wedged"
+
+# DNS probe: google.com requires DNS resolution *plus* routing. If 1.1.1.1 worked but
+# this doesn't, the problem is isolated to DNS (mDNSResponder, MagicDNS, resolver config).
+set -l dns_ok 0
+for i in (seq 10)
+    if ping -c 1 -W 1000 google.com >/dev/null 2>&1
+        set dns_ok 1
+        echo "    DNS OK after $i""s (google.com resolves)"
+        break
+    end
+    sleep 1
+end
+test $dns_ok -eq 0; and echo "    DNS still broken after 10s — check scutil --dns"
