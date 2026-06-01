@@ -24,21 +24,46 @@ aliases:
           exit 1
         fi
     pc: pr create --web
-    # Prune local branches (and their worktrees) once their PR is closed —
-    # either merged or declined. Skips branches with an open PR or no PR,
-    # skips worktrees with uncommitted changes, and never touches main.
-    prune-merged: |-
-        !git for-each-ref --format='%(refname:short) %(worktreepath)' refs/heads/ |
+    # Prune local branches (and their worktrees) whose work is done, against the
+    # remote's actual default branch (main/master/etc. — detected, not assumed).
+    # A branch is deletable if EITHER all its commits are already in the default
+    # branch (any merge style, including squash — name-agnostic) OR its PR
+    # (matched by head name) is MERGED/CLOSED. Skips branches with unmerged
+    # commits and no closed PR, skips worktrees that won't cleanly remove
+    # (e.g. dirty/untracked), and never touches the default branch or m.
+    prune-done: |-
+        !remote=origin
+        git fetch "$remote" --prune --quiet
+        base=$(git symbolic-ref --quiet --short "refs/remotes/$remote/HEAD" 2>/dev/null)
+        if [ -z "$base" ]; then
+          git remote set-head "$remote" --auto >/dev/null 2>&1
+          base=$(git symbolic-ref --quiet --short "refs/remotes/$remote/HEAD" 2>/dev/null)
+        fi
+        if [ -z "$base" ]; then
+          db=$(gh repo view --json defaultBranchRef --jq '.defaultBranchRef.name' 2>/dev/null)
+          case "$db" in ''|*[!A-Za-z0-9._/-]*) db= ;; esac
+          [ -n "$db" ] && base="$remote/$db"
+        fi
+        # Never guess: the base must resolve to a real commit, else abort without deleting.
+        if [ -z "$base" ] || ! git rev-parse --verify --quiet "$base^{commit}" >/dev/null 2>&1; then
+          echo "prune-done: cannot determine default branch for $remote" >&2; exit 1
+        fi
+        def=${base#$remote/}
+        git for-each-ref --format='%(refname:short) %(worktreepath)' refs/heads/ |
         while read -r b wt; do
-          case "$b" in main|master) continue;; esac
-          state=$(gh pr list --head "$b" --state all --limit 1 --json state --jq '.[0].state' 2>/dev/null)
-          case "$state" in
-            MERGED|CLOSED) ;;
-            *) continue ;;
-          esac
+          case "$b" in m|main|master|"$def") continue;; esac
+          if [ -z "$(git rev-list "$base..$b" 2>/dev/null)" ]; then
+            reason="in $def"
+          else
+            state=$(gh pr list --head "$b" --state all --limit 1 --json state --jq '.[0].state' 2>/dev/null)
+            case "$state" in
+              MERGED|CLOSED) reason="PR $state" ;;
+              *) continue ;;
+            esac
+          fi
           if [ -n "$wt" ]; then
             git worktree remove "$wt" || continue
           fi
-          git branch -D "$b"
+          git branch -D "$b" && echo "pruned $b ($reason)"
         done
 version: "1"
