@@ -11,6 +11,8 @@ set -l vim_plug_path ~/.local/share/nvim/site/autoload/plug.vim
 if test ! -e "$vim_plug_path"
     echo "Installing vim-plug for neovim"
     curl --create-dirs --location --output "$vim_plug_path" https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    echo "Installing neovim plugins"
+    nvim --headless +PlugInstall +qall
 end
 
 set -l bash_git_completion_path ~/.config/bash/git-completion.bash
@@ -39,5 +41,5 @@ if test -e ~/Library/Fonts/JetBrainsMono-SemiBold.ttf
     rm -f ~/Library/Fonts/JetBrainsMono{,NL}-{SemiBold, SemiBoldItalic}.ttf
 end
 
-# make it obvious where to put secrets
-touch ~/secrets.fish
+# make it obvious where to put machine-local config and secrets
+touch ~/.env ~/secrets.bash ~/secrets.fish
