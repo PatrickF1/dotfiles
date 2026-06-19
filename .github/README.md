@@ -13,19 +13,37 @@ My configuration and bootstrap files for `bash`, `fish`, `git`, `Visual Studio C
 
 Unlike most other dotfiles repos that use symlinks or `rsync` to manage your dotfiles, we will use git and only git. See this very excellent [Atlassian article](https://www.atlassian.com/git/tutorials/dotfiles) and [DistroTube tutorial](https://www.youtube.com/watch?v=tBoLDpTWVOM) for a primer, though this setup is a bit different. The basic idea is that this repository's directory structure mirrors `$HOME`'s directory structure when all the dotfiles exist in their proper place. By setting up this repository in this way, we will be able to set our git working directory to the home directory and checkout dotfiles directly into the directories they should go.
 
+On a fresh machine, run the one-command bootstrap. It installs the Xcode Command Line Tools and Homebrew (neither of which is present on a clean macOS install), clones this repo, checks the dotfiles out into `$HOME`, installs the Brewfile, and runs the two fish setup scripts:
+
 ```sh
-# clone the repo into the expected place (~/Code/dotfiles)
-cd # start installation steps from home directory
-mkdir -p Code/dotfiles
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/patrickf1/dotfiles/main/.dotfiles_meta/bootstrap.sh)"
+```
+
+The script ([`.dotfiles_meta/bootstrap.sh`](../.dotfiles_meta/bootstrap.sh)) is idempotent, so it's safe to re-run after pulling new changes. If the repo is already cloned, you can run it directly instead of via `curl`:
+
+```sh
+bash ~/Code/dotfiles/.dotfiles_meta/bootstrap.sh
+```
+
+For reference, the bootstrap performs these steps:
+
+```sh
+# 1. Xcode Command Line Tools (provides git)
+xcode-select --install
+
+# 2. Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# 3. clone the repo into the expected place (~/Code/dotfiles)
 git clone https://github.com/patrickf1/dotfiles ~/Code/dotfiles
 
-# checkout all the files into our home directory by making it the git working directory
+# 4. checkout all the files into our home directory by making it the git working directory
 git --git-dir=Code/dotfiles/.git --work-tree=. reset --hard
 
-# hide untracked files so the output of git status is not overwhelming
+# 5. hide untracked files so the output of git status is not overwhelming
 git --git-dir=Code/dotfiles/.git config --local status.showUntrackedFiles no
 
-# run all the install scripts, which are located in .dotfiles_meta
+# 6. run all the install scripts, which are located in .dotfiles_meta
 cd Code/dotfiles/.dotfiles_meta
 brew bundle install
 fish install_shell_utilities.fish
