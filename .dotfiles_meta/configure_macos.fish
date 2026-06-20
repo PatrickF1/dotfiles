@@ -1,6 +1,5 @@
 #!/usr/bin/env fish
 
-echo "Configuring macOS and built-in apps"
 # Close any open System Settings panes to prevent them from overriding
 # the settings being configured
 osascript -e 'tell application "System Settings" to quit'
@@ -169,4 +168,4 @@ for app in Finder Dock cfprefsd SystemUIServer Alfred Postico
     killall -q $app
 end
 
-echo "Done. You may need to restart currently running applications for new settings to kick in."
+echo "Some changes may need a new login session or app restart to take effect"
