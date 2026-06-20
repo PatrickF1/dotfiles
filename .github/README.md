@@ -19,35 +19,10 @@ On a fresh machine, run the one-command bootstrap. It installs the Xcode Command
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/patrickf1/dotfiles/main/.dotfiles_meta/bootstrap.sh)"
 ```
 
-The script ([`.dotfiles_meta/bootstrap.sh`](../.dotfiles_meta/bootstrap.sh)) is idempotent, so it's safe to re-run after pulling new changes. If the repo is already cloned, you can run it directly instead of via `curl`:
+The script ([`.dotfiles_meta/bootstrap.sh`](../.dotfiles_meta/bootstrap.sh)) is idempotent, so it's safe to re-run after pulling new changes. It is commented step by step if you want to see exactly what it does. If the repo is already cloned, you can run it directly instead of via `curl`:
 
 ```sh
 bash ~/Code/dotfiles/.dotfiles_meta/bootstrap.sh
-```
-
-For reference, the bootstrap performs these steps:
-
-```sh
-# 1. Xcode Command Line Tools (provides git)
-xcode-select --install
-
-# 2. Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-# 3. clone the repo into the expected place (~/Code/dotfiles)
-git clone https://github.com/patrickf1/dotfiles ~/Code/dotfiles
-
-# 4. checkout all the files into our home directory by making it the git working directory
-git --git-dir=Code/dotfiles/.git --work-tree=. reset --hard
-
-# 5. hide untracked files so the output of git status is not overwhelming
-git --git-dir=Code/dotfiles/.git config --local status.showUntrackedFiles no
-
-# 6. run all the install scripts, which are located in .dotfiles_meta
-cd Code/dotfiles/.dotfiles_meta
-brew bundle install
-fish install_shell_utilities.fish
-fish configure_macos.fish
 ```
 
 ## Workflow for updating dotfiles
