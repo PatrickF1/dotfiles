@@ -1,6 +1,10 @@
 # dotfiles
 
-My configuration and bootstrap files for `bash`, `fish`, `git`, `Visual Studio Code`, and even `brew`, `macOS settings`, and the settings for some applications. Includes scripts to automate installation. These are my bespoke dotfiles and workflow and therefore are likely ill-suited for everyone else. That said, I did my best to make my dotfiles as lightweight and sensible as possible so they may be worth forking as a starting point for your dotfiles.
+## About
+
+My configuration and bootstrap files for `bash`, `fish`, `git`, `Visual Studio Code`, and even `brew`, `macOS settings`, and the settings for some applications. Includes scripts to automate installation as much as possible. These are my bespoke dotfiles and workflow and therefore are likely ill-suited for everyone else. That said, I did my best to make my dotfiles as lightweight and sensible as possible so they may be worth forking as a starting point for your dotfiles.
+
+Unlike most other dotfiles repos that use symlinks or `rsync` to manage your dotfiles, we will use git and only git. See this very excellent [Atlassian article](https://www.atlassian.com/git/tutorials/dotfiles) and [DistroTube tutorial](https://www.youtube.com/watch?v=tBoLDpTWVOM) for a primer, though this setup is a bit different. The basic idea is that this repository's directory structure mirrors `$HOME`'s directory structure when all the dotfiles exist in their proper place. By setting up this repository in this way, we will be able to set our git working directory to the home directory and checkout dotfiles directly into the directories they should go.
 
 ## Assumptions
 
@@ -11,17 +15,11 @@ My configuration and bootstrap files for `bash`, `fish`, `git`, `Visual Studio C
 
 ## Installing
 
-Unlike most other dotfiles repos that use symlinks or `rsync` to manage your dotfiles, we will use git and only git. See this very excellent [Atlassian article](https://www.atlassian.com/git/tutorials/dotfiles) and [DistroTube tutorial](https://www.youtube.com/watch?v=tBoLDpTWVOM) for a primer, though this setup is a bit different. The basic idea is that this repository's directory structure mirrors `$HOME`'s directory structure when all the dotfiles exist in their proper place. By setting up this repository in this way, we will be able to set our git working directory to the home directory and checkout dotfiles directly into the directories they should go.
-
-On a fresh machine, run the one-command bootstrap. It installs the Xcode Command Line Tools and Homebrew (neither of which is present on a clean macOS install), clones this repo, checks the dotfiles out into `$HOME`, installs the Brewfile, and runs the two fish setup scripts:
+On a fresh machine, run the bootstrap script
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/patrickf1/dotfiles/main/.dotfiles_meta/bootstrap.sh)"
-```
-
-The script ([`.dotfiles_meta/bootstrap.sh`](../.dotfiles_meta/bootstrap.sh)) is idempotent, so it's safe to re-run after pulling new changes. It is commented step by step if you want to see exactly what it does. If the repo is already cloned, you can run it directly instead of via `curl`:
-
-```sh
+# or if the repo is already cloned, run it directly
 bash ~/Code/dotfiles/.dotfiles_meta/bootstrap.sh
 ```
 
