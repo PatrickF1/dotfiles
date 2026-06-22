@@ -15,6 +15,9 @@ defaults write com.apple.finder FXPreferredViewStyle -string Nlsv
 # Disable the warning shown when changing a file extension
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
+# Show all filename extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
 # Set the Home folder as the default path for new Finder tabs
 defaults write com.apple.finder NewWindowTarget -string PfLo
 defaults write com.apple.finder NewWindowTargetPath -string "file://$HOME"
@@ -25,6 +28,9 @@ defaults write com.apple.finder ShowPathbar -bool true
 # When performing a search, search the current folder by default
 defaults write com.apple.finder FXDefaultSearchScope -string SCcf
 
+# Keep folders on top when sorting by name
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
+
 # Don't show hidden files by default
 defaults write com.apple.finder AppleShowAllFiles -bool false
 
@@ -34,6 +40,19 @@ defaults write com.apple.finder DisableAllAnimations -bool true
 # Set desktop wallpaper to something minimal and slightly soothing
 set wallpaper_path (realpath (status dirname))/rings_wallpaper.png
 osascript -e 'tell application "System Events" to tell every desktop to set picture to "'"$wallpaper_path"'"'
+
+###############################################################################
+# Appearance                                                                  #
+###############################################################################
+
+# Automatically switch between light and dark mode based on time of day
+defaults write NSGlobalDomain AppleInterfaceStyleSwitchesAutomatically -bool true
+
+# Always show scroll bars instead of only while scrolling
+defaults write NSGlobalDomain AppleShowScrollBars -string Always
+
+# Clicking the scroll bar track jumps to that spot instead of paging
+defaults write NSGlobalDomain AppleScrollerPagingBehavior -bool true
 
 ###############################################################################
 # Keyboard, Mouse, Trackpad                                                  #
@@ -49,7 +68,6 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 # Disable automatic substitutions that get in the way when typing code
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
-defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)
@@ -61,6 +79,12 @@ defaults write "Apple Global Domain" "com.apple.scrollwheel.scaling" 0.4
 
 # Set Trackpad click weight to light
 defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 0
+
+# Enable the App Exposé gesture (swipe down with three fingers)
+defaults write com.apple.dock showAppExposeGestureEnabled -bool true
+
+# Disable the Launchpad pinch gesture
+defaults write com.apple.dock showLaunchpadGestureEnabled -bool false
 
 ###############################################################################
 # Dock                                                                        #
@@ -90,6 +114,12 @@ defaults write com.apple.dock autohide-time-modifier -float 0.25
 
 # Shrink the size of Dock app icons for more horizontal screen real estate
 defaults write com.apple.dock tilesize -int 52
+
+# Disable all Hot Corners (0 = no-op) and clear their modifier keys
+for corner in tl tr bl br
+    defaults write com.apple.dock "wvous-$corner-corner" -int 0
+    defaults write com.apple.dock "wvous-$corner-modifier" -int 0
+end
 
 ###############################################################################
 # Miscellaneous                                                               #
@@ -135,6 +165,12 @@ sudo pmset -a hibernatemode 0
 
 # Don't wake for network access
 sudo pmset -a womp 0
+
+# Turn off the display after 2 minutes of inactivity on every power source
+sudo pmset -a displaysleep 2
+
+# Don't play the chime sound on startup
+sudo nvram StartupMute=%01
 
 # System Settings > General > About > Name
 sudo scutil --set ComputerName "Patrick's MacBook"
