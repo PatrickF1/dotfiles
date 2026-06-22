@@ -35,5 +35,5 @@ Projects
 # Ignore secrets and machine-local config
 .config/gh/hosts.yml
 .env
-secrets.bash
+secrets.sh
 secrets.fish

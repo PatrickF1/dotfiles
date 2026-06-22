@@ -42,4 +42,4 @@ if test -e ~/Library/Fonts/JetBrainsMono-SemiBold.ttf
 end
 
 # make it obvious where to put machine-local config and secrets
-touch ~/.env ~/secrets.bash ~/secrets.fish
+touch ~/.env ~/secrets.sh ~/secrets.fish

@@ -42,7 +42,7 @@ Any sensitive or machine-specific config lives outside the repo in three gitigno
 | File             | Purpose                                                                                 | Loaded by                |
 | ---------------- | --------------------------------------------------------------------------------------- | ------------------------ |
 | `~/.env`         | Cross-shell env vars in plain `KEY=value` format (one per line, no `export` or quotes). | `.bashrc`, `config.fish` |
-| `~/secrets.bash` | Bash-only setup that can't be expressed as `KEY=value` (NVM init, derived URLs, etc.).  | `.bashrc`                |
+| `~/secrets.sh`   | Bash/zsh setup that can't be expressed as `KEY=value` (NVM init, derived URLs, etc.).   | `.bashrc`, `.zprofile`   |
 | `~/secrets.fish` | Fish-only setup (`fish_add_path`, derived URLs, etc.).                                  | `config.fish`            |
 
 `~/.env` serves as single source of truth for env vars across both shells.

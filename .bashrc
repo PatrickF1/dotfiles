@@ -14,9 +14,9 @@ fi
 
 export PATH="$HOME/.local/bin":$PATH
 
-# Bash-specific machine-local config (gitignored): NVM init, derived URLs, etc.
+# Machine-local config (gitignored) shared with zsh.
 # Must be sourced after ~/.env, since it references vars defined there.
-[ -f "$HOME/secrets.bash" ] && . "$HOME/secrets.bash"
+[ -f "$HOME/secrets.sh" ] && . "$HOME/secrets.sh"
 
 source ~/.config/bash/aliases.bash
 source ~/.config/bash/functions.bash
