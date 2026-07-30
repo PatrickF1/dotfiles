@@ -144,6 +144,9 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 # Disable shadow in screenshots
 defaults write com.apple.screencapture disable-shadow -bool true
 
+# Keep the screenshot thumbnail preview on screen for 8 seconds
+defaults write com.apple.screencaptureui thumbnailExpiration -float 8
+
 # Set highlight color to green
 defaults write NSGlobalDomain AppleHighlightColor -string "0.752941 0.964706 0.678431 Green"
 
