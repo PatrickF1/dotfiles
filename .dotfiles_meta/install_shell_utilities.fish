@@ -41,5 +41,12 @@ if test -e ~/Library/Fonts/JetBrainsMono-SemiBold.ttf
     rm -f ~/Library/Fonts/JetBrainsMono{,NL}-{SemiBold, SemiBoldItalic}.ttf
 end
 
+if test ! -e ~/.finicky.js
+    echo "Seeding ~/.finicky.js from template (machine-local, add URL routing rules there)"
+    cp (status dirname)/finicky_template.js ~/.finicky.js
+    # Launch Finicky so it registers itself and prompts to become the default browser
+    open -a Finicky
+end
+
 # make it obvious where to put machine-local config and secrets
 touch ~/.env ~/secrets.sh ~/secrets.fish
