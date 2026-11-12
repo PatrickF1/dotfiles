@@ -35,6 +35,12 @@ Be very careful about not running `dot add -A` on the home directory. To avoid a
 
 When adding new files, remember that untracked files are not shown by git status.
 
+## Global agent instructions
+
+`.agents/AGENTS.md` is the shared source for Claude Code and Codex. Both
+`.claude/CLAUDE.md` and `.codex/AGENTS.md` are relative symlinks to it, so the
+home-directory checkout installs both agents' instructions without extra setup.
+
 ## Secrets and machine-local config
 
 Any sensitive or machine-specific config lives outside the repo in three gitignored files:
